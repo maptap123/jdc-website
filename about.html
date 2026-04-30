@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — JDC Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #f2b900;
+      --gold-dim: rgba(242,185,0,0.4);
+      --navy: #091b37;
+      --slate: #465462;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f7f5f2;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--navy);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 0 3rem;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(9,27,55,0.0);
+      backdrop-filter: blur(0px);
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    }
+    nav.scrolled {
+      background: #091b37;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-links a.active { color: white; }
+    .nav-cta {
+      font-size: 0.7rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.18em !important;
+      color: var(--navy) !important;
+      background: var(--gold);
+      padding: 0.6rem 1.5rem;
+      transition: background 0.2s ease !important;
+    }
+    .nav-cta:hover { background: white !important; color: var(--navy) !important; }
+    .nav-back {
+      font-size: 0.68rem !important;
+      letter-spacing: 0.1em !important;
+      color: rgba(255,255,255,0.4) !important;
+    }
+    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a:not(.nav-cta):not(.nav-back) { display: none; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 0;
+      height: 100vh;
+      min-height: 680px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Jobs/caudill/20240815-AJW_0082.jpg');
+      background-size: cover;
+      background-position: center 25%;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(9,27,55,0.95) 0%,
+        rgba(9,27,55,0.55) 45%,
+        rgba(9,27,55,0.18) 100%
+      );
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 5rem 5.5rem;
+      max-width: 860px;
+    }
+    .hero-eyebrow {
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6.5vw, 7rem);
+      font-weight: 300;
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+      color: white;
+      margin-bottom: 1.75rem;
+    }
+    .hero-heading em {
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+    }
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content { padding: 0 2rem 3.5rem; }
+      .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+    }
+
+    /* ── SCRIPTURE BLOCK ── */
+    .scripture-block {
+      background: var(--navy);
+      padding: 5.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .scripture-block::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(242,185,0,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 50%, rgba(70,84,98,0.2) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .scripture-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+      position: relative;
+    }
+    .scripture-icon span {
+      display: block;
+      width: 48px;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+    .scripture-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: white;
+      line-height: 1.45;
+      max-width: 780px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+    .scripture-ref {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      position: relative;
+    }
+    .mission-divider {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--gold-dim), transparent);
+      margin: 2.5rem auto;
+      position: relative;
+    }
+    .mission-statement {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.85;
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .mission-statement strong {
+      color: rgba(255,255,255,0.82);
+      font-weight: 400;
+    }
+
+    /* ── OUR STORY ── */
+    .story-section {
+      background: #f7f5f2;
+      padding: 7rem 5rem;
+    }
+    .story-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .story-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .story-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .story-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: 1.75rem;
+    }
+    .story-heading em { font-style: italic; }
+    .story-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .story-body + .story-body { margin-top: 0; }
+    .story-since {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--navy);
+      border-top: 2px solid var(--gold);
+      padding-top: 0.65rem;
+    }
+    .story-img-wrap {
+      position: relative;
+    }
+    .story-img-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+    }
+    .story-img-accent {
+      position: absolute;
+      bottom: -2.5rem;
+      right: -2.5rem;
+      width: 55%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 6px solid #f7f5f2;
+      box-shadow: 0 8px 40px rgba(9,27,55,0.18);
+    }
+    .story-img-badge {
+      position: absolute;
+      top: 2rem;
+      left: -2rem;
+      background: var(--navy);
+      color: white;
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+    }
+    .story-img-badge .badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--gold);
+      display: block;
+    }
+    .story-img-badge .badge-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 900px) {
+      .story-section { padding: 5rem 2rem 7rem; }
+      .story-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .story-img-accent { bottom: -1.5rem; right: -1rem; }
+      .story-img-badge { left: 0; top: 1rem; }
+    }
+
+    /* ── STATS ── */
+    .stats-section {
+      background: var(--navy);
+      padding: 5rem 3rem;
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 4.5vw, 5rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }
+      .stat-item:last-child, .stat-item:nth-last-child(2) { border-bottom: none; }
+    }
+
+    /* ── LEADERSHIP ── */
+    .leadership-section {
+      background: white;
+      padding: 7rem 5rem;
+    }
+    .leadership-header {
+      max-width: 1100px;
+      margin: 0 auto 4.5rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+    .section-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 3.2vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+    .section-heading em { font-style: italic; }
+    .section-sub {
+      max-width: 380px;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.8;
+    }
+
+    .leadership-unit {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 5fr 6fr;
+      gap: 5.5rem;
+      align-items: center;
+    }
+    .leader-photo-wrap {
+      position: relative;
+    }
+    .leader-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      box-shadow: 0 8px 48px rgba(9,27,55,0.14);
+    }
+    .leader-photo-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: var(--navy);
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .leader-photo-bar span {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .leader-photo-bar strong {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+    .leader-role {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+    .leader-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+    }
+    .leader-name em { font-style: italic; }
+    .leader-bio {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .leader-divider {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.5rem 0;
+    }
+    .leader-creds-label {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(9,27,55,0.4);
+      margin-bottom: 0.75rem;
+    }
+    .leader-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .cred-tag {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: rgba(9,27,55,0.07);
+      border: 1px solid rgba(9,27,55,0.12);
+      padding: 0.35rem 0.75rem;
+    }
+
+    @media (max-width: 900px) {
+      .leadership-section { padding: 5rem 2rem; }
+      .leadership-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .leadership-unit { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* ── CREDENTIALS BANNER ── */
+    .creds-section {
+      background: var(--slate);
+      padding: 4.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .creds-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(9,27,55,0.4) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .creds-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .creds-label {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      flex-shrink: 0;
+      min-width: 120px;
+    }
+    .creds-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      flex: 1;
+    }
+    .cred-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.55rem 1rem;
+    }
+    .cred-badge svg { flex-shrink: 0; }
+    .cred-badge span {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    @media (max-width: 768px) {
+      .creds-section { padding: 3.5rem 2rem; }
+      .creds-inner { flex-direction: column; gap: 2rem; align-items: flex-start; }
+    }
+
+    /* ── AWARD HIGHLIGHT ── */
+    .award-section {
+      background: #f7f5f2;
+      padding: 5rem 5rem;
+    }
+    .award-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .award-badge-wrap {
+      text-align: center;
+    }
+    .award-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(9,27,55,0.15);
+      background: white;
+      box-shadow: 0 4px 32px rgba(9,27,55,0.08);
+      gap: 0.5rem;
+    }
+    .award-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .award-title {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-align: center;
+      line-height: 1.6;
+      max-width: 130px;
+    }
+    .award-org {
+      font-size: 0.56rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(9,27,55,0.4);
+    }
+    .award-content .section-eyebrow { margin-bottom: 1.25rem; }
+    .award-content .section-heading { margin-bottom: 1.25rem; }
+    .award-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.85;
+    }
+
+    @media (max-width: 900px) {
+      .award-section { padding: 5rem 2rem; }
+      .award-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .award-badge-wrap { text-align: left; }
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--navy);
+      padding: 7rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(242,185,0,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 50%, rgba(70,84,98,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .cta-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .cta-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+      font-weight: 300;
+      color: white;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+    .cta-heading em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .cta-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      max-width: 460px;
+      margin: 0 auto 2.75rem;
+      position: relative;
+    }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 1rem 2.25rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn-primary:hover { background: white; }
+    .btn-ghost {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .btn-ghost:hover { color: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050f1e;
+      padding: 2.5rem 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+    .footer-icon { height: 68px; width: auto; opacity: 0.85; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.18rem; }
+    .footer-contact span {
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.38);
+    }
+    .footer-copy {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .footer-links a {
+      font-size: 0.63rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.6); }
+    @media (max-width: 768px) {
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-left { align-items: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <img src="Brand_assets/jdc icon.png" alt="JDC Construction">
+    </a>
+    <div class="nav-links">
+      <a href="custom-home.html">Custom Homes</a>
+      <a href="remodeling.html">Remodeling</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html" class="nav-back">← Home</a>
+      <a href="quote.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Since 1996</div>
+      <h1 class="hero-heading">Built on <em>Faith.</em><br>Driven by Craft.</h1>
+      <p class="hero-sub">For 30 years, JDC Construction has built and transformed homes across Southeast Indiana with honesty, precision, and a deep commitment to the families we serve.</p>
+    </div>
+  </section>
+
+  <!-- Scripture / Mission -->
+  <section class="scripture-block">
+    <div class="scripture-icon">
+      <span></span>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <circle cx="9" cy="9" r="8" stroke="rgba(242,185,0,0.5)" stroke-width="1"/>
+        <circle cx="9" cy="9" r="3" fill="rgba(242,185,0,0.5)"/>
+      </svg>
+      <span></span>
+    </div>
+    <blockquote class="scripture-quote">
+      "Whatever you do, work at it with all your heart,<br>as working for the Lord, not for men."
+    </blockquote>
+    <div class="scripture-ref">Colossians 3:23</div>
+    <div class="mission-divider"></div>
+    <p class="mission-statement">
+      Our mission is <strong>to bring glory to God by improving the lives of our clients and our employees</strong> — delivering unmatched craftsmanship, transparent communication, and lasting quality in every project we touch.
+    </p>
+  </section>
+
+  <!-- Our Story -->
+  <section class="story-section">
+    <div class="story-grid">
+      <div class="story-text">
+        <div class="story-eyebrow">Our Story</div>
+        <h2 class="story-heading">Thirty Years<br>of <em>Building<br>Dreams</em></h2>
+        <p class="story-body">JDC Construction was founded in 1996 by Jason Cox, a Northern Kentucky University graduate with a degree in Construction Technology. What began as a single-minded commitment to accurate estimating and honest workmanship has grown into one of Southeast Indiana's most trusted names in custom home building and remodeling.</p>
+        <p class="story-body">Jason and his wife Lisa share leadership of the company — and together hold more elite designations from the National Association of Home Builders than nearly any other team in the region. They work personally on every project, from the first meeting to the final walkthrough.</p>
+        <p class="story-body">We handle everything from focused renovations to complete custom builds, always with the same care and attention to detail — because for us, every home is someone's legacy.</p>
+        <span class="story-since">Established 1996 · Lawrenceburg, Indiana</span>
+      </div>
+      <div class="story-img-wrap">
+        <img class="story-img-main" src="Jobs/cameron/20240620-AJW_9013.jpg" alt="Modern custom home entry" loading="lazy">
+        <img class="story-img-accent" src="Jobs/cameron/20240620-AJW_9063.jpg" alt="Custom kitchen detail" loading="lazy">
+        <div class="story-img-badge">
+          <span class="badge-num">30</span>
+          <span class="badge-label">Years in<br>Business</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">1996</div>
+        <div class="stat-label">Year<br>Founded</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Graduate Master<br>Remodelers in Indiana</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">NAHB Elite<br>Designations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">#1</div>
+        <div class="stat-label">Indiana Remodeler<br>of the Year, 2019</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="leadership-section">
+    <div class="leadership-header">
+      <div>
+        <div class="section-eyebrow">Leadership</div>
+        <h2 class="section-heading">Meet Jason<br>&amp; <em>Lisa Cox</em></h2>
+      </div>
+      <p class="section-sub">Jason and Lisa lead every project personally — bringing two of the most comprehensive sets of credentials in the state directly to your home.</p>
+    </div>
+
+    <div class="leadership-unit">
+      <!-- Photo -->
+      <div class="leader-photo-wrap">
+        <img class="leader-photo" src="Brand_assets/jason-lisa.jpg" alt="Jason and Lisa Cox, Owners of JDC Construction">
+        <div class="leader-photo-bar">
+          <strong>Jason &amp; Lisa Cox</strong>
+          <span>· Owners</span>
+        </div>
+      </div>
+
+      <!-- Combined info -->
+      <div class="leader-info">
+        <div class="leader-role">Founders &amp; Owners</div>
+        <h3 class="leader-name">Jason &amp; <em>Lisa Cox</em></h3>
+        <p class="leader-bio">Jason founded JDC Construction after graduating from Northern Kentucky University with a degree in Construction Technology. His hands-on approach to estimating, structural integrity, and trade coordination has defined JDC's reputation for honesty since day one.</p>
+        <p class="leader-bio">Lisa brings the design eye that transforms a well-built structure into a home — guiding clients through material selection, space planning, and every detail in between. Together, Jason and Lisa work personally on every project from first meeting to final walkthrough.</p>
+        <div class="leader-divider"></div>
+        <div class="leader-creds-label">Shared Designations — National Association of Home Builders</div>
+        <div class="leader-creds">
+          <span class="cred-tag">GMR</span>
+          <span class="cred-tag">GMB</span>
+          <span class="cred-tag">CGR</span>
+          <span class="cred-tag">CAPS</span>
+          <span class="cred-tag">CGP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials banner -->
+  <section class="creds-section">
+    <div class="creds-inner">
+      <div class="creds-label">Certifications &amp; Affiliations</div>
+      <div class="creds-list">
+        <div class="cred-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="rgba(242,185,0,0.6)" stroke-width="1"/>
+            <path d="M4.5 7l2 2 3-3" stroke="rgba(242,185,0,0.6)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Graduate Master Remodeler (GMR)</span>
+        </div>
+        <div class="cred-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="rgba(242,185,0,0.6)" stroke-width="1"/>
+            <path d="M4.5 7l2 2 3-3" stroke="rgba(242,185,0,0.6)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Graduate Master Builder (GMB)</span>
+        </div>
+        <div class="cred-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="rgba(242,185,0,0.6)" stroke-width="1"/>
+            <path d="M4.5 7l2 2 3-3" stroke="rgba(242,185,0,0.6)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Certified Graduate Remodeler (CGR)</span>
+        </div>
+        <div class="cred-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="rgba(242,185,0,0.6)" stroke-width="1"/>
+            <path d="M4.5 7l2 2 3-3" stroke="rgba(242,185,0,0.6)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Aging-in-Place Specialist (CAPS)</span>
+        </div>
+        <div class="cred-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="rgba(242,185,0,0.6)" stroke-width="1"/>
+            <path d="M4.5 7l2 2 3-3" stroke="rgba(242,185,0,0.6)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Certified Green Professional (CGP)</span>
+        </div>
+        <div class="cred-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="rgba(242,185,0,0.6)" stroke-width="1"/>
+            <path d="M4.5 7l2 2 3-3" stroke="rgba(242,185,0,0.6)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Indiana Builders Association (IBA)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Award highlight -->
+  <section class="award-section">
+    <div class="award-inner">
+      <div class="award-badge-wrap">
+        <div class="award-badge">
+          <div class="award-year">2019</div>
+          <div class="award-title">Remodeler of the Year</div>
+          <div class="award-org">Indiana Builders Association</div>
+        </div>
+      </div>
+      <div class="award-content">
+        <div class="section-eyebrow">Recognition</div>
+        <h2 class="section-heading">Indiana's <em>Remodeler<br>of the Year</em></h2>
+        <p class="award-body">In 2019, the Indiana Builders Association recognized JDC Construction as the state's top remodeler — an honor that reflects our team's relentless pursuit of quality, client satisfaction, and professional excellence. Jason and Lisa are also the only Certified Master Remodelers and Certified Master Builders serving Southeast Indiana, holding designations held by fewer than 70 builders nationwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-eyebrow">Start Your Project</div>
+    <h2 class="cta-heading">Let's Build<br><em>Something Lasting.</em></h2>
+    <p class="cta-sub">Whether you're planning a custom home from the ground up or transforming your current space, we'd love to talk through your vision.</p>
+    <div class="cta-buttons">
+      <a href="quote.html" class="btn-primary">
+        Get a Free Quote
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+          <path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <a href="index.html"><img src="Brand_assets/jdc icon.png" alt="JDC Construction" class="footer-icon"></a>
+      <div class="footer-contact">
+        <span>(812) 637-2684</span>
+        <span>info@jdcconstruction.com</span>
+      </div>
+    </div>
+    <p class="footer-copy">© 2024 JDC Construction · Licensed &amp; Insured · Lawrenceburg, IN · COL 3:23</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="custom-home.html">Custom Homes</a>
+      <a href="remodeling.html">Remodeling</a>
+      <a href="about.html">About</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

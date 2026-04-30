@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python -c \"import playwright; print\\('playwright available'\\)\" 2>&1)",
+      "PowerShell(python \"C:\\\\Users\\\\mapta\\\\Documents\\\\Website\\\\screenshot_py.py\" \"http://localhost:3000/remodeling.html\" \"remodeling\" 2>&1)"
+    ]
+  }
+}

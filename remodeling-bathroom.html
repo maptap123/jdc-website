@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bathroom Renovation — JDC Construction</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --gold: #f2b900; --navy: #091b37; --slate: #465462; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #f7f5f2; font-family: 'DM Sans', sans-serif; color: var(--navy); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 3rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    nav.scrolled { background: #091b37; backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
+    .nav-logo img { height: 52px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s ease; }
+    .nav-links a:hover { color: white; }
+    .nav-cta { font-size: 0.7rem !important; font-weight: 500 !important; letter-spacing: 0.18em !important; color: var(--navy) !important; background: var(--gold); padding: 0.6rem 1.5rem; transition: background 0.2s ease !important; }
+    .nav-cta:hover { background: white !important; }
+    .nav-back { color: rgba(255,255,255,0.4) !important; }
+    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
+
+    .hero {
+      position: relative; height: 72vh; min-height: 520px;
+      overflow: hidden; display: flex; align-items: flex-end;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('Jobs/caudill/20240618-AJW_8507.JPG');
+      background-size: cover; background-position: center 30%;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,27,55,0.92) 0%, rgba(9,27,55,0.45) 45%, rgba(9,27,55,0.1) 100%);
+    }
+    .hero-content { position: relative; z-index: 10; padding: 0 5rem 4.5rem; }
+    .hero-eyebrow { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+    .hero-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem, 6.5vw, 6.5rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.03em; color: white; margin-bottom: 1.5rem; }
+    .hero-heading em { font-style: italic; }
+    .hero-desc { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 420px; margin-bottom: 2rem; }
+    .hero-actions { display: flex; align-items: center; gap: 1.5rem; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.65rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 1rem 2.25rem; text-decoration: none; transition: background 0.2s ease; }
+    .btn-primary:hover { background: white; }
+    .btn-ghost { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s ease; }
+    .btn-ghost:hover { color: white; }
+
+    .gallery-section { padding: 5rem 5rem; background: #f7f5f2; }
+    .gallery-header { max-width: 1200px; margin: 0 auto 3rem; display: flex; align-items: flex-end; justify-content: space-between; }
+    .section-eyebrow { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); margin: 0; }
+    .gallery-count { font-size: 0.72rem; color: var(--slate); letter-spacing: 0.08em; opacity: 0.55; }
+    .gallery-grid { columns: 3; column-gap: 10px; max-width: 1200px; margin: 0 auto; }
+    .gallery-item { break-inside: avoid; margin-bottom: 10px; position: relative; overflow: hidden; cursor: pointer; }
+    .gallery-item img { width: 100%; height: auto; display: block; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-item-overlay { position: absolute; inset: 0; background: rgba(9,27,55,0.35); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center; }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+    .cta-section { padding: 7rem 5rem; background: var(--navy); text-align: center; }
+    .cta-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: white; margin-bottom: 1rem; }
+    .cta-heading em { font-style: italic; color: var(--gold); }
+    .cta-sub { font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 480px; margin: 0 auto 2.5rem; }
+    .btn-lg { display: inline-flex; align-items: center; gap: 0.65rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 1.1rem 2.5rem; text-decoration: none; transition: background 0.2s ease; }
+    .btn-lg:hover { background: white; }
+
+    footer { background: #050e1d; padding: 2.5rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-left { display: flex; flex-direction: column; align-items: flex-start; gap: 0.65rem; }
+    .footer-icon { height: 68px; width: auto; opacity: 0.85; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.18rem; }
+    .footer-contact span { font-size: 0.63rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); }
+    .footer-copy { font-size: 0.62rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.2); text-align: center; }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: flex-end; }
+    .footer-links a { font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+    #lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(5,14,29,0.95); align-items: center; justify-content: center; }
+    #lightbox.active { display: flex; }
+    #lb-img { max-width: 92vw; max-height: 90vh; object-fit: contain; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
+    #lb-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 1.75rem; cursor: pointer; line-height: 1; padding: 0.5rem; transition: color 0.2s ease; }
+    #lb-close:hover { color: white; }
+
+    @media (max-width: 1024px) { nav { padding: 0 2rem; } .hero-content { padding: 0 2.5rem 3rem; } .gallery-section, .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; } footer { padding: 2rem 2.5rem; } }
+    @media (max-width: 768px) { nav { padding: 0 1.5rem; } .nav-links { display: none; } .hero-content { padding: 0 1.5rem 2.5rem; } .gallery-section { padding: 3rem 1.5rem; } .gallery-grid { columns: 2; } .cta-section { padding: 4rem 1.5rem; } footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; } .footer-left { align-items: center; } .footer-links { justify-content: center; } }
+    @media (max-width: 480px) { .gallery-grid { columns: 1; } }
+  </style>
+</head>
+<body>
+
+  <div id="lightbox" onclick="if(event.target===this)closeLb()">
+    <img id="lb-img" src="" alt="">
+    <button id="lb-close" onclick="closeLb()">✕</button>
+  </div>
+
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo"><img src="Brand_assets/jdc icon.png" alt="JDC Construction"></a>
+    <div class="nav-links">
+      <a href="#gallery">Gallery</a>
+      <a href="remodeling.html" class="nav-back">← Remodeling</a>
+      <a href="quote.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Remodeling</div>
+      <h1 class="hero-heading">Bathroom<br><em>Renovation</em></h1>
+      <p class="hero-desc">Spa-like master baths to efficient guest bathrooms — custom tile, vanities, fixtures, and more.</p>
+      <div class="hero-actions">
+        <a href="remodeling.html" class="btn-ghost">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M13 5H1M5.5 8.5L2 5l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          All Services
+        </a>
+        <a href="quote.html" class="btn-primary">
+          Free Estimate
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="gallery-header">
+      <div>
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-title">Bathroom Projects</h2>
+      </div>
+      <span class="gallery-count">35 photos</span>
+    </div>
+    <div class="gallery-grid">
+
+      <!-- Caudill bathroom renovation -->
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8458.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8458.JPG" alt="Bathroom renovation" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8473.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8473.JPG" alt="Bathroom vanity" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8488.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8488.JPG" alt="Bathroom tile" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8507.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8507.JPG" alt="Bathroom vanity" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8523.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8523.JPG" alt="Bathroom detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8538.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8538.JPG" alt="Bathroom fixture" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8553.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8553.JPG" alt="Bathroom view" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8568.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8568.JPG" alt="Bathroom tile" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8582.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8582.JPG" alt="Bathroom vanity" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8598.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8598.JPG" alt="Bathroom detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8613.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8613.JPG" alt="Bathroom view" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8628.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8628.JPG" alt="Bathroom tile" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8642.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8642.JPG" alt="Master bath" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8657.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8657.JPG" alt="Bathroom fixture" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8677.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8677.JPG" alt="Bathroom vanity" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8698.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8698.JPG" alt="Master bath vanity" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8718.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8718.JPG" alt="Bathroom detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8742.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8742.JPG" alt="Bathroom view" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8764.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8764.JPG" alt="Bathroom tile" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/caudill/20240618-AJW_8787.JPG')">
+        <img src="Jobs/caudill/20240618-AJW_8787.JPG" alt="Bathroom detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- Alice custom tile shower -->
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3547_49_50.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3547_49_50.jpg" alt="Custom tile shower" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3567_69_70.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3567_69_70.jpg" alt="Shower tile detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3587_89_90.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3587_89_90.jpg" alt="Bathroom view" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3607_09_10.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3607_09_10.jpg" alt="Shower detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3617_19_20.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3617_19_20.jpg" alt="Bathroom tile" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3627_29_30.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3627_29_30.jpg" alt="Custom tile work" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3637-HDR.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3637-HDR.jpg" alt="Bathroom renovation" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3739_40_43.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3739_40_43.jpg" alt="Custom tile shower" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3764_7_8.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3764_7_8.jpg" alt="Shower detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3780_2_3.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3780_2_3.jpg" alt="Bathroom view" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3795.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3795.jpg" alt="Bathroom detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3810.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3810.jpg" alt="Bathroom finish" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3825_7_8.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3825_7_8.jpg" alt="Bathroom tile" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3869.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3869.jpg" alt="Bathroom renovation" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLb('Jobs/Alice/20210111-AJW_3882.jpg')">
+        <img src="Jobs/Alice/20210111-AJW_3882.jpg" alt="Bathroom finish" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="section-eyebrow" style="justify-content:center; margin-bottom:1.25rem;">Get Started</div>
+    <h2 class="cta-heading">Ready to transform<br><em>your bathroom?</em></h2>
+    <p class="cta-sub">We offer free in-home estimates — no obligation. Let's talk about your vision and build a plan together.</p>
+    <a href="quote.html" class="btn-lg">
+      Get a Free Quote
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <a href="index.html"><img src="Brand_assets/jdc icon.png" alt="JDC Construction" class="footer-icon"></a>
+      <div class="footer-contact">
+        <span>(812) 637-2684</span>
+        <span>info@jdcconstruction.com</span>
+      </div>
+    </div>
+    <p class="footer-copy">© 2024 JDC Construction · Licensed &amp; Insured · COL 3:23</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="custom-home.html">Custom Homes</a>
+      <a href="remodeling.html">Remodeling</a>
+      <a href="about.html">About</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    function openLb(src) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+  </script>
+</body>
+</html>

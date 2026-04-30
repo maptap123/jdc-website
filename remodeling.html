@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remodeling — JDC Construction</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #f2b900;
+      --gold-dim: rgba(242,185,0,0.4);
+      --navy: #091b37;
+      --slate: #465462;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f7f5f2;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--navy);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 0 3rem;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(9,27,55,0.0);
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    }
+    nav.scrolled {
+      background: #091b37;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-cta {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy) !important;
+      background: var(--gold);
+      padding: 0.6rem 1.5rem;
+      transition: background 0.2s ease !important;
+    }
+    .nav-cta:hover { background: white !important; }
+    .nav-back {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4) !important;
+    }
+    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 0;
+      height: 100vh;
+      min-height: 700px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Jobs/Cleeter/20200722-AJW_0039.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(9,27,55,0.93) 0%,
+        rgba(9,27,55,0.5) 40%,
+        rgba(9,27,55,0.2) 100%
+      );
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 5rem 5rem;
+      max-width: 900px;
+    }
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 7vw, 7.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: white;
+      margin-bottom: 1.75rem;
+    }
+    .hero-heading em { font-style: italic; font-weight: 300; }
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 1rem 2.25rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn-primary:hover { background: white; }
+    .btn-ghost {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s ease;
+    }
+    .btn-ghost:hover { color: white; }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 5rem;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-scroll span {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      writing-mode: vertical-rl;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 7rem 5rem;
+      background: white;
+    }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: 3.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5px;
+      background: rgba(9,27,55,0.07);
+    }
+    .service-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .service-card:hover { background: var(--navy); }
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(9,27,55,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .service-card:hover .service-icon {
+      border-color: rgba(242,185,0,0.4);
+      background: rgba(242,185,0,0.1);
+    }
+    .service-icon svg { transition: stroke 0.3s ease; stroke: var(--slate); }
+    .service-card:hover .service-icon svg { stroke: var(--gold); }
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+    }
+    .service-card:hover .service-title { color: white; }
+    .service-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.7;
+      transition: color 0.3s ease;
+    }
+    .service-card:hover .service-desc { color: rgba(255,255,255,0.55); }
+    .service-tag {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(9,27,55,0.3);
+      transition: color 0.3s ease;
+    }
+    .service-card:hover .service-tag { color: var(--gold); }
+
+    /* ── PORTFOLIO ── */
+    .portfolio {
+      padding: 7rem 5rem;
+      background: #f7f5f2;
+    }
+    .section-header {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    /* Two-column photo feature */
+    .portfolio-feature {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .portfolio-feature-main {
+      position: relative;
+      overflow: hidden;
+      height: 520px;
+    }
+    .portfolio-feature-stack {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+    }
+    .portfolio-row {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-feature-main, .portfolio-item { height: 260px; }
+    .portfolio-feature-main { height: 520px; }
+
+    .portfolio-item img,
+    .portfolio-feature-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .portfolio-item:hover img,
+    .portfolio-feature-main:hover img { transform: scale(1.05); }
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(9,27,55,0.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .portfolio-item:hover .portfolio-overlay,
+    .portfolio-feature-main:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1.25rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .portfolio-item:hover .portfolio-label,
+    .portfolio-feature-main:hover .portfolio-label { opacity: 1; transform: translateY(0); }
+
+    /* ── STATEMENT / PROMISE ── */
+    .promise {
+      background: var(--navy);
+      padding: 7rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .promise::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242,185,0,0.05) 0%, transparent 65%);
+    }
+    .promise-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .promise-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: white;
+    }
+    .promise-heading em { font-style: italic; color: var(--gold); }
+    .promise-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    .promise-point {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .promise-point:last-child { border-bottom: none; padding-bottom: 0; }
+    .promise-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      font-weight: 300;
+      color: rgba(242,185,0,0.25);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 2.5rem;
+    }
+    .promise-point-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.35rem;
+    }
+    .promise-point-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      position: relative;
+      padding: 8rem 5rem;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Jobs/Cleeter/20200722-AJW_0081.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 10;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .cta-heading em { font-style: italic; color: var(--gold); }
+    .cta-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      margin-bottom: 2.75rem;
+    }
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .btn-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 1.1rem 2.5rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn-lg:hover { background: white; }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      padding: 1.1rem 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050e1d;
+      padding: 2.5rem 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+    .footer-icon { height: 68px; width: auto; opacity: 0.85; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.18rem; }
+    .footer-contact span {
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.38);
+    }
+    .footer-copy {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .footer-links a {
+      font-size: 0.63rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .hero-content, .services, .portfolio, .promise, .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .promise-inner { gap: 3rem; }
+      .portfolio-feature { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hero-content { padding: 0 1.5rem 3rem; }
+      .services, .portfolio, .promise, .cta-section { padding: 4rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-feature { grid-template-columns: 1fr; }
+      .portfolio-feature-main { height: 300px; }
+      .portfolio-row { grid-template-columns: 1fr; }
+      .portfolio-item { height: 240px; }
+      .promise-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-left { align-items: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <img src="Brand_assets/jdc icon.png" alt="JDC Construction">
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="index.html" class="nav-back">← Home</a>
+      <a href="quote.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Remodeling</div>
+      <h1 class="hero-heading">Your Home,<br><em>Reimagined.</em></h1>
+      <p class="hero-sub">JDC transforms kitchens, bathrooms, and living spaces into rooms you'll love for decades — with the same craftsmanship we bring to every custom build.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Free Estimate
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#portfolio" class="btn-ghost">
+          See Our Work
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-inner">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">Remodeling services<br>built on craftsmanship.</h2>
+      <div class="services-grid">
+
+        <a href="remodeling-kitchen.html" class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="16" height="12" rx="1"/>
+              <path d="M2 10h16M6 6V4a4 4 0 018 0v2"/>
+              <circle cx="10" cy="13" r="1.5"/>
+            </svg>
+          </div>
+          <div class="service-title">Kitchen Remodeling</div>
+          <p class="service-desc">Custom cabinetry, countertops, islands, and layouts designed to make your kitchen the heart of your home.</p>
+          <span class="service-tag">View Projects →</span>
+        </a>
+
+        <a href="remodeling-bathroom.html" class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="14" height="14" rx="1"/>
+              <path d="M7 10h6M10 7v6"/>
+            </svg>
+          </div>
+          <div class="service-title">Bathroom Renovation</div>
+          <p class="service-desc">Spa-like master baths to efficient guest bathrooms — custom tile, fixtures, vanities, and more.</p>
+          <span class="service-tag">View Projects →</span>
+        </a>
+
+        <a href="remodeling-whole-home.html" class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 17h16M4 17V8l6-5 6 5v9"/>
+              <rect x="7" y="11" width="6" height="6"/>
+            </svg>
+          </div>
+          <div class="service-title">Whole Home Remodel</div>
+          <p class="service-desc">Full-home transformations that update your floor plan, finishes, and flow from a single coordinated team.</p>
+          <span class="service-tag">View Projects →</span>
+        </a>
+
+        <a href="remodeling-addition.html" class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v16M2 10h16"/>
+              <rect x="5" y="5" width="10" height="10" rx="1"/>
+            </svg>
+          </div>
+          <div class="service-title">Additions &amp; Expansions</div>
+          <p class="service-desc">Room additions, bonus rooms, sunrooms, and second-story additions that extend your home's footprint.</p>
+          <span class="service-tag">View Projects →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-title">Recent Remodels</h2>
+      </div>
+    </div>
+
+    <!-- Feature + stack -->
+    <div class="portfolio-feature" style="max-width:1200px; margin: 0 auto 12px;">
+      <div class="portfolio-feature-main" style="height:520px;">
+        <img src="Jobs/Cleeter/20200722-AJW_0039.jpg" alt="Kitchen remodel" loading="lazy">
+        <div class="portfolio-overlay"></div>
+        <span class="portfolio-label">Full Kitchen Remodel</span>
+      </div>
+      <div class="portfolio-feature-stack">
+        <div class="portfolio-item" style="height:auto;">
+          <img src="Jobs/caudill/20240618-AJW_8507.JPG" alt="Bathroom renovation" loading="lazy">
+          <div class="portfolio-overlay"></div>
+          <span class="portfolio-label">Bathroom Renovation</span>
+        </div>
+        <div class="portfolio-item" style="height:auto;">
+          <img src="Jobs/caudill/20240618-AJW_8698.JPG" alt="Master bath vanity" loading="lazy">
+          <div class="portfolio-overlay"></div>
+          <span class="portfolio-label">Master Bath Vanity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row -->
+    <div class="portfolio-row" style="max-width:1200px; margin: 0 auto;">
+      <div class="portfolio-item">
+        <img src="Jobs/Cleeter/20200722-AJW_0081.jpg" alt="Kitchen island" loading="lazy">
+        <div class="portfolio-overlay"></div>
+        <span class="portfolio-label">Custom Island</span>
+      </div>
+      <div class="portfolio-item">
+        <img src="Jobs/Alice/20210111-AJW_3739_40_43.jpg" alt="Custom tile shower" loading="lazy">
+        <div class="portfolio-overlay"></div>
+        <span class="portfolio-label">Custom Tile Shower</span>
+      </div>
+      <div class="portfolio-item">
+        <img src="Jobs/cameron/20240620-AJW_9013.jpg" alt="Modern entryway" loading="lazy">
+        <div class="portfolio-overlay"></div>
+        <span class="portfolio-label">Modern Entry</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PROMISE -->
+  <section class="promise">
+    <div class="promise-inner">
+      <div>
+        <div class="section-eyebrow" style="color: var(--gold); margin-bottom: 1.25rem;">Our Promise</div>
+        <h2 class="promise-heading">Why homeowners<br>choose <em>JDC</em><br>again &amp; again.</h2>
+      </div>
+      <div class="promise-points">
+        <div class="promise-point">
+          <div class="promise-num">01</div>
+          <div>
+            <div class="promise-point-title">Transparent Pricing</div>
+            <p class="promise-point-desc">Detailed written estimates with no hidden fees. You know the full cost before work begins — and we stick to it.</p>
+          </div>
+        </div>
+        <div class="promise-point">
+          <div class="promise-num">02</div>
+          <div>
+            <div class="promise-point-title">Skilled Tradesmen</div>
+            <p class="promise-point-desc">Every crew member is a seasoned professional. We don't hire subs off Craigslist — our team is vetted, trained, and proud of their craft.</p>
+          </div>
+        </div>
+        <div class="promise-point">
+          <div class="promise-num">03</div>
+          <div>
+            <div class="promise-point-title">Clean Jobsite, Always</div>
+            <p class="promise-point-desc">We respect your home. Daily cleanup and dust containment mean you're living comfortably throughout the renovation.</p>
+          </div>
+        </div>
+        <div class="promise-point">
+          <div class="promise-num">04</div>
+          <div>
+            <div class="promise-point-title">Backed by Warranty</div>
+            <p class="promise-point-desc">All remodeling work is backed by a comprehensive labor warranty. We stand behind every project, long after the tools are packed up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="cta-bg"></div>
+    <div class="cta-inner">
+      <div class="section-eyebrow" style="justify-content:center; color: var(--gold);">Get Started</div>
+      <h2 class="cta-heading">Ready to transform<br><em>your space?</em></h2>
+      <p class="cta-sub">We offer free in-home estimates — no obligation. Our team will walk through your space, listen to your vision, and give you a clear, detailed quote.</p>
+      <div class="cta-actions">
+        <a href="quote.html" class="btn-lg">
+          Get a Free Quote
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="index.html"><img src="Brand_assets/jdc icon.png" alt="JDC Construction" class="footer-icon"></a>
+      <div class="footer-contact">
+        <span>(812) 637-2684</span>
+        <span>info@jdcconstruction.com</span>
+      </div>
+    </div>
+    <p class="footer-copy">© 2024 JDC Construction · Licensed &amp; Insured · COL 3:23</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="custom-home.html">Custom Homes</a>
+      <a href="remodeling.html">Remodeling</a>
+      <a href="about.html">About</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JDC Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #f2b900;
+      --gold-dim: rgba(242,185,0,0.6);
+      --navy: #091b37;
+      --slate: #465462;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* ── Logo bar ── */
+    .logo-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 2rem 0;
+      background: linear-gradient(to bottom, rgba(9,27,55,0.85) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .logo-bar img {
+      height: 130px;
+      width: auto;
+      filter: drop-shadow(0 2px 28px rgba(0,0,0,0.65));
+    }
+    .logo-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-top: 0.45rem;
+    }
+
+    /* ── Static center divider ── */
+    .center-divider {
+      position: fixed;
+      top: 8%;
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(242,185,0,0.85) 18%,
+        rgba(242,185,0,0.85) 82%,
+        transparent
+      );
+      z-index: 50;
+      box-shadow: 0 0 14px rgba(242,185,0,0.35), 0 0 40px rgba(242,185,0,0.12);
+      pointer-events: none;
+    }
+
+    /* ── Split panels — fixed 50/50 ── */
+    .split {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    /* Background photo */
+    .panel-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .panel:hover .panel-bg { transform: scale(1.06); }
+
+    /* Base dark overlay */
+    .panel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(9,27,55,0.28) 0%,
+        rgba(9,27,55,0.42) 40%,
+        rgba(9,27,55,0.80) 100%
+      );
+    }
+
+    /* Glow bloom on hover */
+    .panel-glow {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .panel-l .panel-glow {
+      background:
+        radial-gradient(ellipse at 50% 42%, rgba(242,185,0,0.38) 0%, rgba(242,185,0,0.14) 32%, transparent 62%);
+      box-shadow: inset 0 0 160px rgba(242,185,0,0.12);
+    }
+    .panel-r .panel-glow {
+      background:
+        radial-gradient(ellipse at 50% 42%, rgba(180,220,255,0.25) 0%, rgba(140,190,240,0.09) 32%, transparent 62%);
+      box-shadow: inset 0 0 160px rgba(140,190,240,0.08);
+    }
+    .panel:hover .panel-glow { opacity: 1; }
+
+    /* Dim the inactive panel */
+    .panel-dim {
+      position: absolute;
+      inset: 0;
+      background: rgba(9,27,55,0.52);
+      opacity: 0;
+      transition: opacity 0.65s ease;
+      pointer-events: none;
+      z-index: 6;
+    }
+    .split:has(.panel-l:hover) .panel-r .panel-dim { opacity: 1; }
+    .split:has(.panel-r:hover) .panel-l .panel-dim { opacity: 1; }
+
+    /* Grain texture */
+    .panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: 30;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── Always-visible division name ── */
+    .panel-division {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+      text-align: center;
+      pointer-events: none;
+    }
+    .panel-division-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 5vw, 6.5rem);
+      font-weight: 300;
+      color: white;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      text-shadow: 0 2px 50px rgba(0,0,0,0.55);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+      white-space: nowrap;
+    }
+    .panel:hover .panel-division-name {
+      opacity: 0.45;
+      transform: translateY(-10px);
+    }
+    .panel-division-rule {
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--gold-dim);
+      margin: 0.9rem auto 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .panel:hover .panel-division-rule {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    /* ── Hover content ── */
+    .panel-content {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      padding: 2.5rem 3.5rem 3.5rem;
+      z-index: 25;
+    }
+    .panel-r .panel-content { text-align: right; }
+
+    .panel-content-label {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.5s ease 0.05s, transform 0.5s ease 0.05s;
+    }
+    .panel:hover .panel-content-label { opacity: 1; transform: translateY(0); }
+
+    .panel-sub {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      max-width: 300px;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.55s ease 0.12s, transform 0.55s ease 0.12s;
+    }
+    .panel-r .panel-sub { margin-left: auto; text-align: right; }
+    .panel:hover .panel-sub { opacity: 1; transform: translateY(0); }
+
+    .panel-buttons {
+      display: flex;
+      gap: 0.75rem;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.5s ease 0.22s, transform 0.5s ease 0.22s;
+    }
+    .panel-r .panel-buttons { justify-content: flex-end; }
+    .panel:hover .panel-buttons { opacity: 1; transform: translateY(0); }
+
+    .btn-explore {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.82rem 1.75rem;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .btn-explore:hover { background: white; }
+
+    .btn-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.32);
+      padding: 0.82rem 1.75rem;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    .btn-quote:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.65);
+      color: white;
+    }
+
+    /* ── Bottom strip ── */
+    .bottom-strip {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 0; right: 0;
+      z-index: 100;
+      text-align: center;
+      pointer-events: none;
+    }
+    .bottom-strip p {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      html, body { overflow-y: auto; }
+      .split { flex-direction: column; height: auto; min-height: 100dvh; }
+      .panel { min-height: 50dvh; }
+      .center-divider { display: none; }
+      .panel-dim { display: none; }
+      .panel-division { top: 38%; }
+      .panel-division-name { font-size: clamp(2.4rem, 8vw, 3.8rem); opacity: 1 !important; transform: none !important; }
+      .panel-division-rule { opacity: 1 !important; transform: none !important; }
+      .panel-content-label, .panel-sub, .panel-buttons { opacity: 1; transform: none; }
+      .panel-content { padding: 1.75rem 2rem 2.5rem; }
+      .panel-r .panel-content { text-align: left; }
+      .panel-r .panel-sub { margin-left: 0; text-align: left; }
+      .panel-r .panel-buttons { justify-content: flex-start; }
+      .logo-bar img { height: 90px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo bar -->
+  <div class="logo-bar">
+    <img src="Brand_assets/jdclogo.png" alt="JDC Construction">
+    <span class="logo-tagline">COL 3:23</span>
+  </div>
+
+  <!-- Static gold center divider -->
+  <div class="center-divider"></div>
+
+  <!-- Split panels -->
+  <div class="split">
+
+    <!-- LEFT — Custom Homes -->
+    <div class="panel panel-l" onclick="location.href='custom-home.html'" role="link" aria-label="Explore Custom Homes" tabindex="0">
+      <div class="panel-bg" style="background-image:url('Jobs/caudill/20240815-AJW_0082.jpg'); background-position: center 30%;"></div>
+      <div class="panel-overlay"></div>
+      <div class="panel-glow"></div>
+      <div class="panel-dim"></div>
+
+      <div class="panel-division">
+        <div class="panel-division-name">Custom Homes</div>
+        <span class="panel-division-rule"></span>
+      </div>
+
+      <div class="panel-content">
+        <div class="panel-content-label">Custom Homes</div>
+        <p class="panel-sub">From foundation to finish — custom homes crafted around your vision, your lifestyle, your legacy.</p>
+        <div class="panel-buttons">
+          <a href="custom-home.html" class="btn-explore" onclick="event.stopPropagation()">
+            Explore
+            <svg width="13" height="9" viewBox="0 0 13 9" fill="none">
+              <path d="M1 4.5h11M8 1.5L11 4.5l-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="quote.html" class="btn-quote" onclick="event.stopPropagation()">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — Remodeling -->
+    <div class="panel panel-r" onclick="location.href='remodeling.html'" role="link" aria-label="Explore Remodeling" tabindex="0">
+      <div class="panel-bg" style="background-image:url('Jobs/Cleeter/20200722-AJW_0039.jpg'); background-position: center center;"></div>
+      <div class="panel-overlay"></div>
+      <div class="panel-glow"></div>
+      <div class="panel-dim"></div>
+
+      <div class="panel-division">
+        <div class="panel-division-name">Remodeling</div>
+        <span class="panel-division-rule"></span>
+      </div>
+
+      <div class="panel-content">
+        <div class="panel-content-label">Remodeling</div>
+        <p class="panel-sub">Expert renovations that breathe new life into your existing home — kitchens, baths, and beyond.</p>
+        <div class="panel-buttons">
+          <a href="quote.html" class="btn-quote" onclick="event.stopPropagation()">Get a Quote</a>
+          <a href="remodeling.html" class="btn-explore" onclick="event.stopPropagation()">
+            <svg width="13" height="9" viewBox="0 0 13 9" fill="none">
+              <path d="M12 4.5H1M5 1.5L2 4.5l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Explore
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom copyright strip -->
+  <div class="bottom-strip">
+    <p>JDC Construction &nbsp;·&nbsp; Licensed &amp; Insured &nbsp;·&nbsp; COL 3:23</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.panel[tabindex]').forEach(panel => {
+      panel.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') panel.click();
+      });
+    });
+  </script>
+
+</body>
+</html>
