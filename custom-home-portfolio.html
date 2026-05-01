@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remodeling — JDC Construction</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Custom Home Portfolio — JDC Construction</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
@@ -34,7 +33,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(9,27,55,0.0);
+      background: transparent;
       transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
     }
     nav.scrolled {
@@ -72,7 +71,7 @@
       padding: 0.6rem 1.5rem;
       transition: background 0.2s ease !important;
     }
-    .nav-cta:hover { background: white !important; }
+    .nav-cta:hover { background: white !important; color: var(--navy) !important; }
     .nav-back {
       font-size: 0.68rem;
       letter-spacing: 0.12em;
@@ -94,16 +93,16 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581009/Jobs/Cleeter/20200722-AJW_0039.jpg');
+      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777580991/Jobs/caudill/20240815-AJW_0082.jpg');
       background-size: cover;
-      background-position: center center;
+      background-position: center 30%;
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(9,27,55,0.93) 0%,
+        rgba(9,27,55,0.92) 0%,
         rgba(9,27,55,0.5) 40%,
         rgba(9,27,55,0.2) 100%
       );
@@ -148,50 +147,20 @@
       line-height: 0.95;
       letter-spacing: -0.03em;
       color: white;
-      margin-bottom: 1.75rem;
+      margin: 0 0 1.75rem;
     }
-    .hero-heading em { font-style: italic; font-weight: 300; }
+    .hero-heading em {
+      font-style: italic;
+      font-weight: 300;
+    }
     .hero-sub {
       font-size: 1rem;
       font-weight: 300;
       color: rgba(255,255,255,0.6);
       line-height: 1.75;
       max-width: 480px;
-      margin-bottom: 2.5rem;
+      margin: 0;
     }
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--navy);
-      background: var(--gold);
-      padding: 1rem 2.25rem;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-    .btn-primary:hover { background: white; }
-    .btn-ghost {
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s ease;
-    }
-    .btn-ghost:hover { color: white; }
     .hero-scroll {
       position: absolute;
       bottom: 2.5rem;
@@ -220,12 +189,7 @@
       50% { opacity: 0.7; }
     }
 
-    /* ── SERVICES ── */
-    .services {
-      padding: 7rem 5rem;
-      background: white;
-    }
-    .services-inner { max-width: 1200px; margin: 0 auto; }
+    /* ── SECTION SHARED ── */
     .section-eyebrow {
       font-size: 0.62rem;
       font-weight: 500;
@@ -251,92 +215,45 @@
       line-height: 1.1;
       letter-spacing: -0.02em;
       color: var(--navy);
-      margin-bottom: 3.5rem;
+      margin: 0 0 0.75rem;
     }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5px;
-      background: rgba(9,27,55,0.07);
-    }
-    .service-card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: white;
-      padding: 2.5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .service-card:hover { background: var(--navy); }
-    .service-icon {
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(9,27,55,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      transition: border-color 0.3s ease, background 0.3s ease;
-    }
-    .service-card:hover .service-icon {
-      border-color: rgba(242,185,0,0.4);
-      background: rgba(242,185,0,0.1);
-    }
-    .service-icon svg { transition: stroke 0.3s ease; stroke: var(--slate); }
-    .service-card:hover .service-icon svg { stroke: var(--gold); }
-    .service-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.75rem;
-      transition: color 0.3s ease;
-    }
-    .service-card:hover .service-title { color: white; }
-    .service-desc {
-      font-size: 0.85rem;
+    .section-desc {
+      font-size: 0.95rem;
       font-weight: 300;
       color: var(--slate);
-      line-height: 1.7;
-      transition: color 0.3s ease;
+      line-height: 1.75;
+      max-width: 560px;
+      margin: 0;
     }
-    .service-card:hover .service-desc { color: rgba(255,255,255,0.55); }
-    .service-tag {
-      display: inline-block;
-      margin-top: 1.5rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(9,27,55,0.3);
-      transition: color 0.3s ease;
-    }
-    .service-card:hover .service-tag { color: var(--gold); }
 
-    /* ── PORTFOLIO ── */
-    .portfolio {
+    /* ── FEATURED PROJECT SECTION ── */
+    .project-section {
       padding: 7rem 5rem;
-      background: #f7f5f2;
     }
-    .section-header {
+    .project-section--warm { background: #f7f5f2; }
+    .project-section--white { background: white; }
+
+    .project-header {
       max-width: 1200px;
-      margin: 0 auto 4rem;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
+      margin: 0 auto 3.5rem;
+    }
+    .project-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.25rem, 4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      margin: 0.5rem 0 1rem;
     }
 
-    /* Two-column photo feature */
+    /* Feature + stack layout */
     .portfolio-feature {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 0 auto 12px;
       display: grid;
       grid-template-columns: 7fr 5fr;
       gap: 12px;
-      margin-bottom: 12px;
     }
     .portfolio-feature-main {
       position: relative;
@@ -358,9 +275,11 @@
     .portfolio-item {
       position: relative;
       overflow: hidden;
+      height: 260px;
     }
-    .portfolio-feature-main, .portfolio-item { height: 260px; }
-    .portfolio-feature-main { height: 520px; }
+    .portfolio-feature-stack .portfolio-item {
+      height: auto;
+    }
 
     .portfolio-item img,
     .portfolio-feature-main img {
@@ -396,75 +315,98 @@
     .portfolio-item:hover .portfolio-label,
     .portfolio-feature-main:hover .portfolio-label { opacity: 1; transform: translateY(0); }
 
-    /* ── STATEMENT / PROMISE ── */
-    .promise {
+    /* ── DIVIDER STRIP ── */
+    .divider-strip {
       background: var(--navy);
-      padding: 7rem 5rem;
+      padding: 4rem 5rem;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .promise::before {
+    .divider-strip::before {
       content: '';
       position: absolute;
-      top: -20%;
-      left: -5%;
-      width: 500px;
-      height: 500px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 300px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(242,185,0,0.05) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(242,185,0,0.06) 0%, transparent 65%);
+      pointer-events: none;
     }
-    .promise-inner {
+    .divider-strip-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      font-weight: 300;
+      font-style: italic;
+      color: white;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    .divider-strip-text em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    /* ── ADDITIONAL PROJECTS (GALLERY GRID) ── */
+    .additional-projects {
+      padding: 7rem 5rem;
+      background: #f7f5f2;
+    }
+    .additional-header {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+    .gallery-grid {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 340px 260px;
+      gap: 12px;
     }
-    .promise-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 4vw, 4rem);
-      font-weight: 300;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: white;
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
     }
-    .promise-heading em { font-style: italic; color: var(--gold); }
-    .promise-points {
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
+    .gallery-item:nth-child(1) { grid-column: 1 / 6; grid-row: 1; }
+    .gallery-item:nth-child(2) { grid-column: 6 / 9; grid-row: 1; }
+    .gallery-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1; }
+    .gallery-item:nth-child(4) { grid-column: 1 / 5; grid-row: 2; }
+    .gallery-item:nth-child(5) { grid-column: 5 / 9; grid-row: 2; }
+    .gallery-item:nth-child(6) { grid-column: 9 / 13; grid-row: 2; }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .promise-point {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      padding-bottom: 1.75rem;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(9,27,55,0.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
-    .promise-point:last-child { border-bottom: none; padding-bottom: 0; }
-    .promise-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.25rem;
-      font-weight: 300;
-      color: rgba(242,185,0,0.25);
-      line-height: 1;
-      flex-shrink: 0;
-      width: 2.5rem;
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1.25rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
     }
-    .promise-point-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 0.35rem;
-    }
-    .promise-point-desc {
-      font-size: 0.85rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.7;
-    }
+    .gallery-item:hover .gallery-item-label { opacity: 1; transform: translateY(0); }
 
     /* ── CTA ── */
     .cta-section {
@@ -476,7 +418,7 @@
     .cta-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581731/Jobs/Cleeter/20200722-AJW_0081.jpg');
+      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg');
       background-size: cover;
       background-position: center;
       opacity: 0.1;
@@ -495,7 +437,7 @@
       line-height: 1.1;
       letter-spacing: -0.02em;
       color: white;
-      margin-bottom: 1.25rem;
+      margin: 0 0 1.25rem;
     }
     .cta-heading em { font-style: italic; color: var(--gold); }
     .cta-sub {
@@ -503,7 +445,7 @@
       font-weight: 300;
       color: rgba(255,255,255,0.55);
       line-height: 1.75;
-      margin-bottom: 2.75rem;
+      margin: 0 0 2.75rem;
     }
     .cta-actions {
       display: flex;
@@ -649,10 +591,17 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       nav { padding: 0 2rem; }
-      .hero-content, .services, .portfolio, .promise, .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .promise-inner { gap: 3rem; }
+      .hero-content { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .project-section { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .divider-strip { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .additional-projects { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
       .portfolio-feature { grid-template-columns: 1fr 1fr; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .gallery-item { grid-column: auto !important; grid-row: auto !important; height: 240px; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
@@ -661,16 +610,18 @@
       .hero-content { padding: 0 1.25rem 3rem; }
       .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); }
       .hero-sub { font-size: 0.9rem; }
-      .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .hero-scroll { display: none; }
-      .services, .portfolio, .promise, .cta-section { padding: 4rem 1.25rem; }
-      .services-grid { grid-template-columns: 1fr; }
-      .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .project-section { padding: 4rem 1.25rem; }
+      .divider-strip { padding: 3rem 1.25rem; }
+      .additional-projects { padding: 4rem 1.25rem; }
+      .cta-section { padding: 5rem 1.25rem; }
       .portfolio-feature { grid-template-columns: 1fr; }
       .portfolio-feature-main { height: 300px; }
+      .portfolio-feature-stack .portfolio-item { height: 220px; }
       .portfolio-row { grid-template-columns: 1fr; }
       .portfolio-item { height: 240px; }
-      .promise-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item { height: 260px; }
       .cta-actions { flex-direction: column; align-items: center; gap: 1rem; }
       footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.25rem; }
       .footer-left { align-items: center; }
@@ -682,8 +633,8 @@
 
   <!-- Mobile Nav Overlay -->
   <div class="mobile-nav-overlay" id="mobile-nav">
-    <a href="#services" onclick="closeMobileNav()">Services</a>
-    <a href="#portfolio" onclick="closeMobileNav()">Portfolio</a>
+    <a href="custom-home.html" onclick="closeMobileNav()">Custom Homes</a>
+    <a href="custom-home-process.html" onclick="closeMobileNav()">Our Process</a>
     <a href="about.html" onclick="closeMobileNav()">About</a>
     <a href="articles.html" onclick="closeMobileNav()">Articles</a>
     <a href="index.html" onclick="closeMobileNav()">← Home</a>
@@ -692,12 +643,10 @@
 
   <!-- NAV -->
   <nav id="main-nav">
-    <a href="index.html" class="nav-logo">
-      <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">
-    </a>
+    <a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction"></a>
     <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="custom-home.html">Custom Homes</a>
+      <a href="custom-home-process.html">Our Process</a>
       <a href="about.html">About</a>
       <a href="articles.html">Articles</a>
       <a href="index.html" class="nav-back">← Home</a>
@@ -713,19 +662,9 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Remodeling</div>
-      <h1 class="hero-heading">Your Home,<br><em>Reimagined.</em></h1>
-      <p class="hero-sub">JDC transforms kitchens, bathrooms, and living spaces into rooms you'll love for decades — with the same craftsmanship we bring to every custom build.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">
-          Free Estimate
-          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#portfolio" class="btn-ghost">
-          See Our Work
-          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
+      <div class="hero-eyebrow">Our Work</div>
+      <h1 class="hero-heading">Custom Home<br><em>Portfolio</em></h1>
+      <p class="hero-sub">Thirty years of building homes across Southeast Indiana — each one as individual as the family inside.</p>
     </div>
     <div class="hero-scroll">
       <span>Scroll</span>
@@ -733,89 +672,27 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="services-inner">
-      <div class="section-eyebrow">What We Do</div>
-      <h2 class="section-title">Remodeling services<br>built on craftsmanship.</h2>
-      <div class="services-grid">
-
-        <a href="remodeling-kitchen.html" class="service-card">
-          <div class="service-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="6" width="16" height="12" rx="1"/>
-              <path d="M2 10h16M6 6V4a4 4 0 018 0v2"/>
-              <circle cx="10" cy="13" r="1.5"/>
-            </svg>
-          </div>
-          <div class="service-title">Kitchen Remodeling</div>
-          <p class="service-desc">Custom cabinetry, countertops, islands, and layouts designed to make your kitchen the heart of your home.</p>
-          <span class="service-tag">View Projects →</span>
-        </a>
-
-        <a href="remodeling-bathroom.html" class="service-card">
-          <div class="service-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="14" height="14" rx="1"/>
-              <path d="M7 10h6M10 7v6"/>
-            </svg>
-          </div>
-          <div class="service-title">Bathroom Renovation</div>
-          <p class="service-desc">Spa-like master baths to efficient guest bathrooms — custom tile, fixtures, vanities, and more.</p>
-          <span class="service-tag">View Projects →</span>
-        </a>
-
-        <a href="remodeling-whole-home.html" class="service-card">
-          <div class="service-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 17h16M4 17V8l6-5 6 5v9"/>
-              <rect x="7" y="11" width="6" height="6"/>
-            </svg>
-          </div>
-          <div class="service-title">Whole Home Remodel</div>
-          <p class="service-desc">Full-home transformations that update your floor plan, finishes, and flow from a single coordinated team.</p>
-          <span class="service-tag">View Projects →</span>
-        </a>
-
-        <a href="remodeling-addition.html" class="service-card">
-          <div class="service-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M10 2v16M2 10h16"/>
-              <rect x="5" y="5" width="10" height="10" rx="1"/>
-            </svg>
-          </div>
-          <div class="service-title">Additions &amp; Expansions</div>
-          <p class="service-desc">Room additions, bonus rooms, sunrooms, and second-story additions that extend your home's footprint.</p>
-          <span class="service-tag">View Projects →</span>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section class="portfolio" id="portfolio">
-    <div class="section-header">
-      <div>
-        <div class="section-eyebrow">Portfolio</div>
-        <h2 class="section-title">Recent Remodels</h2>
-      </div>
+  <!-- FEATURED PROJECT: CAUDILL RESIDENCE -->
+  <section class="project-section project-section--warm">
+    <div class="project-header">
+      <div class="section-eyebrow">Featured Project</div>
+      <h2 class="project-name">The Caudill Residence</h2>
+      <p class="section-desc">A luxury custom home in Southeast Indiana featuring open-concept living, bespoke millwork, and spa-inspired bathrooms.</p>
     </div>
 
-    <!-- Feature + stack -->
-    <div class="portfolio-feature" style="max-width:1200px; margin: 0 auto 12px;">
-      <div class="portfolio-feature-main" style="height:520px;">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581026/Jobs/Cleeter/20200722-AJW_0118.jpg" alt="Bathroom remodel" loading="lazy">
+    <div class="portfolio-feature">
+      <div class="portfolio-feature-main">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581631/Jobs/caudill/20240618-AJW_8458.jpg" alt="Caudill Residence interior" loading="lazy">
         <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Full Bathroom Remodel</span>
+        <span class="portfolio-label">Caudill Residence</span>
       </div>
       <div class="portfolio-feature-stack">
-        <div class="portfolio-item" style="height:auto;">
-          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581676/Jobs/caudill/20240618-AJW_8623.jpg" alt="Custom vanity" loading="lazy">
+        <div class="portfolio-item">
+          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581676/Jobs/caudill/20240618-AJW_8623.jpg" alt="Custom vanity detail" loading="lazy">
           <div class="portfolio-overlay"></div>
           <span class="portfolio-label">Custom Vanity</span>
         </div>
-        <div class="portfolio-item" style="height:auto;">
+        <div class="portfolio-item">
           <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581678/Jobs/caudill/20240618-AJW_8633.jpg" alt="Spa bath" loading="lazy">
           <div class="portfolio-overlay"></div>
           <span class="portfolio-label">Spa Bath</span>
@@ -823,77 +700,132 @@
       </div>
     </div>
 
-    <!-- Row -->
-    <div class="portfolio-row" style="max-width:1200px; margin: 0 auto;">
+    <div class="portfolio-row">
       <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581593/Jobs/cameron/20240620-AJW_9123.jpg" alt="Luxe bathroom" loading="lazy">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581679/Jobs/caudill/20240618-AJW_8638.jpg" alt="Bathroom detail" loading="lazy">
         <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Luxe Bathroom</span>
+        <span class="portfolio-label">Bath Detail</span>
       </div>
       <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581081/Jobs/Larkin/20240815-AJW_0007.jpg" alt="Custom tile work" loading="lazy">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581653/Jobs/caudill/20240618-AJW_8533.jpg" alt="Open concept living" loading="lazy">
         <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Custom Tile</span>
+        <span class="portfolio-label">Open Living</span>
       </div>
       <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581063/Jobs/drouge/20250929-AJW_7219.jpg" alt="Bath renovation" loading="lazy">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581681/Jobs/caudill/20240618-AJW_8648.jpg" alt="Luxury finishes" loading="lazy">
         <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Bath Renovation</span>
+        <span class="portfolio-label">Luxury Finishes</span>
       </div>
     </div>
   </section>
 
-  <!-- OUR PROMISE -->
-  <section class="promise">
-    <div class="promise-inner">
-      <div>
-        <div class="section-eyebrow" style="color: var(--gold); margin-bottom: 1.25rem;">Our Promise</div>
-        <h2 class="promise-heading">Why homeowners<br>choose <em>JDC</em><br>again &amp; again.</h2>
+  <!-- DIVIDER STRIP -->
+  <div class="divider-strip">
+    <p class="divider-strip-text">"Every JDC home begins with a conversation."</p>
+  </div>
+
+  <!-- CAMERON RESIDENCE -->
+  <section class="project-section project-section--white">
+    <div class="project-header">
+      <div class="section-eyebrow">Featured Project</div>
+      <h2 class="project-name">The Cameron Residence</h2>
+      <p class="section-desc">A light-filled custom home featuring designer finishes, a dramatic great room, and seamlessly integrated indoor-outdoor living.</p>
+    </div>
+
+    <div class="portfolio-feature">
+      <div class="portfolio-feature-main">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg" alt="Cameron Residence great room" loading="lazy">
+        <div class="portfolio-overlay"></div>
+        <span class="portfolio-label">Cameron Residence</span>
       </div>
-      <div class="promise-points">
-        <div class="promise-point">
-          <div class="promise-num">01</div>
-          <div>
-            <div class="promise-point-title">Transparent Pricing</div>
-            <p class="promise-point-desc">Detailed written estimates with no hidden fees. You know the full cost before work begins — and we stick to it.</p>
-          </div>
+      <div class="portfolio-feature-stack">
+        <div class="portfolio-item">
+          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581577/Jobs/cameron/20240620-AJW_9063.jpg" alt="Designer finishes" loading="lazy">
+          <div class="portfolio-overlay"></div>
+          <span class="portfolio-label">Designer Finishes</span>
         </div>
-        <div class="promise-point">
-          <div class="promise-num">02</div>
-          <div>
-            <div class="promise-point-title">Skilled Tradesmen</div>
-            <p class="promise-point-desc">Every crew member is a seasoned professional. We don't hire subs off Craigslist — our team is vetted, trained, and proud of their craft.</p>
-          </div>
+        <div class="portfolio-item">
+          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581593/Jobs/cameron/20240620-AJW_9123.jpg" alt="Custom bathroom" loading="lazy">
+          <div class="portfolio-overlay"></div>
+          <span class="portfolio-label">Custom Bath</span>
         </div>
-        <div class="promise-point">
-          <div class="promise-num">03</div>
-          <div>
-            <div class="promise-point-title">Clean Jobsite, Always</div>
-            <p class="promise-point-desc">We respect your home. Daily cleanup and dust containment mean you're living comfortably throughout the renovation.</p>
-          </div>
-        </div>
-        <div class="promise-point">
-          <div class="promise-num">04</div>
-          <div>
-            <div class="promise-point-title">Backed by Warranty</div>
-            <p class="promise-point-desc">All remodeling work is backed by a comprehensive labor warranty. We stand behind every project, long after the tools are packed up.</p>
-          </div>
-        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-row">
+      <div class="portfolio-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581595/Jobs/cameron/20240620-AJW_9138-Edit.jpg" alt="Luxe vanity" loading="lazy">
+        <div class="portfolio-overlay"></div>
+        <span class="portfolio-label">Luxe Vanity</span>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581563/Jobs/cameron/20240620-AJW_9003.jpg" alt="Indoor-outdoor living" loading="lazy">
+        <div class="portfolio-overlay"></div>
+        <span class="portfolio-label">Indoor-Outdoor</span>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581567/Jobs/cameron/20240620-AJW_9018.jpg" alt="Great room detail" loading="lazy">
+        <div class="portfolio-overlay"></div>
+        <span class="portfolio-label">Great Room</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL PROJECTS -->
+  <section class="additional-projects">
+    <div class="additional-header">
+      <div class="section-eyebrow">More Homes</div>
+      <h2 class="section-title">A selection of recent builds.</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581081/Jobs/Larkin/20240815-AJW_0007.jpg" alt="Larkin Residence" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+        <span class="gallery-item-label">Larkin Residence</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581084/Jobs/Larkin/20240815-AJW_0026.jpg" alt="Custom millwork" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+        <span class="gallery-item-label">Custom Millwork</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581104/Jobs/Larkin/20240815-AJW_9895.jpg" alt="Master suite" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+        <span class="gallery-item-label">Master Suite</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580861/Jobs/Alice/20210111-AJW_3547_49_50.jpg" alt="Alice Residence" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+        <span class="gallery-item-label">Alice Residence</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580869/Jobs/Alice/20210111-AJW_3632-HDR.jpg" alt="Great room" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+        <span class="gallery-item-label">Great Room</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580876/Jobs/Alice/20210111-AJW_3682-HDR-Edit.jpg" alt="Custom kitchen" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+        <span class="gallery-item-label">Custom Kitchen</span>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta-section" id="contact">
+  <section class="cta-section">
     <div class="cta-bg"></div>
     <div class="cta-inner">
-      <div class="section-eyebrow" style="justify-content:center; color: var(--gold);">Get Started</div>
-      <h2 class="cta-heading">Ready to transform<br><em>your space?</em></h2>
-      <p class="cta-sub">We offer free in-home estimates — no obligation. Our team will walk through your space, listen to your vision, and give you a clear, detailed quote.</p>
+      <div class="section-eyebrow" style="justify-content: center;">Get Started</div>
+      <h2 class="cta-heading">Ready to build<br><em>your home?</em></h2>
+      <p class="cta-sub">Start with a free consultation. We'll walk through your vision, your site, and what's realistically achievable — no pressure, no obligation.</p>
       <div class="cta-actions">
         <a href="quote.html" class="btn-lg">
           Get a Free Quote
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="custom-home-process.html" class="btn-outline">
+          See Our Process →
         </a>
       </div>
     </div>
@@ -908,7 +840,7 @@
         <span>info@jdcconstruction.com</span>
       </div>
     </div>
-    <p class="footer-copy">© 2024 JDC Construction · Licensed &amp; Insured · COL 3:23</p>
+    <p class="footer-copy">© 2026 JDC Construction · Licensed &amp; Insured · COL 3:23</p>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="custom-home.html">Custom Homes</a>

@@ -12,7 +12,13 @@
     *, *::before, *::after { box-sizing: border-box; }
     body { margin: 0; background: #f7f5f2; font-family: 'DM Sans', sans-serif; color: var(--navy); }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 3rem; height: 80px; display: flex; align-items: center; justify-content: space-between; background: transparent; transition: background 0.4s ease, box-shadow 0.4s ease; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 3rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
     nav.scrolled { background: #091b37; backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
     .nav-logo img { height: 52px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
     .nav-links { display: flex; align-items: center; gap: 2.5rem; }
@@ -23,24 +29,55 @@
     .nav-back { color: rgba(255,255,255,0.4) !important; }
     .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
 
-    .hero { position: relative; height: 72vh; min-height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581563/Jobs/cameron/20240620-AJW_9003.jpg'); background-size: cover; background-position: center 40%; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(9,27,55,0.92) 0%, rgba(9,27,55,0.45) 45%, rgba(9,27,55,0.1) 100%); }
+    .hero {
+      position: relative; height: 72vh; min-height: 520px;
+      overflow: hidden; display: flex; align-items: flex-end;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7382.jpg');
+      background-size: cover; background-position: center 40%;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,27,55,0.92) 0%, rgba(9,27,55,0.45) 45%, rgba(9,27,55,0.1) 100%);
+    }
     .hero-content { position: relative; z-index: 10; padding: 0 5rem 4.5rem; }
-    .hero-eyebrow { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-eyebrow {
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.75rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
     .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
-    .hero-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem, 6.5vw, 6.5rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.03em; color: white; margin-bottom: 1.5rem; }
+    .hero-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6.5vw, 6.5rem);
+      font-weight: 300; line-height: 0.95; letter-spacing: -0.03em; color: white; margin-bottom: 1.5rem;
+    }
     .hero-heading em { font-style: italic; }
     .hero-desc { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 420px; margin-bottom: 2rem; }
     .hero-actions { display: flex; align-items: center; gap: 1.5rem; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 0.65rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 1rem 2.25rem; text-decoration: none; transition: background 0.2s ease; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.65rem;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); background: var(--gold); padding: 1rem 2.25rem;
+      text-decoration: none; transition: background 0.2s ease;
+    }
     .btn-primary:hover { background: white; }
-    .btn-ghost { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s ease; }
+    .btn-ghost {
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s ease;
+    }
     .btn-ghost:hover { color: white; }
 
     .gallery-section { padding: 5rem 5rem; background: #f7f5f2; }
     .gallery-header { max-width: 1200px; margin: 0 auto 3rem; display: flex; align-items: flex-end; justify-content: space-between; }
-    .section-eyebrow { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-eyebrow {
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
     .section-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
     .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); margin: 0; }
     .gallery-count { font-size: 0.72rem; color: var(--slate); letter-spacing: 0.08em; opacity: 0.55; }
@@ -48,14 +85,23 @@
     .gallery-item { break-inside: avoid; margin-bottom: 10px; position: relative; overflow: hidden; cursor: pointer; }
     .gallery-item img { width: 100%; height: auto; display: block; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
     .gallery-item:hover img { transform: scale(1.04); }
-    .gallery-item-overlay { position: absolute; inset: 0; background: rgba(9,27,55,0.35); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center; }
+    .gallery-item-overlay {
+      position: absolute; inset: 0; background: rgba(9,27,55,0.35);
+      opacity: 0; transition: opacity 0.3s ease;
+      display: flex; align-items: center; justify-content: center;
+    }
     .gallery-item:hover .gallery-item-overlay { opacity: 1; }
 
     .cta-section { padding: 7rem 5rem; background: var(--navy); text-align: center; }
     .cta-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: white; margin-bottom: 1rem; }
     .cta-heading em { font-style: italic; color: var(--gold); }
     .cta-sub { font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 480px; margin: 0 auto 2.5rem; }
-    .btn-lg { display: inline-flex; align-items: center; gap: 0.65rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 1.1rem 2.5rem; text-decoration: none; transition: background 0.2s ease; }
+    .btn-lg {
+      display: inline-flex; align-items: center; gap: 0.65rem;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--navy); background: var(--gold); padding: 1.1rem 2.5rem;
+      text-decoration: none; transition: background 0.2s ease;
+    }
     .btn-lg:hover { background: white; }
 
     footer { background: #050e1d; padding: 2.5rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -68,14 +114,95 @@
     .footer-links a { font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s ease; }
     .footer-links a:hover { color: rgba(255,255,255,0.6); }
 
-    #lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(5,14,29,0.95); align-items: center; justify-content: center; }
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(5,14,29,0.95);
+      align-items: center; justify-content: center;
+    }
     #lightbox.active { display: flex; }
     #lb-img { max-width: 92vw; max-height: 90vh; object-fit: contain; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
     #lb-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 1.75rem; cursor: pointer; line-height: 1; padding: 0.5rem; transition: color 0.2s ease; }
     #lb-close:hover { color: white; }
 
-    @media (max-width: 1024px) { nav { padding: 0 2rem; } .hero-content { padding: 0 2.5rem 3rem; } .gallery-section, .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; } footer { padding: 2rem 2.5rem; } }
-    @media (max-width: 768px) { nav { padding: 0 1.5rem; } .nav-links { display: none; } .hero-content { padding: 0 1.5rem 2.5rem; } .gallery-section { padding: 3rem 1.5rem; } .gallery-grid { columns: 2; } .cta-section { padding: 4rem 1.5rem; } footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; } .footer-left { align-items: center; } .footer-links { justify-content: center; } }
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1100;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: white;
+      border-radius: 1px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(9,27,55,0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay a {
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .mobile-nav-overlay a:hover { color: white; }
+    .mobile-nav-overlay .mobile-cta {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.85rem 2.25rem;
+      letter-spacing: 0.18em;
+    }
+
+    @media (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .hero-content { padding: 0 2.5rem 3rem; }
+      .gallery-section, .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
+      footer { padding: 2rem 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-content { padding: 0 1.25rem 2.5rem; }
+      .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+      .hero-desc { font-size: 0.85rem; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .gallery-section { padding: 3rem 1.25rem; }
+      .gallery-grid { columns: 2; }
+      .cta-section { padding: 4rem 1.25rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.25rem; }
+      .footer-left { align-items: center; }
+      .footer-links { justify-content: center; }
+    }
     @media (max-width: 480px) { .gallery-grid { columns: 1; } }
   </style>
 </head>
@@ -86,6 +213,13 @@
     <button id="lb-close" onclick="closeLb()">✕</button>
   </div>
 
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav">
+    <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+    <a href="remodeling.html" onclick="closeMobileNav()">← Remodeling</a>
+    <a href="quote.html" class="mobile-cta">Get a Quote</a>
+  </div>
+
   <nav id="main-nav">
     <a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction"></a>
     <div class="nav-links">
@@ -93,6 +227,9 @@
       <a href="remodeling.html" class="nav-back">← Remodeling</a>
       <a href="quote.html" class="nav-cta">Get a Quote</a>
     </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <section class="hero">
@@ -101,7 +238,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Remodeling</div>
       <h1 class="hero-heading">Whole Home<br><em>Remodel</em></h1>
-      <p class="hero-desc">Full-home transformations that update your floor plan, finishes, and flow — from a single coordinated team.</p>
+      <p class="hero-desc">Full-home transformations that update your floor plan, finishes, and flow — coordinated from start to finish by a single trusted team.</p>
       <div class="hero-actions">
         <a href="remodeling.html" class="btn-ghost">
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M13 5H1M5.5 8.5L2 5l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -121,108 +258,187 @@
         <div class="section-eyebrow">Portfolio</div>
         <h2 class="section-title">Whole Home Projects</h2>
       </div>
-      <span class="gallery-count">25 photos</span>
+      <span class="gallery-count">35 photos</span>
     </div>
     <div class="gallery-grid">
 
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581563/Jobs/cameron/20240620-AJW_9003.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581563/Jobs/cameron/20240620-AJW_9003.jpg" alt="Open floor plan" loading="lazy">
+      <!-- Round 1 — one from each job -->
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0112.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0112.jpg" alt="Whole home transformation" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581564/Jobs/cameron/20240620-AJW_9008.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581564/Jobs/cameron/20240620-AJW_9008.jpg" alt="Living room" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0109.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0109.jpg" alt="Whole home remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg" alt="Modern entryway" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9033.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9033.jpg" alt="Luxury remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581567/Jobs/cameron/20240620-AJW_9018.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581567/Jobs/cameron/20240620-AJW_9018.jpg" alt="Interior detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0036.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0036.jpg" alt="Home renovation" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581568/Jobs/cameron/20240620-AJW_9023.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581568/Jobs/cameron/20240620-AJW_9023.jpg" alt="Interior view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7098.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7098.jpg" alt="Contemporary remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581569/Jobs/cameron/20240620-AJW_9027.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581569/Jobs/cameron/20240620-AJW_9027.jpg" alt="Interior detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3637-HDR.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3637-HDR.jpg" alt="Renovation result" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581570/Jobs/cameron/20240620-AJW_9033.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581570/Jobs/cameron/20240620-AJW_9033.jpg" alt="Living space" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7139.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7139.jpg" alt="Modern remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581571/Jobs/cameron/20240620-AJW_9038.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581571/Jobs/cameron/20240620-AJW_9038.jpg" alt="Interior view" loading="lazy">
+
+      <!-- Round 2 -->
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0117.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0117.jpg" alt="Updated interiors" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581572/Jobs/cameron/20240620-AJW_9043.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581572/Jobs/cameron/20240620-AJW_9043.jpg" alt="Interior detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0133.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0133.jpg" alt="Living room" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581574/Jobs/cameron/20240620-AJW_9048.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581574/Jobs/cameron/20240620-AJW_9048.jpg" alt="Living area" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9038.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9038.jpg" alt="Great room" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581575/Jobs/cameron/20240620-AJW_9052.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581575/Jobs/cameron/20240620-AJW_9052.jpg" alt="Interior view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0040.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0040.jpg" alt="Living areas" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581576/Jobs/cameron/20240620-AJW_9057.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581576/Jobs/cameron/20240620-AJW_9057.jpg" alt="Interior detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7100.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7100.jpg" alt="Open concept" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581577/Jobs/cameron/20240620-AJW_9063.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581577/Jobs/cameron/20240620-AJW_9063.jpg" alt="Living space" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3642-HDR.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3642-HDR.jpg" alt="Interior lighting" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581578/Jobs/cameron/20240620-AJW_9068.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581578/Jobs/cameron/20240620-AJW_9068.jpg" alt="Interior view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7144.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7144.jpg" alt="Updated living" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581580/Jobs/cameron/20240620-AJW_9073.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581580/Jobs/cameron/20240620-AJW_9073.jpg" alt="Interior finishes" loading="lazy">
+
+      <!-- Round 3 -->
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0122.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0122.jpg" alt="New finishes" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581582/Jobs/cameron/20240620-AJW_9078.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581582/Jobs/cameron/20240620-AJW_9078.jpg" alt="Interior view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0134.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0134.jpg" alt="Flooring and trim" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581583/Jobs/cameron/20240620-AJW_9083.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581583/Jobs/cameron/20240620-AJW_9083.jpg" alt="Interior detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9043.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9043.jpg" alt="Custom millwork" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581584/Jobs/cameron/20240620-AJW_9088.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581584/Jobs/cameron/20240620-AJW_9088.jpg" alt="Interior view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0042.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0042.jpg" alt="Trim and details" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581586/Jobs/cameron/20240620-AJW_9093.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581586/Jobs/cameron/20240620-AJW_9093.jpg" alt="Interior space" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7328.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7328.jpg" alt="Finishes and fixtures" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581589/Jobs/cameron/20240620-AJW_9103.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581589/Jobs/cameron/20240620-AJW_9103.jpg" alt="Interior view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3647_49_50.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3647_49_50.jpg" alt="Flooring and walls" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581591/Jobs/cameron/20240620-AJW_9113.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581591/Jobs/cameron/20240620-AJW_9113.jpg" alt="Interior detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7149.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7149.jpg" alt="Interior selections" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581593/Jobs/cameron/20240620-AJW_9123.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581593/Jobs/cameron/20240620-AJW_9123.jpg" alt="Living space" loading="lazy">
+
+      <!-- Round 4 -->
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0127.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0127.jpg" alt="Architectural updates" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581595/Jobs/cameron/20240620-AJW_9138-Edit.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581595/Jobs/cameron/20240620-AJW_9138-Edit.jpg" alt="Interior view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0142.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0142.jpg" alt="Ceiling and lighting" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581598/Jobs/cameron/20240620-AJW_9152.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581598/Jobs/cameron/20240620-AJW_9152.jpg" alt="Interior finish" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9048.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9048.jpg" alt="Premium finishes" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581602/Jobs/cameron/20240620-AJW_9172.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581602/Jobs/cameron/20240620-AJW_9172.jpg" alt="Interior view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0047.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0047.jpg" alt="Material selections" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7367.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7367.jpg" alt="Craftsmanship detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3652-HDR.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3652-HDR.jpg" alt="Character preserved" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7152.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7152.jpg" alt="Refined finishes" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- Round 5 -->
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0132.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/caudill/20240815-AJW_0132.jpg" alt="Completed renovation" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0145.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Cleeter/20200722-AJW_0145.jpg" alt="Finished remodel" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9052.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/cameron/20240620-AJW_9052.jpg" alt="Completed project" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0052.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Larkin/20240815-AJW_0052.jpg" alt="Completed remodel" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7372.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Perfect/20250929-AJW_7372.jpg" alt="Finished renovation" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3657-HDR.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/Alice/20210111-AJW_3657-HDR.jpg" alt="Completed transformation" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7158.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/Jobs/drouge/20250929-AJW_7158.jpg" alt="Project complete" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
 
@@ -231,8 +447,8 @@
 
   <section class="cta-section">
     <div class="section-eyebrow" style="justify-content:center; margin-bottom:1.25rem;">Get Started</div>
-    <h2 class="cta-heading">Ready for a whole<br><em>home transformation?</em></h2>
-    <p class="cta-sub">We offer free in-home estimates — no obligation. Let's talk about your vision and build a plan together.</p>
+    <h2 class="cta-heading">Ready to transform<br><em>your entire home?</em></h2>
+    <p class="cta-sub">We offer free in-home estimates — no obligation. Let's walk through your space and build a plan together.</p>
     <a href="quote.html" class="btn-lg">
       Get a Free Quote
       <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -253,6 +469,7 @@
       <a href="custom-home.html">Custom Homes</a>
       <a href="remodeling.html">Remodeling</a>
       <a href="about.html">About</a>
+      <a href="articles.html">Articles</a>
       <a href="quote.html">Get a Quote</a>
     </div>
   </footer>
@@ -260,6 +477,18 @@
   <script>
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    function toggleMobileNav() {
+      const overlay = document.getElementById('mobile-nav');
+      const btn = document.getElementById('hamburger');
+      overlay.classList.toggle('open');
+      btn.classList.toggle('open');
+      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMobileNav() {
+      document.getElementById('mobile-nav').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
     function openLb(src) {
       document.getElementById('lb-img').src = src;
       document.getElementById('lightbox').classList.add('active');

@@ -1,0 +1,1099 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Process — Custom Homes — JDC Construction</title>
+  <meta name="description" content="Learn exactly how JDC Construction builds a custom home from first conversation to move-in. Four clear phases, no surprises, Southeast Indiana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #f2b900;
+      --gold-dim: rgba(242,185,0,0.4);
+      --navy: #091b37;
+      --slate: #465462;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f7f5f2;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--navy);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 3rem;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(9,27,55,0.0);
+      backdrop-filter: blur(0px);
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    }
+    nav.scrolled {
+      background: #091b37;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-links a.active { color: white; }
+    .nav-cta {
+      font-size: 0.7rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.18em !important;
+      color: var(--navy) !important;
+      background: var(--gold);
+      padding: 0.6rem 1.5rem;
+      transition: background 0.2s ease !important;
+    }
+    .nav-cta:hover { background: white !important; color: var(--navy) !important; }
+    .nav-back {
+      font-size: 0.68rem !important;
+      letter-spacing: 0.1em !important;
+      color: rgba(255,255,255,0.4) !important;
+    }
+    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1100;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: white;
+      border-radius: 1px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(9,27,55,0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay a {
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .mobile-nav-overlay a:hover { color: white; }
+    .mobile-nav-overlay .mobile-cta {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.85rem 2.25rem;
+      letter-spacing: 0.18em;
+    }
+
+    @media (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .nav-links { gap: 1.5rem; }
+      .nav-links a:not(.nav-cta):not(.nav-back) { display: none; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    .hero {
+      position: relative;
+      z-index: 0;
+      height: 100vh;
+      min-height: 680px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581631/Jobs/caudill/20240618-AJW_8458.jpg');
+      background-size: cover;
+      background-position: center 35%;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(9,27,55,0.93) 0%,
+        rgba(9,27,55,0.55) 42%,
+        rgba(9,27,55,0.2) 100%
+      );
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 5rem 5.5rem;
+      max-width: 860px;
+    }
+    .hero-eyebrow {
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6.5vw, 7rem);
+      font-weight: 300;
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+      color: white;
+      margin-bottom: 1.75rem;
+    }
+    .hero-heading em {
+      font-style: italic;
+      color: rgba(255,255,255,0.72);
+    }
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.8;
+      max-width: 500px;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 5rem;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-scroll span {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      writing-mode: vertical-rl;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 0.7; transform: scaleY(0.8); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content { padding: 0 1.25rem 3.5rem; }
+      .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+      .hero-scroll { display: none; }
+    }
+
+    /* ── TIMELINE INTRO STRIP ── */
+    .timeline-strip {
+      background: var(--navy);
+      padding: 4.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .timeline-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(242,185,0,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 50%, rgba(70,84,98,0.18) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .timeline-stats {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .timeline-stat {
+      text-align: center;
+      padding: 2rem 2rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .timeline-stat:last-child { border-right: none; }
+    .timeline-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 4.5vw, 5rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-stat-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 600px) {
+      .timeline-stats { grid-template-columns: 1fr; }
+      .timeline-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .timeline-stat:last-child { border-bottom: none; }
+    }
+
+    /* ── PHASE SECTIONS ── */
+    .phase-section {
+      padding: 7rem 5rem;
+    }
+    .phase-section--white { background: white; }
+    .phase-section--cream { background: #f7f5f2; }
+
+    .phase-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5.5rem;
+      align-items: center;
+    }
+    .phase-grid--reverse .phase-img-col { order: 2; }
+    .phase-grid--reverse .phase-content-col { order: 1; }
+
+    .phase-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      box-shadow:
+        0 4px 24px rgba(9,27,55,0.1),
+        0 12px 48px rgba(9,27,55,0.08);
+    }
+
+    .phase-label {
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .phase-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .phase-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 3.5vw, 3.75rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: 1.75rem;
+    }
+    .phase-heading em { font-style: italic; }
+    .phase-body {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.88;
+      margin-bottom: 1.25rem;
+    }
+    .phase-body:last-of-type { margin-bottom: 2rem; }
+
+    /* Phase checklist */
+    .phase-checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      border-top: 1px solid rgba(9,27,55,0.08);
+      padding-top: 1.5rem;
+      margin-top: 0.25rem;
+    }
+    .phase-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.82rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--slate);
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .phase-section { padding: 4.5rem 2rem; }
+      .phase-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .phase-grid--reverse .phase-img-col { order: 1; }
+      .phase-grid--reverse .phase-content-col { order: 2; }
+    }
+
+    /* ── HONEST CALLOUT ── */
+    .callout-section {
+      background: var(--navy);
+      padding: 8rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .callout-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 25% 50%, rgba(242,185,0,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 50%, rgba(70,84,98,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .callout-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .callout-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .callout-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .callout-eyebrow::before,
+    .callout-eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+    .callout-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 4.5vw, 4.75rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: white;
+      margin-bottom: 2.25rem;
+    }
+    .callout-body {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.52);
+      line-height: 1.88;
+      margin-bottom: 1.25rem;
+    }
+    .callout-body:last-child { margin-bottom: 0; }
+
+    @media (max-width: 768px) {
+      .callout-section { padding: 5.5rem 2rem; }
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background: white;
+      padding: 7rem 5rem;
+    }
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-header {
+      margin-bottom: 3.5rem;
+    }
+    .section-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(9,27,55,0.08);
+      padding: 1.75rem 0;
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(9,27,55,0.08); }
+    .faq-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 0.85rem;
+    }
+    .faq-a {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .faq-section { padding: 4.5rem 2rem; }
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--navy);
+      padding: 8rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-bg-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581595/Jobs/cameron/20240620-AJW_9138-Edit.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .cta-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4.5vw, 4.75rem);
+      font-weight: 300;
+      color: white;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .cta-heading em { font-style: italic; color: rgba(255,255,255,0.68); }
+    .cta-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      max-width: 460px;
+      margin: 0 auto 2.75rem;
+    }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 1rem 2.25rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn-primary:hover { background: white; }
+    .btn-ghost {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .btn-ghost:hover { color: white; }
+
+    @media (max-width: 768px) {
+      .cta-section { padding: 5.5rem 2rem; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050e1d;
+      padding: 2.5rem 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+    .footer-icon { height: 68px; width: auto; opacity: 0.85; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.18rem; }
+    .footer-contact a,
+    .footer-contact span {
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.38);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-contact a:hover { color: rgba(255,255,255,0.65); }
+    .footer-copy {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      line-height: 1.7;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .footer-links a {
+      font-size: 0.63rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+    @media (max-width: 768px) {
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.25rem; }
+      .footer-left { align-items: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav">
+    <a href="custom-home-portfolio.html" onclick="closeMobileNav()">Portfolio</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="articles.html" onclick="closeMobileNav()">Articles</a>
+    <a href="custom-home.html" onclick="closeMobileNav()">← Custom Homes</a>
+    <a href="quote.html" class="mobile-cta">Get a Quote</a>
+  </div>
+
+  <!-- Nav -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">
+    </a>
+    <div class="nav-links">
+      <a href="custom-home-portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="articles.html">Articles</a>
+      <a href="custom-home.html" class="nav-back">← Custom Homes</a>
+      <a href="quote.html" class="nav-cta">Get a Quote</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">How We Build</div>
+      <h1 class="hero-heading">Your home,<br>from vision<br><em>to move-in.</em></h1>
+      <p class="hero-sub">Building a custom home is one of the most meaningful decisions a family makes. Here's exactly what to expect when you build with JDC.</p>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Timeline intro strip -->
+  <section class="timeline-strip">
+    <div class="timeline-stats">
+      <div class="timeline-stat">
+        <div class="timeline-stat-num">10–14</div>
+        <div class="timeline-stat-label">Months, typical build</div>
+      </div>
+      <div class="timeline-stat">
+        <div class="timeline-stat-num">4</div>
+        <div class="timeline-stat-label">Key project phases</div>
+      </div>
+      <div class="timeline-stat">
+        <div class="timeline-stat-num">200+</div>
+        <div class="timeline-stat-label">Custom homes built</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 1: Discovery & Design -->
+  <section class="phase-section phase-section--white">
+    <div class="phase-grid">
+      <div class="phase-img-col">
+        <img
+          class="phase-img"
+          src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg"
+          alt="Custom home entry and living space"
+          loading="lazy"
+        >
+      </div>
+      <div class="phase-content-col">
+        <div class="phase-label">Phase 01</div>
+        <h2 class="phase-heading">Discovery<br>&amp; <em>Design</em></h2>
+        <p class="phase-body">Every JDC home starts with a conversation, not a blueprint. We sit down with you to understand how you actually live — how you use your kitchen in the morning, what your ideal Sunday afternoon looks like, where the kids' homework happens. From that, we build a program that's specific to you.</p>
+        <p class="phase-body">Our design team then translates your vision into a detailed set of plans and 3D renderings before a dollar is committed to construction. You'll see and approve the home before the first shovel hits the ground.</p>
+        <ul class="phase-checklist">
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Site visit and evaluation
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Design consultation
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Space program &amp; budget alignment
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Architectural drawings
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            3D renderings for client review
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 2: Selections & Planning -->
+  <section class="phase-section phase-section--cream">
+    <div class="phase-grid phase-grid--reverse">
+      <div class="phase-img-col">
+        <img
+          class="phase-img"
+          src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581676/Jobs/caudill/20240618-AJW_8623.jpg"
+          alt="Custom home interior finishes and selections"
+          loading="lazy"
+        >
+      </div>
+      <div class="phase-content-col">
+        <div class="phase-label">Phase 02</div>
+        <h2 class="phase-heading">Selections<br>&amp; <em>Planning</em></h2>
+        <p class="phase-body">This is where your home gets its character. You'll work through every selection — cabinets, countertops, tile, fixtures, flooring, trim profiles, paint — with a detailed budget tracker so you always know where you stand.</p>
+        <p class="phase-body">Nothing goes to contract until every selection is made and every cost is confirmed. No surprises mid-build.</p>
+        <ul class="phase-checklist">
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Material and finish selections
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Appliance specifications
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Lighting and plumbing fixture selections
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Detailed construction budget
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Final contract and schedule
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 3: Construction -->
+  <section class="phase-section phase-section--white">
+    <div class="phase-grid">
+      <div class="phase-img-col">
+        <img
+          class="phase-img"
+          src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581678/Jobs/caudill/20240618-AJW_8633.jpg"
+          alt="Custom home construction in progress"
+          loading="lazy"
+        >
+      </div>
+      <div class="phase-content-col">
+        <div class="phase-label">Phase 03</div>
+        <h2 class="phase-heading">Expert<br><em>Construction</em></h2>
+        <p class="phase-body">Once the plans are approved and selections locked, our team begins. We handle permitting, site prep, foundation, framing, mechanicals, and every finish ourselves — no subcontractors you've never met.</p>
+        <p class="phase-body">You'll have direct access to your project manager throughout the build. Weekly update calls, a live project schedule, and a documented punch list at every phase milestone.</p>
+        <ul class="phase-checklist">
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Permitting &amp; site preparation
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Foundation &amp; framing
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Mechanical rough-ins (electrical, plumbing, HVAC)
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Insulation &amp; drywall
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Interior finish work
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Exterior finish &amp; landscaping
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 4: Walkthrough & Warranty -->
+  <section class="phase-section phase-section--cream">
+    <div class="phase-grid phase-grid--reverse">
+      <div class="phase-img-col">
+        <img
+          class="phase-img"
+          src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580991/Jobs/caudill/20240815-AJW_0082.jpg"
+          alt="Finished custom home exterior"
+          loading="lazy"
+        >
+      </div>
+      <div class="phase-content-col">
+        <div class="phase-label">Phase 04</div>
+        <h2 class="phase-heading">Walkthrough<br>&amp; <em>Warranty</em></h2>
+        <p class="phase-body">Before we hand over the keys, we do a thorough final walkthrough together. Every item on the punch list is addressed — not just noted. We don't close until you're satisfied.</p>
+        <p class="phase-body">All JDC custom homes are backed by a comprehensive labor warranty. We're a phone call away long after the last tool leaves the site.</p>
+        <ul class="phase-checklist">
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Comprehensive punch list walkthrough
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Final cleaning and detail work
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Systems orientation (HVAC, smart home, etc.)
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Key handover
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            1-year warranty walkthrough
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" stroke-width="1"/>
+              <polyline points="5,9.5 7.5,12 13,6.5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            Ongoing support
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect Callout -->
+  <section class="callout-section">
+    <div class="callout-inner">
+      <div class="callout-eyebrow">The Honest Part</div>
+      <h2 class="callout-heading">What most builders<br>won't tell you.</h2>
+      <p class="callout-body">Building a custom home takes longer than most people expect — and that's a feature, not a bug. The reason our homes turn out the way they do is that we don't rush selection, planning, or construction to hit an arbitrary deadline.</p>
+      <p class="callout-body">A typical JDC custom home takes 10 to 14 months from signed contract to keys. Homes with complex sites, specialty materials, or large footprints can take longer. We'll give you a realistic schedule on day one — and we'll stick to it.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-inner">
+      <div class="faq-header">
+        <div class="section-eyebrow">Common Questions</div>
+        <h2 class="section-title">You probably have a few.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">How much does a custom home cost with JDC?</div>
+          <p class="faq-a">Every home is different, and we won't give you a number until we understand your program, site, and selections. What we can tell you: we build luxury custom homes in the $600,000–$2M+ range in Southeast Indiana, and our detailed pre-construction budget process means you'll have a firm number before any work begins.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I need to own land already?</div>
+          <p class="faq-a">Not necessarily. We can help you evaluate sites, and we work with several local real estate partners. But we're also happy to work with a site you've already selected.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What makes JDC different from a national or semi-custom builder?</div>
+          <p class="faq-a">We build one home at a time. While founders Jason and Lisa Cox oversee our rigorous standards, you'll work directly with our dedicated project managers — not a detached sales team. Every decision gets the attention it deserves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg-img"></div>
+    <div class="cta-inner">
+      <h2 class="cta-heading">Ready to start<br><em>your build?</em></h2>
+      <p class="cta-sub">Free initial consultation. We'll visit the site, walk through your vision, and give you an honest assessment of what's achievable.</p>
+      <div class="cta-buttons">
+        <a href="quote.html" class="btn-primary">Get a Free Quote</a>
+        <a href="custom-home-portfolio.html" class="btn-ghost">View Our Portfolio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <img class="footer-icon" src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">
+      <div class="footer-contact">
+        <a href="tel:8126372684">(812) 637-2684</a>
+        <a href="mailto:info@jdcconstruction.com">info@jdcconstruction.com</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 JDC Construction<br>Licensed &amp; Insured &middot; COL 3:23
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="custom-home.html">Custom Homes</a>
+      <a href="remodeling.html">Remodeling</a>
+      <a href="about.html">About</a>
+      <a href="articles.html">Articles</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('main-nav');
+      function onScroll() {
+        if (window.scrollY > 60) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+    function toggleMobileNav() {
+      const overlay = document.getElementById('mobile-nav');
+      const btn = document.getElementById('hamburger');
+      overlay.classList.toggle('open');
+      btn.classList.toggle('open');
+      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMobileNav() {
+      document.getElementById('mobile-nav').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  </script>
+
+</body>
+</html>

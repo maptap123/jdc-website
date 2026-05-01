@@ -90,8 +90,66 @@
     #lb-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 1.75rem; cursor: pointer; line-height: 1; padding: 0.5rem; transition: color 0.2s ease; }
     #lb-close:hover { color: white; }
 
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1100;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: white;
+      border-radius: 1px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(9,27,55,0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay a {
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .mobile-nav-overlay a:hover { color: white; }
+    .mobile-nav-overlay .mobile-cta {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.85rem 2.25rem;
+      letter-spacing: 0.18em;
+    }
+
     @media (max-width: 1024px) { nav { padding: 0 2rem; } .hero-content { padding: 0 2.5rem 3rem; } .gallery-section, .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; } footer { padding: 2rem 2.5rem; } }
-    @media (max-width: 768px) { nav { padding: 0 1.5rem; } .nav-links { display: none; } .hero-content { padding: 0 1.5rem 2.5rem; } .gallery-section { padding: 3rem 1.5rem; } .gallery-grid { columns: 2; } .cta-section { padding: 4rem 1.5rem; } footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; } .footer-left { align-items: center; } .footer-links { justify-content: center; } }
+    @media (max-width: 768px) { nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); } .nav-links { display: none; } .nav-hamburger { display: flex; } .hero-content { padding: 0 1.25rem 2.5rem; } .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); } .hero-desc { font-size: 0.85rem; } .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; } .gallery-section { padding: 3rem 1.25rem; } .gallery-grid { columns: 2; } .cta-section { padding: 4rem 1.25rem; } footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.25rem; } .footer-left { align-items: center; } .footer-links { justify-content: center; } }
     @media (max-width: 480px) { .gallery-grid { columns: 1; } }
   </style>
 </head>
@@ -102,6 +160,13 @@
     <button id="lb-close" onclick="closeLb()">✕</button>
   </div>
 
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav">
+    <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+    <a href="remodeling.html" onclick="closeMobileNav()">← Remodeling</a>
+    <a href="quote.html" class="mobile-cta">Get a Quote</a>
+  </div>
+
   <nav id="main-nav">
     <a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction"></a>
     <div class="nav-links">
@@ -109,6 +174,9 @@
       <a href="remodeling.html" class="nav-back">← Remodeling</a>
       <a href="quote.html" class="nav-cta">Get a Quote</a>
     </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <section class="hero">
@@ -137,151 +205,172 @@
         <div class="section-eyebrow">Portfolio</div>
         <h2 class="section-title">Bathroom Projects</h2>
       </div>
-      <span class="gallery-count">35 photos</span>
+      <span class="gallery-count">33 photos</span>
     </div>
-    <div class="gallery-grid">
+        <div class="gallery-grid">
 
-      <!-- Caudill bathroom renovation -->
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581631/Jobs/caudill/20240618-AJW_8458.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581631/Jobs/caudill/20240618-AJW_8458.jpg" alt="Bathroom renovation" loading="lazy">
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581026/Jobs/Cleeter/20200722-AJW_0118.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581026/Jobs/Cleeter/20200722-AJW_0118.jpg" alt="Bathroom remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581635/Jobs/caudill/20240618-AJW_8473.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581635/Jobs/caudill/20240618-AJW_8473.jpg" alt="Bathroom vanity" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581027/Jobs/Cleeter/20200722-AJW_0125.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581027/Jobs/Cleeter/20200722-AJW_0125.jpg" alt="Bathroom remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581639/Jobs/caudill/20240618-AJW_8488.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581639/Jobs/caudill/20240618-AJW_8488.jpg" alt="Bathroom tile" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581739/Jobs/Cleeter/20200722-AJW_0130.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581739/Jobs/Cleeter/20200722-AJW_0130.jpg" alt="Bathroom detail" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581646/Jobs/caudill/20240618-AJW_8507.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581646/Jobs/caudill/20240618-AJW_8507.jpg" alt="Bathroom vanity" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581029/Jobs/Cleeter/20200722-AJW_0133.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581029/Jobs/Cleeter/20200722-AJW_0133.jpg" alt="Bathroom tile" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581650/Jobs/caudill/20240618-AJW_8523.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581650/Jobs/caudill/20240618-AJW_8523.jpg" alt="Bathroom detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581740/Jobs/Cleeter/20200722-AJW_0135%20copy.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581740/Jobs/Cleeter/20200722-AJW_0135%20copy.jpg" alt="Bathroom view" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581654/Jobs/caudill/20240618-AJW_8538.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581654/Jobs/caudill/20240618-AJW_8538.jpg" alt="Bathroom fixture" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581742/Jobs/Cleeter/20200722-AJW_0136.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581742/Jobs/Cleeter/20200722-AJW_0136.jpg" alt="Bathroom detail" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581658/Jobs/caudill/20240618-AJW_8553.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581658/Jobs/caudill/20240618-AJW_8553.jpg" alt="Bathroom view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581034/Jobs/Cleeter/20200722-AJW_0142.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581034/Jobs/Cleeter/20200722-AJW_0142.jpg" alt="Bathroom renovation" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581662/Jobs/caudill/20240618-AJW_8568.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581662/Jobs/caudill/20240618-AJW_8568.jpg" alt="Bathroom tile" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581036/Jobs/Cleeter/20200722-AJW_0151.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581036/Jobs/Cleeter/20200722-AJW_0151.jpg" alt="Bathroom view" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581665/Jobs/caudill/20240618-AJW_8582.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581665/Jobs/caudill/20240618-AJW_8582.jpg" alt="Bathroom vanity" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581744/Jobs/Cleeter/20200722-AJW_0156.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581744/Jobs/Cleeter/20200722-AJW_0156.jpg" alt="Bathroom detail" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581669/Jobs/caudill/20240618-AJW_8598.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581669/Jobs/caudill/20240618-AJW_8598.jpg" alt="Bathroom detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580866/Jobs/Alice/20210111-AJW_3607_09_10.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580866/Jobs/Alice/20210111-AJW_3607_09_10.jpg" alt="Shower detail" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581673/Jobs/caudill/20240618-AJW_8613.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581673/Jobs/caudill/20240618-AJW_8613.jpg" alt="Bathroom view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580867/Jobs/Alice/20210111-AJW_3617_19_20.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580867/Jobs/Alice/20210111-AJW_3617_19_20.jpg" alt="Bathroom tile" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581677/Jobs/caudill/20240618-AJW_8628.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581677/Jobs/caudill/20240618-AJW_8628.jpg" alt="Bathroom tile" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581676/Jobs/caudill/20240618-AJW_8623.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581676/Jobs/caudill/20240618-AJW_8623.jpg" alt="Custom vanity" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581678/Jobs/caudill/20240618-AJW_8633.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581678/Jobs/caudill/20240618-AJW_8633.jpg" alt="Spa bath" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581679/Jobs/caudill/20240618-AJW_8638.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581679/Jobs/caudill/20240618-AJW_8638.jpg" alt="Bathroom detail" loading="lazy">
+        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
       <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581680/Jobs/caudill/20240618-AJW_8642.jpg')">
         <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581680/Jobs/caudill/20240618-AJW_8642.jpg" alt="Master bath" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581683/Jobs/caudill/20240618-AJW_8657.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581683/Jobs/caudill/20240618-AJW_8657.jpg" alt="Bathroom fixture" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581681/Jobs/caudill/20240618-AJW_8648.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581681/Jobs/caudill/20240618-AJW_8648.jpg" alt="Bathroom renovation" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581688/Jobs/caudill/20240618-AJW_8677.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581688/Jobs/caudill/20240618-AJW_8677.jpg" alt="Bathroom vanity" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581690/Jobs/caudill/20240618-AJW_8688.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581690/Jobs/caudill/20240618-AJW_8688.jpg" alt="Bathroom view" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581692/Jobs/caudill/20240618-AJW_8698.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581692/Jobs/caudill/20240618-AJW_8698.jpg" alt="Master bath vanity" loading="lazy">
-        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581697/Jobs/caudill/20240618-AJW_8718.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581697/Jobs/caudill/20240618-AJW_8718.jpg" alt="Bathroom detail" loading="lazy">
-        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581704/Jobs/caudill/20240618-AJW_8742.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581704/Jobs/caudill/20240618-AJW_8742.jpg" alt="Bathroom view" loading="lazy">
-        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581710/Jobs/caudill/20240618-AJW_8764.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581710/Jobs/caudill/20240618-AJW_8764.jpg" alt="Bathroom tile" loading="lazy">
-        <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
+
       <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581715/Jobs/caudill/20240618-AJW_8787.jpg')">
         <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581715/Jobs/caudill/20240618-AJW_8787.jpg" alt="Bathroom detail" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
 
-      <!-- Alice custom tile shower -->
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580861/Jobs/Alice/20210111-AJW_3547_49_50.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580861/Jobs/Alice/20210111-AJW_3547_49_50.jpg" alt="Custom tile shower" loading="lazy">
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581723/Jobs/caudill/20240618-AJW_8817.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581723/Jobs/caudill/20240618-AJW_8817.jpg" alt="Bathroom tile" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580863/Jobs/Alice/20210111-AJW_3567_69_70.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580863/Jobs/Alice/20210111-AJW_3567_69_70.jpg" alt="Shower tile detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581593/Jobs/cameron/20240620-AJW_9123.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581593/Jobs/cameron/20240620-AJW_9123.jpg" alt="Luxe bathroom" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580864/Jobs/Alice/20210111-AJW_3587_89_90.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580864/Jobs/Alice/20210111-AJW_3587_89_90.jpg" alt="Bathroom view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581595/Jobs/cameron/20240620-AJW_9138-Edit.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581595/Jobs/cameron/20240620-AJW_9138-Edit.jpg" alt="Bathroom remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580866/Jobs/Alice/20210111-AJW_3607_09_10.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580866/Jobs/Alice/20210111-AJW_3607_09_10.jpg" alt="Shower detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581597/Jobs/cameron/20240620-AJW_9147.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581597/Jobs/cameron/20240620-AJW_9147.jpg" alt="Bathroom view" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580867/Jobs/Alice/20210111-AJW_3617_19_20.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580867/Jobs/Alice/20210111-AJW_3617_19_20.jpg" alt="Bathroom tile" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581599/Jobs/cameron/20240620-AJW_9157.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581599/Jobs/cameron/20240620-AJW_9157.jpg" alt="Bathroom detail" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580869/Jobs/Alice/20210111-AJW_3627_29_30.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580869/Jobs/Alice/20210111-AJW_3627_29_30.jpg" alt="Custom tile work" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581600/Jobs/cameron/20240620-AJW_9163.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581600/Jobs/cameron/20240620-AJW_9163.jpg" alt="Bathroom finish" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580870/Jobs/Alice/20210111-AJW_3637-HDR.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580870/Jobs/Alice/20210111-AJW_3637-HDR.jpg" alt="Bathroom renovation" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581081/Jobs/Larkin/20240815-AJW_0007.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581081/Jobs/Larkin/20240815-AJW_0007.jpg" alt="Custom tile" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580881/Jobs/Alice/20210111-AJW_3739_40_43.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580881/Jobs/Alice/20210111-AJW_3739_40_43.jpg" alt="Custom tile shower" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777576923/20240815-AJW_9890_zqsfkp.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777576923/20240815-AJW_9890_zqsfkp.jpg" alt="Bathroom remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580884/Jobs/Alice/20210111-AJW_3764_7_8.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580884/Jobs/Alice/20210111-AJW_3764_7_8.jpg" alt="Shower detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581104/Jobs/Larkin/20240815-AJW_9895.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581104/Jobs/Larkin/20240815-AJW_9895.jpg" alt="Custom bathroom" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580886/Jobs/Alice/20210111-AJW_3780_2_3.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580886/Jobs/Alice/20210111-AJW_3780_2_3.jpg" alt="Bathroom view" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581122/Jobs/Larkin/20240815-AJW_9984.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581122/Jobs/Larkin/20240815-AJW_9984.jpg" alt="Bathroom view" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580888/Jobs/Alice/20210111-AJW_3795.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580888/Jobs/Alice/20210111-AJW_3795.jpg" alt="Bathroom detail" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581124/Jobs/Larkin/20240815-AJW_9995.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581124/Jobs/Larkin/20240815-AJW_9995.jpg" alt="Bathroom detail" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580890/Jobs/Alice/20210111-AJW_3810.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580890/Jobs/Alice/20210111-AJW_3810.jpg" alt="Bathroom finish" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581063/Jobs/drouge/20250929-AJW_7219.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581063/Jobs/drouge/20250929-AJW_7219.jpg" alt="Bath renovation" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580892/Jobs/Alice/20210111-AJW_3825_7_8.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580892/Jobs/Alice/20210111-AJW_3825_7_8.jpg" alt="Bathroom tile" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581066/Jobs/drouge/20250929-AJW_7234.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581066/Jobs/drouge/20250929-AJW_7234.jpg" alt="Bathroom remodel" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580892/Jobs/Alice/20210111-AJW_3869.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580892/Jobs/Alice/20210111-AJW_3869.jpg" alt="Bathroom renovation" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581158/Jobs/Perfect/20250929-AJW_7357.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581158/Jobs/Perfect/20250929-AJW_7357.jpg" alt="Bathroom detail" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
-      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777580895/Jobs/Alice/20210111-AJW_3882.jpg')">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580895/Jobs/Alice/20210111-AJW_3882.jpg" alt="Bathroom finish" loading="lazy">
+
+      <div class="gallery-item" onclick="openLb('https://res.cloudinary.com/dybuigweq/image/upload/v1777581767/Jobs/Perfect/20250929-AJW_7362.jpg')">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581767/Jobs/Perfect/20250929-AJW_7362.jpg" alt="Bathroom finish" loading="lazy">
         <div class="gallery-item-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
       </div>
 
@@ -312,6 +401,7 @@
       <a href="custom-home.html">Custom Homes</a>
       <a href="remodeling.html">Remodeling</a>
       <a href="about.html">About</a>
+      <a href="articles.html">Articles</a>
       <a href="quote.html">Get a Quote</a>
     </div>
   </footer>
@@ -319,6 +409,18 @@
   <script>
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    function toggleMobileNav() {
+      const overlay = document.getElementById('mobile-nav');
+      const btn = document.getElementById('hamburger');
+      overlay.classList.toggle('open');
+      btn.classList.toggle('open');
+      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMobileNav() {
+      document.getElementById('mobile-nav').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
     function openLb(src) {
       document.getElementById('lb-img').src = src;
       document.getElementById('lightbox').classList.add('active');

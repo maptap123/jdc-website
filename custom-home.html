@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Homes — JDC Construction</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
@@ -657,6 +656,65 @@
     }
     .footer-links a:hover { color: rgba(255,255,255,0.6); }
 
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1100;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: white;
+      border-radius: 1px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(9,27,55,0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay a {
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .mobile-nav-overlay a:hover { color: white; }
+    .mobile-nav-overlay .mobile-cta {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.85rem 2.25rem;
+      letter-spacing: 0.18em;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       nav { padding: 0 2rem; }
@@ -670,22 +728,44 @@
       .gallery-item { grid-column: auto !important; grid-row: auto !important; height: 240px; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 1.5rem; }
+      nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
       .nav-links { display: none; }
-      .hero-content { padding: 0 1.5rem 3rem; }
-      .statement, .portfolio, .process, .features, .cta-section { padding: 4rem 1.5rem; }
-      .statement-inner, .features-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-hamburger { display: flex; }
+      .hero-content { padding: 0 1.25rem 3rem; }
+      .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+      .hero-sub { font-size: 0.9rem; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .hero-scroll { display: none; }
+      .statement, .portfolio, .process, .features, .cta-section { padding: 4rem 1.25rem; }
+      .statement-inner, .features-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .features-image-accent { display: none; }
+      .features-image img { height: auto; min-height: 260px; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item { height: 260px; }
+      .gallery-item { height: 240px; }
       .process-steps { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .portfolio > div[style] { grid-template-columns: 1fr !important; }
+      .portfolio > div[style] > div[style] { grid-template-rows: unset !important; }
+      .gallery-item[style] { height: 260px !important; }
+      .stats-row { gap: 1.5rem; flex-wrap: wrap; }
+      .cta-actions { flex-direction: column; align-items: center; gap: 1rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.25rem; }
       .footer-left { align-items: center; }
       .footer-links { justify-content: center; }
-      .stats-row { gap: 2rem; }
     }
   </style>
 </head>
 <body>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav">
+    <a href="custom-home-portfolio.html" onclick="closeMobileNav()">Portfolio</a>
+    <a href="custom-home-process.html" onclick="closeMobileNav()">Process</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="articles.html" onclick="closeMobileNav()">Articles</a>
+    <a href="index.html" onclick="closeMobileNav()">← Home</a>
+    <a href="quote.html" class="mobile-cta">Get a Quote</a>
+  </div>
 
   <!-- NAV -->
   <nav id="main-nav">
@@ -693,12 +773,16 @@
       <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">
     </a>
     <div class="nav-links">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#process">Process</a>
+      <a href="custom-home-portfolio.html">Portfolio</a>
+      <a href="custom-home-process.html">Process</a>
       <a href="about.html">About</a>
+      <a href="articles.html">Articles</a>
       <a href="index.html" class="nav-back">← Home</a>
       <a href="quote.html" class="nav-cta">Get a Quote</a>
     </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -706,9 +790,9 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Custom Homes</div>
+      <div class="hero-eyebrow">Luxury Custom Homes</div>
       <h1 class="hero-heading">Built to<br><em>Last.</em><br>Designed to<br><em>Inspire.</em></h1>
-      <p class="hero-sub">Every JDC custom home begins with your vision and ends with a masterpiece. We handle every detail — from the first blueprint to the final walkthrough.</p>
+      <p class="hero-sub">Every JDC luxury custom home begins with your vision and ends with a masterpiece. We cater to discerning clients, handling every detail from the first blueprint to the final walkthrough.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">
           Start Your Project
@@ -735,7 +819,7 @@
       <div class="statement-right">
         <div class="statement-verse">COL 3:23</div>
         <p class="statement-text">
-          JDC Construction was founded on a simple conviction: that building a home is one of the most meaningful investments a family can make. We treat each project with that gravity — meticulous craftsmanship, transparent communication, and a relentless commitment to quality that goes far beyond code compliance.
+          JDC Construction was founded on a simple conviction: that building a luxury custom home is one of the most meaningful investments a family can make. We treat each high-end project with that gravity — bringing meticulous craftsmanship, premium materials, and a relentless commitment to architectural excellence.
         </p>
         <div class="stats-row">
           <div class="stat-item">
@@ -755,79 +839,89 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
+  <!-- PORTFOLIO TEASER -->
   <section class="portfolio" id="portfolio">
     <div class="section-header">
       <div>
         <div class="section-eyebrow">Our Work</div>
         <h2 class="section-title">Recent Custom Homes</h2>
       </div>
+      <a href="custom-home-portfolio.html" class="section-link">
+        View All Projects
+        <svg width="13" height="9" viewBox="0 0 13 9" fill="none">
+          <path d="M1 4.5h11M8 1.5L11 4.5l-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580991/Jobs/caudill/20240815-AJW_0082.jpg" alt="Custom craftsman home exterior" loading="lazy">
+    <div style="max-width:1200px; margin: 0 auto; display: grid; grid-template-columns: 7fr 5fr; gap: 12px; margin-bottom: 12px;">
+      <div class="gallery-item" style="height: 480px;">
+        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581631/Jobs/caudill/20240618-AJW_8458.jpg" alt="Caudill custom home interior" loading="lazy">
         <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Craftsman Estate</span>
+        <span class="gallery-item-label">The Caudill Residence</span>
       </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581653/Jobs/caudill/20240618-AJW_8533.jpg" alt="Custom kitchen with blue cabinetry" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Gourmet Kitchen</span>
+      <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 12px;">
+        <div class="gallery-item">
+          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg" alt="Cameron custom home" loading="lazy">
+          <div class="gallery-item-overlay"></div>
+          <span class="gallery-item-label">The Cameron Residence</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581081/Jobs/Larkin/20240815-AJW_0007.jpg" alt="Larkin custom home" loading="lazy">
+          <div class="gallery-item-overlay"></div>
+          <span class="gallery-item-label">The Larkin Residence</span>
+        </div>
       </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581692/Jobs/caudill/20240618-AJW_8698.jpg" alt="Master bath vanity" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Master Suite</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg" alt="Modern entryway with black door" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Modern Entry</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581646/Jobs/caudill/20240618-AJW_8507.jpg" alt="Bathroom with pebble tile" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Custom Bath</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581635/Jobs/caudill/20240618-AJW_8473.jpg" alt="Built-in cabinetry" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Built-In Cabinetry</span>
-      </div>
+    </div>
+
+    <div style="max-width:1200px; margin: 0 auto; text-align: center; padding-top: 2.5rem;">
+      <a href="custom-home-portfolio.html" class="btn-primary">
+        View Full Portfolio
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </section>
 
-  <!-- PROCESS -->
+  <!-- PROCESS TEASER -->
   <section class="process" id="process">
     <div class="process-inner">
-      <div class="section-header" style="margin-bottom: 0; border-bottom: none;">
+      <div class="section-header" style="margin-bottom: 0; border-bottom: none; align-items: flex-end; justify-content: space-between;">
         <div>
           <div class="section-eyebrow" style="color: var(--gold);">How We Build</div>
           <h2 class="section-title" style="color: white;">Your home, from<br>idea to <em style="font-style:italic; color: var(--gold);">move-in.</em></h2>
         </div>
+        <a href="custom-home-process.html" style="font-size:0.7rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-decoration:none; display:flex; align-items:center; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:0.25rem; transition:color 0.2s ease, border-color 0.2s ease; flex-shrink:0; margin-bottom:0.75rem;">
+          Full Process
+          <svg width="13" height="9" viewBox="0 0 13 9" fill="none"><path d="M1 4.5h11M8 1.5L11 4.5l-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
       <div class="process-steps">
         <div class="step">
           <div class="step-num">01</div>
           <div class="step-title">Discovery & Design</div>
-          <p class="step-desc">We sit down to understand your vision, lifestyle, and budget. Our design team translates your ideas into detailed plans and 3D renderings.</p>
+          <p class="step-desc">We sit down to understand your vision, lifestyle, and budget. Detailed plans and 3D renderings before a dollar is committed.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
           <div class="step-title">Selection & Planning</div>
-          <p class="step-desc">Walk through our selection process for finishes, fixtures, and materials. Every choice is logged, budgeted, and scheduled before a shovel hits the ground.</p>
+          <p class="step-desc">Every finish, fixture, and material is selected and locked before construction begins. No surprises mid-build.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
           <div class="step-title">Expert Construction</div>
-          <p class="step-desc">Our team of skilled craftsmen bring your plans to life. You receive regular updates and full transparency at every phase of the build.</p>
+          <p class="step-desc">Our dedicated team handles every phase, guided by the high standards of our founders. Weekly updates, full transparency, zero surprises.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
           <div class="step-title">Walkthrough & Warranty</div>
-          <p class="step-desc">A thorough final walkthrough ensures every detail meets our standard. We back our work with a comprehensive warranty and ongoing support.</p>
+          <p class="step-desc">A thorough final walkthrough before keys are handed over. Every JDC home is backed by a comprehensive labor warranty.</p>
         </div>
+      </div>
+      <div style="margin-top: 3.5rem; text-align: center;">
+        <a href="custom-home-process.html" class="btn-primary" style="display:inline-flex;">
+          See Our Full Process
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" style="margin-left:0.65rem;"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -913,6 +1007,7 @@
       <a href="custom-home.html">Custom Homes</a>
       <a href="remodeling.html">Remodeling</a>
       <a href="about.html">About</a>
+      <a href="articles.html">Articles</a>
       <a href="quote.html">Get a Quote</a>
     </div>
   </footer>
@@ -922,6 +1017,18 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
+    function toggleMobileNav() {
+      const overlay = document.getElementById('mobile-nav');
+      const btn = document.getElementById('hamburger');
+      overlay.classList.toggle('open');
+      btn.classList.toggle('open');
+      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMobileNav() {
+      document.getElementById('mobile-nav').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
   </script>
 
 </body>
