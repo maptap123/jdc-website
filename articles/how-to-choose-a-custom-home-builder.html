@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Choose a Custom Home Builder | JDC Construction</title>
+  <meta name="description" content="What to look for, what questions to ask, and how to tell the difference between a custom home builder you can trust and one you can't — before you sign anything.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Choose a Custom Home Builder",
+    "description": "What to look for, what questions to ask, and how to tell the difference between a custom home builder you can trust and one you can't — before you sign anything.",
+    "datePublished": "2026-05-01",
+    "image": "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
+    "author": { "@type": "Organization", "name": "JDC Construction" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "JDC Construction",
+      "logo": { "@type": "ImageObject", "url": "https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" }
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --gold: #f2b900;
+      --gold-dim: rgba(242,185,0,0.4);
+      --navy: #091b37;
+      --slate: #465462;
+      --cream: #f7f5f2;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--navy); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 3rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(9,27,55,0.0); backdrop-filter: blur(0px);
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    }
+    nav.scrolled { background: #091b37; backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
+    .nav-logo img { height: 52px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a {
+      font-size: 0.75rem; font-weight: 400; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-links a.active { color: white; }
+    .nav-cta {
+      font-size: 0.7rem !important; font-weight: 500 !important; letter-spacing: 0.18em !important;
+      color: var(--navy) !important; background: var(--gold); padding: 0.6rem 1.5rem;
+      transition: background 0.2s ease !important;
+    }
+    .nav-cta:hover { background: white !important; color: var(--navy) !important; }
+    .nav-back { font-size: 0.68rem !important; letter-spacing: 0.1em !important; color: rgba(255,255,255,0.4) !important; }
+    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 36px; height: 36px; background: none; border: none;
+      cursor: pointer; padding: 4px; z-index: 1100;
+    }
+    .nav-hamburger span { display: block; width: 100%; height: 1.5px; background: white; border-radius: 1px; transition: transform 0.3s ease, opacity 0.3s ease; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-nav-overlay {
+      display: none; position: fixed; inset: 0; z-index: 900;
+      background: rgba(9,27,55,0.97); flex-direction: column;
+      align-items: center; justify-content: center; gap: 2rem; padding: 2rem;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay a {
+      font-size: 1.1rem; font-weight: 300; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+      text-decoration: none; transition: color 0.2s ease;
+    }
+    .mobile-nav-overlay a:hover { color: white; }
+    .mobile-nav-overlay .mobile-cta {
+      margin-top: 1rem; font-size: 0.8rem; font-weight: 500;
+      color: var(--navy); background: var(--gold); padding: 0.85rem 2.25rem; letter-spacing: 0.18em;
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .article-hero {
+      position: relative; height: 72vh; min-height: 540px;
+      overflow: hidden; display: flex; align-items: flex-end;
+    }
+    .article-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1');
+      background-size: cover; background-position: center 55%;
+    }
+    .article-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,27,55,0.97) 0%, rgba(9,27,55,0.60) 45%, rgba(9,27,55,0.25) 100%);
+    }
+    .article-hero-content { position: relative; z-index: 10; padding: 0 5rem 4.5rem; max-width: 960px; }
+    .article-eyebrow { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.5rem; }
+    .article-category { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); }
+    .article-eyebrow-sep { display: block; width: 1px; height: 16px; background: rgba(242,185,0,0.35); }
+    .article-date { font-size: 0.62rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+    .article-hero-h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+      font-weight: 300; line-height: 0.97; letter-spacing: -0.025em; color: white; margin-bottom: 1.5rem;
+    }
+    .article-hero-h1 em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .article-meta-row { display: flex; align-items: center; gap: 1.5rem; }
+    .article-byline { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em; color: rgba(255,255,255,0.48); }
+    .article-readtime { font-size: 0.68rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); }
+    @media (max-width: 768px) {
+      .article-hero-content { padding: 0 1.25rem 3rem; }
+      .article-hero-h1 { font-size: clamp(2.4rem, 9vw, 3.8rem); }
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { background: var(--navy); padding: 0.85rem 5rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .breadcrumb a, .breadcrumb span {
+      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+      text-decoration: none; color: rgba(255,255,255,0.35);
+    }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb .crumb-sep { color: rgba(255,255,255,0.18); }
+    .breadcrumb .crumb-current { color: rgba(255,255,255,0.55); }
+    @media (max-width: 768px) { .breadcrumb { padding: 0.75rem 1.25rem; } }
+
+    /* ── ARTICLE LAYOUT ── */
+    .article-wrapper {
+      max-width: 1120px; margin: 0 auto; padding: 5.5rem 5rem;
+      display: grid; grid-template-columns: 1fr 300px; gap: 5rem; align-items: start;
+    }
+    @media (max-width: 960px) {
+      .article-wrapper { grid-template-columns: 1fr; padding: 3.5rem 1.25rem; gap: 3rem; }
+    }
+
+    /* ── BODY TYPOGRAPHY ── */
+    .article-lead {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 300; font-style: italic; line-height: 1.6; color: var(--slate);
+      margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(9,27,55,0.1);
+    }
+    .answer-box {
+      background: var(--navy); border-left: 3px solid var(--gold);
+      padding: 1.75rem 2rem; margin-bottom: 2.5rem; position: relative; overflow: hidden;
+    }
+    .answer-box::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 0% 50%, rgba(242,185,0,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .answer-box-label { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .answer-box p { font-size: 1.02rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.82); margin: 0; }
+    .answer-box strong { color: white; font-weight: 500; }
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); margin: 3rem 0 1.25rem;
+    }
+    .article-body h3 {
+      font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+      margin: 2.25rem 0 0.75rem; display: flex; align-items: center; gap: 0.85rem;
+    }
+    .article-body h3::after { content: ''; display: block; flex: 1; height: 1px; background: rgba(9,27,55,0.1); }
+    .article-body p { font-size: 1rem; font-weight: 300; line-height: 1.82; color: #334155; margin-bottom: 1.25rem; }
+    .article-body strong { color: var(--navy); font-weight: 500; }
+    .article-body a { color: var(--navy); font-weight: 400; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; transition: color 0.2s ease; }
+    .article-body a:hover { color: var(--slate); }
+
+    /* Mid-article image */
+    .article-image { width: 100%; margin: 2.5rem 0; overflow: hidden; }
+    .article-image img { width: 100%; height: 400px; object-fit: cover; display: block; }
+    .article-image figcaption { font-size: 0.65rem; letter-spacing: 0.12em; color: rgba(9,27,55,0.35); padding: 0.5rem 0 0; text-align: right; }
+
+    /* Pull quote */
+    .pull-quote { border-left: 3px solid var(--gold); margin: 2.5rem 0; padding: 1.25rem 2rem; background: rgba(242,185,0,0.04); }
+    .pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 300; font-style: italic; line-height: 1.55; color: var(--navy); margin: 0; }
+
+    /* Checklist */
+    .checklist { list-style: none; padding: 0; margin: 1.5rem 0; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      padding: 0.9rem 0; border-bottom: 1px solid rgba(9,27,55,0.07);
+      font-size: 0.95rem; font-weight: 300; color: #334155; line-height: 1.6;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
+    .checklist strong { color: var(--navy); font-weight: 500; }
+
+    /* Red flag list */
+    .redflag-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+    .redflag-list li {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      padding: 0.9rem 0; border-bottom: 1px solid rgba(9,27,55,0.07);
+      font-size: 0.95rem; font-weight: 300; color: #334155; line-height: 1.6;
+    }
+    .redflag-list li:last-child { border-bottom: none; }
+    .redflag-list li::before {
+      content: ''; display: block; width: 6px; height: 6px; border-radius: 50%;
+      background: #b91c1c; margin-top: 7px; flex-shrink: 0; flex-shrink: 0;
+    }
+    .redflag-list strong { color: var(--navy); font-weight: 500; }
+
+    /* ── SIDEBAR ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-card { background: var(--navy); padding: 2rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; }
+    .sidebar-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 100% 0%, rgba(242,185,0,0.08) 0%, transparent 60%); pointer-events: none; }
+    .sidebar-card-label { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .sidebar-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: white; line-height: 1.25; margin-bottom: 0.85rem; }
+    .sidebar-card p { font-size: 0.88rem; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; }
+    .sidebar-cta {
+      display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--navy); background: var(--gold);
+      padding: 0.75rem 1.5rem; text-decoration: none; transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .sidebar-cta:hover { background: white; transform: translateY(-1px); }
+    .sidebar-facts { background: white; border: 1px solid rgba(9,27,55,0.08); padding: 1.75rem 2rem; }
+    .sidebar-facts-label { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .fact-item { display: flex; flex-direction: column; padding: 0.85rem 0; border-bottom: 1px solid rgba(9,27,55,0.07); }
+    .fact-item:last-child { border-bottom: none; }
+    .fact-label { font-size: 0.62rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(9,27,55,0.42); margin-bottom: 0.2rem; }
+    .fact-value { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--navy); }
+    @media (max-width: 960px) { .article-sidebar { position: static; } }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--navy); padding: 6rem 5rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(242,185,0,0.07) 0%, transparent 55%), radial-gradient(ellipse at 80% 50%, rgba(70,84,98,0.2) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .cta-eyebrow { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; position: relative; }
+    .cta-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 300; line-height: 1; letter-spacing: -0.02em; color: white; margin-bottom: 1.25rem; position: relative; }
+    .cta-heading em { font-style: italic; color: rgba(255,255,255,0.6); }
+    .cta-sub { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.48); max-width: 480px; margin: 0 auto 2.5rem; position: relative; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); background: var(--gold); padding: 0.95rem 2.5rem;
+      text-decoration: none; position: relative;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn-primary:hover { background: white; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    @media (max-width: 768px) { .cta-section { padding: 4rem 1.25rem; } }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 5rem; display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .footer-left { display: flex; align-items: center; gap: 1.5rem; }
+    .footer-icon { height: 36px; width: auto; opacity: 0.7; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.15rem; }
+    .footer-contact span { font-size: 0.7rem; color: rgba(255,255,255,0.38); letter-spacing: 0.05em; }
+    .footer-copy { font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.22); margin: 0; }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { footer { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; } }
+  </style>
+</head>
+<body>
+
+<div class="mobile-nav-overlay" id="mobile-nav">
+  <a href="../custom-home.html" onclick="closeMobileNav()">Custom Homes</a>
+  <a href="../remodeling.html" onclick="closeMobileNav()">Remodeling</a>
+  <a href="../about.html" onclick="closeMobileNav()">About</a>
+  <a href="../articles.html" onclick="closeMobileNav()" class="active">Articles</a>
+  <a href="../index.html" onclick="closeMobileNav()">← Home</a>
+  <a href="../quote.html" class="mobile-cta">Get a Quote</a>
+</div>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">
+  </a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="../custom-home.html">Custom Homes</a>
+    <a href="../remodeling.html">Remodeling</a>
+    <a href="../about.html">About</a>
+    <a href="../articles.html" class="active">Articles</a>
+    <a href="../index.html" class="nav-back">← Home</a>
+    <a href="../quote.html" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="article-hero-bg"></div>
+  <div class="article-hero-overlay"></div>
+  <div class="article-hero-content">
+    <div class="article-eyebrow">
+      <span class="article-category">Custom Homes</span>
+      <span class="article-eyebrow-sep"></span>
+      <span class="article-date">May 2026</span>
+    </div>
+    <h1 class="article-hero-h1">How to Choose a<br><em>Custom Home Builder</em></h1>
+    <div class="article-meta-row">
+      <span class="article-byline">JDC Construction &middot; Lawrenceburg, Indiana</span>
+      <span class="article-readtime">8 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <a href="../index.html">JDC Construction</a>
+  <span class="crumb-sep">&rsaquo;</span>
+  <a href="../articles.html">Articles</a>
+  <span class="crumb-sep">&rsaquo;</span>
+  <span class="crumb-current">How to Choose a Custom Home Builder</span>
+</div>
+
+<div class="article-wrapper">
+
+  <article class="article-body">
+
+    <p class="article-lead">Search "custom home builder near me" and you get a page full of names. Most have nice websites. A few have photos of finished homes. None of them make the decision easy for you. That's a problem, because this is one of the most important decisions you'll make.</p>
+
+    <div class="answer-box">
+      <div class="answer-box-label">The Short Version</div>
+      <p>Look for a builder with <strong>verifiable local experience</strong>, a <strong>clear process</strong>, a portfolio you can actually visit, <strong>references willing to take your call</strong>, and honest answers about cost and timeline before you've signed anything. If a builder checks all five, they're worth a serious conversation.</p>
+    </div>
+
+    <h2>You're Choosing a Partner, Not a Vendor</h2>
+    <p>Building a custom home takes 10 to 18 months from signed contract to move-in. That's a long time to be in a relationship with someone. The builder you hire will make hundreds of decisions that affect how you live in that house for the next 30 years — and you won't always be there to weigh in on each one.</p>
+
+    <p>The right builder earns that trust before the contract is signed. The wrong one asks you to extend trust before they've done anything to deserve it.</p>
+
+    <p>Most of the problems homeowners run into with custom builders — budget surprises, missed timelines, communication breakdowns — were visible before the contract was signed. You just have to know what to look for.</p>
+
+    <h2>Five Things That Actually Matter</h2>
+
+    <h3>Credentials and Track Record</h3>
+    <p>Licenses and insurance are the floor, not the ceiling. Every legitimate custom home builder should have both. Beyond that baseline, look for builders who have invested in professional development.</p>
+
+    <p>NAHB (National Association of Home Builders) designations carry real weight. The <strong>GMB (Graduate Master Builder)</strong>, <strong>CGR (Certified Graduate Remodeler)</strong>, and <strong>CAPS (Certified Aging in Place Specialist)</strong> each require documented experience, formal training, and continuing education. A builder who holds these has been evaluated by peers and industry bodies, not just their own marketing department.</p>
+
+    <p>Years in business matters, but don't treat it as a proxy for quality. A seven-year company with strong references beats a 25-year company coasting on a faded reputation.</p>
+
+    <h3>How They Communicate</h3>
+    <p>You'll have questions at every stage of a custom build. Materials get discontinued. Subcontractors run behind. Weather delays happen. How your builder handles those moments — who tells you, how fast, and with what level of detail — separates good builders from frustrating ones.</p>
+
+    <p>Ask directly: How do you communicate with clients during an active build? What's your process when something unexpected comes up? Listen carefully to how they answer. Vague reassurances are not a process.</p>
+
+    <h3>A Portfolio You Can Actually Visit</h3>
+    <p>Request photos and, if possible, addresses of completed homes. Drive by. Ask to schedule a walkthrough of a recent project. You're not just looking for attractive exteriors. You're looking at finish quality in the areas that are easy to rush — trim details, cabinet alignment, how transitions between flooring materials are handled, how the garage meets the foundation.</p>
+
+    <p>Look at homes in your budget range. A builder who does exceptional $1.5M custom builds may not be the right fit for your $650K project, and vice versa.</p>
+
+    <figure class="article-image">
+      <img src="https://images.pexels.com/photos/3288100/pexels-photo-3288100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Custom home under construction showing framing and structure" loading="lazy">
+      <figcaption>Photo: Pexels</figcaption>
+    </figure>
+
+    <h3>Real Local Knowledge</h3>
+    <p>A builder who operates in your county knows the local permit office, the inspectors, and the subcontractors who show up when they say they will. That's worth more than most people realize.</p>
+
+    <p>In Dearborn County and the broader Southeast Indiana area, local knowledge means understanding the specifics of your site: soil types, drainage patterns, frost depth, and how local code requirements differ from neighboring counties. A builder based 60 miles away may be excellent — but verify they've built locally before you assume that experience transfers cleanly.</p>
+
+    <h3>References You Can Actually Call</h3>
+    <p>Not email addresses. Not testimonials on a website. Phone numbers for homeowners who finished a project in the last two years.</p>
+
+    <p>Call them. Ask three questions: Did the project finish close to the original timeline? Were there significant cost surprises that weren't communicated early? Would you hire this builder again? The willingness to provide references — and what those references actually say — tells you nearly everything.</p>
+
+    <div class="pull-quote">
+      <p>"The most common regret we hear from homeowners who had a bad experience is that the warning signs were there in the first conversation. They just didn't know to look for them."</p>
+    </div>
+
+    <h2>Questions to Ask Before You Sign</h2>
+    <p>A good builder answers these directly. None of them are trick questions.</p>
+
+    <ul class="checklist">
+      <li><strong>Who is my primary contact during the build,</strong> and how often will we communicate?</li>
+      <li><strong>How do you handle change orders?</strong> What's the process when scope changes mid-project?</li>
+      <li><strong>What's included in your contract,</strong> and what's an allowance item I'm responsible for selecting?</li>
+      <li><strong>Can you walk me through a sample budget breakdown</strong> from a recent project at a similar price point?</li>
+      <li><strong>Who are your primary subcontractors,</strong> and how long have you worked with them?</li>
+      <li><strong>What's your current backlog,</strong> and when would my project realistically start?</li>
+      <li><strong>How do you handle disputes</strong> if something isn't right at the final walkthrough?</li>
+    </ul>
+
+    <p>If any of these gets an evasive or defensive answer, pay attention to that. The discomfort is information.</p>
+
+    <h2>Red Flags Worth Taking Seriously</h2>
+    <p>Not every warning sign means a builder is bad at their job. Some mean they're a bad fit for you. A few mean something worse.</p>
+
+    <ul class="redflag-list">
+      <li><strong>No willingness to provide references</strong> from homeowners who finished a project in the last two years.</li>
+      <li><strong>Vague answers about licensing, insurance, or trade credentials.</strong> Any legitimate builder has these on hand.</li>
+      <li><strong>A contract with no clear payment schedule or change order process.</strong> That ambiguity always resolves in their favor.</li>
+      <li><strong>Significant pressure to sign or put money down quickly,</strong> before you've had time to review anything or compare options.</li>
+      <li><strong>The person selling you the job won't be managing it.</strong> If that's the case, meet the project manager before you sign. Make sure you're comfortable with them.</li>
+      <li><strong>Portfolio photos that all look the same.</strong> One house style, one finish level, one market. Make sure their range includes what you're planning to build.</li>
+    </ul>
+
+    <h2>Cost and Timeline: Honest Answers Early</h2>
+    <p>Most people searching for custom home builders are also asking how much it costs to build a custom home and how long the process takes. Both are fair questions. A builder who answers them honestly — with real ranges, real caveats, and specifics tied to your actual land and design — is doing their job.</p>
+
+    <p>Be skeptical of anyone who quotes a number before they've seen your lot, reviewed your plans, or understood your expectations for finishes. That's not a quote. It's a guess.</p>
+
+    <p>In Southeast Indiana and the greater Cincinnati area, custom home costs vary substantially based on lot conditions, finished square footage, specification level, and current material prices. A reputable builder will walk you through what drives cost before they commit to a number. That conversation is part of how you evaluate them.</p>
+
+    <h2>The Builder Who's Right for Your Project</h2>
+    <p>The decision isn't complicated. It takes diligence.</p>
+
+    <p>Verify their credentials. Review their portfolio in person, not just on a screen. Call their references and ask the hard questions. Pay attention to how your questions are answered, not just what's said.</p>
+
+    <p>The right custom home builder earns your confidence before you hand over a dollar. When you find one who does that consistently, the rest of the process goes the way it's supposed to.</p>
+
+    <p>JDC Construction has been building custom homes in Southeast Indiana since 1996. Jason and Lisa Cox lead every project personally, and our team holds NAHB designations including GMB, GMR, CGR, CAPS, and CGP. We serve homeowners in Lawrenceburg, Aurora, Dillsboro, Greendale, and across Dearborn County and the greater Cincinnati area.</p>
+
+    <p>See our <a href="../custom-home.html">custom home building services</a>, or reach out directly to talk through your project.</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-card-label">Get Started</div>
+      <h3>Ready to Talk Through Your Build?</h3>
+      <p>We'll walk you through the process, discuss your site, and give you a clear picture of cost and timeline before anything is signed.</p>
+      <a href="../quote.html" class="sidebar-cta">Get a Free Estimate</a>
+    </div>
+    <div class="sidebar-facts">
+      <div class="sidebar-facts-label">At a Glance</div>
+      <div class="fact-item">
+        <span class="fact-label">Key Decision Factors</span>
+        <span class="fact-value">5 criteria</span>
+      </div>
+      <div class="fact-item">
+        <span class="fact-label">Typical Build Timeline</span>
+        <span class="fact-value">10&ndash;18 months</span>
+      </div>
+      <div class="fact-item">
+        <span class="fact-label">Designations to Ask About</span>
+        <span class="fact-value">GMB, CGR, CAPS</span>
+      </div>
+      <div class="fact-item">
+        <span class="fact-label">Service Area</span>
+        <span class="fact-value">SE Indiana &amp; Cincinnati</span>
+      </div>
+      <div class="fact-item">
+        <span class="fact-label">In Business Since</span>
+        <span class="fact-value">1996</span>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<section class="cta-section">
+  <div class="cta-eyebrow">Start Your Project</div>
+  <h2 class="cta-heading">Let's Build<br><em>Something Lasting.</em></h2>
+  <p class="cta-sub">From custom homes to major remodels, we'd love to walk you through your project and give you a realistic picture of what to expect.</p>
+  <div>
+    <a href="../quote.html" class="btn-primary">
+      Get a Free Quote
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+        <path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <a href="../index.html"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>
+    <div class="footer-contact">
+      <span>(812) 637-2684</span>
+      <span>info@jdcconstruction.com</span>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2026 JDC Construction &middot; Licensed &amp; Insured &middot; Lawrenceburg, IN &middot; COL 3:23</p>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../custom-home.html">Custom Homes</a>
+    <a href="../remodeling.html">Remodeling</a>
+    <a href="../about.html">About</a>
+    <a href="../articles.html">Articles</a>
+    <a href="../quote.html">Get a Quote</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+  function toggleMobileNav() {
+    const overlay = document.getElementById('mobile-nav');
+    const btn = document.getElementById('hamburger');
+    overlay.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobileNav() {
+    document.getElementById('mobile-nav').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+
+</body>
+</html>

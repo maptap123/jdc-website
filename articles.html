@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles &amp; Resources | JDC Construction</title>
+  <meta name="description" content="Practical answers on kitchen remodels, bathroom renovations, home additions, and custom home builds from JDC Construction in Lawrenceburg, Indiana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #f2b900;
+      --gold-dim: rgba(242,185,0,0.4);
+      --navy: #091b37;
+      --slate: #465462;
+      --cream: #f7f5f2;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--navy); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 3rem; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(9,27,55,0.0); backdrop-filter: blur(0px);
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    }
+    nav.scrolled { background: #091b37; backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
+    .nav-logo img { height: 52px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a {
+      font-size: 0.75rem; font-weight: 400; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-links a.active { color: white; }
+    .nav-cta {
+      font-size: 0.7rem !important; font-weight: 500 !important; letter-spacing: 0.18em !important;
+      color: var(--navy) !important; background: var(--gold); padding: 0.6rem 1.5rem;
+      transition: background 0.2s ease !important;
+    }
+    .nav-cta:hover { background: white !important; color: var(--navy) !important; }
+    .nav-back { font-size: 0.68rem !important; letter-spacing: 0.1em !important; color: rgba(255,255,255,0.4) !important; }
+    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 36px; height: 36px; background: none; border: none;
+      cursor: pointer; padding: 4px; z-index: 1100;
+    }
+    .nav-hamburger span { display: block; width: 100%; height: 1.5px; background: white; border-radius: 1px; transition: transform 0.3s ease, opacity 0.3s ease; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-nav-overlay {
+      display: none; position: fixed; inset: 0; z-index: 900;
+      background: rgba(9,27,55,0.97); flex-direction: column;
+      align-items: center; justify-content: center; gap: 2rem; padding: 2rem;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay a {
+      font-size: 1.1rem; font-weight: 300; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+      text-decoration: none; transition: color 0.2s ease;
+    }
+    .mobile-nav-overlay a:hover { color: white; }
+    .mobile-nav-overlay .mobile-cta {
+      margin-top: 1rem; font-size: 0.8rem; font-weight: 500;
+      color: var(--navy); background: var(--gold); padding: 0.85rem 2.25rem; letter-spacing: 0.18em;
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy); position: relative; overflow: hidden;
+      padding: 12rem 5rem 7rem; min-height: 480px;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(242,185,0,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 30%, rgba(70,84,98,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 100%, rgba(9,27,55,0.6) 0%, transparent 60%);
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; opacity: 0.03; mix-blend-mode: overlay; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; z-index: 10; max-width: 760px; }
+    .hero-eyebrow {
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.75rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+    .hero-heading {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 300; line-height: 0.95; letter-spacing: -0.03em; color: white; margin-bottom: 1.75rem;
+    }
+    .hero-heading em { font-style: italic; color: rgba(255,255,255,0.6); }
+    .hero-sub {
+      font-size: 1rem; font-weight: 300; line-height: 1.8;
+      color: rgba(255,255,255,0.48); max-width: 480px;
+    }
+    @media (max-width: 768px) {
+      .hero { padding: 9rem 1.25rem 5rem; }
+      .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+    }
+
+    /* ── ARTICLES GRID ── */
+    .articles-section { padding: 6rem 5rem; max-width: 1200px; margin: 0 auto; }
+    @media (max-width: 768px) { .articles-section { padding: 4rem 1.25rem; } }
+
+    /* Featured card */
+    .featured-article {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      background: white; margin-bottom: 4rem; overflow: hidden;
+      box-shadow: 0 4px 40px rgba(9,27,55,0.08), 0 1px 8px rgba(9,27,55,0.04);
+      text-decoration: none; color: inherit;
+      transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .featured-article:hover { transform: translateY(-4px); box-shadow: 0 16px 64px rgba(9,27,55,0.12), 0 4px 16px rgba(9,27,55,0.06); }
+    .featured-article:active { transform: translateY(-2px); }
+    .featured-img-wrap { position: relative; overflow: hidden; min-height: 420px; }
+    .featured-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .featured-article:hover .featured-img-wrap img { transform: scale(1.05); }
+    .featured-img-overlay { position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, rgba(9,27,55,0.12) 100%); }
+    .featured-content { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .featured-tag {
+      font-size: 0.6rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .featured-tag::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+    .featured-content h2 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+      font-weight: 300; line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--navy); margin-bottom: 1.25rem;
+    }
+    .featured-content p {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.8;
+      color: var(--slate); margin-bottom: 2rem;
+    }
+    .featured-meta { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2rem; }
+    .featured-date { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(9,27,55,0.38); }
+    .featured-read { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(9,27,55,0.28); }
+    .read-link {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); text-decoration: none;
+      border-bottom: 1px solid var(--gold); padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .read-link:hover { color: var(--slate); border-color: var(--slate); }
+    @media (max-width: 768px) {
+      .featured-article { grid-template-columns: 1fr; }
+      .featured-img-wrap { min-height: 260px; }
+      .featured-content { padding: 2rem; }
+    }
+
+    /* Grid divider */
+    .grid-label {
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase;
+      color: rgba(9,27,55,0.35); margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .grid-label::after { content: ''; display: block; flex: 1; height: 1px; background: rgba(9,27,55,0.1); }
+
+    /* Article card grid */
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    @media (max-width: 900px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .articles-grid { grid-template-columns: 1fr; } }
+
+    .article-card {
+      background: white; overflow: hidden; text-decoration: none; color: inherit;
+      box-shadow: 0 2px 20px rgba(9,27,55,0.06), 0 1px 4px rgba(9,27,55,0.04);
+      transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+      display: flex; flex-direction: column;
+    }
+    .article-card:hover { transform: translateY(-3px); box-shadow: 0 12px 48px rgba(9,27,55,0.10), 0 2px 8px rgba(9,27,55,0.05); }
+    .article-card:active { transform: translateY(-1px); }
+    .article-card.coming-soon { opacity: 0.55; cursor: default; pointer-events: none; }
+
+    .card-img { position: relative; height: 200px; overflow: hidden; background: rgba(9,27,55,0.06); }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .article-card:hover .card-img img { transform: scale(1.06); }
+    .card-img-placeholder {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(9,27,55,0.06) 0%, rgba(9,27,55,0.03) 100%);
+    }
+    .card-img-placeholder span {
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em;
+      text-transform: uppercase; color: rgba(9,27,55,0.25);
+    }
+    .coming-soon-badge {
+      position: absolute; top: 1rem; right: 1rem;
+      background: var(--navy); color: var(--gold);
+      font-size: 0.55rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+    }
+
+    .card-content { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag { font-size: 0.58rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem; }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300;
+      line-height: 1.2; color: var(--navy); margin-bottom: 0.75rem;
+    }
+    .card-excerpt { font-size: 0.88rem; font-weight: 300; line-height: 1.7; color: var(--slate); margin-bottom: 1.5rem; flex: 1; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid rgba(9,27,55,0.07); }
+    .card-date { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(9,27,55,0.3); }
+    .card-arrow {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; background: var(--gold);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .article-card:hover .card-arrow { background: var(--navy); transform: translateX(2px); }
+    .card-arrow svg { display: block; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--navy); padding: 6rem 5rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(242,185,0,0.07) 0%, transparent 55%), radial-gradient(ellipse at 80% 50%, rgba(70,84,98,0.2) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .cta-eyebrow { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; position: relative; }
+    .cta-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 300; line-height: 1; letter-spacing: -0.02em; color: white; margin-bottom: 1.25rem; position: relative; }
+    .cta-heading em { font-style: italic; color: rgba(255,255,255,0.6); }
+    .cta-sub { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.48); max-width: 480px; margin: 0 auto 2.5rem; position: relative; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); background: var(--gold); padding: 0.95rem 2.5rem;
+      text-decoration: none; position: relative;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn-primary:hover { background: white; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    @media (max-width: 768px) { .cta-section { padding: 4rem 1.25rem; } }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 5rem; display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .footer-left { display: flex; align-items: center; gap: 1.5rem; }
+    .footer-icon { height: 36px; width: auto; opacity: 0.7; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.15rem; }
+    .footer-contact span { font-size: 0.7rem; color: rgba(255,255,255,0.38); letter-spacing: 0.05em; }
+    .footer-copy { font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.22); margin: 0; }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { footer { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; } }
+  </style>
+</head>
+<body>
+
+<div class="mobile-nav-overlay" id="mobile-nav">
+  <a href="custom-home.html" onclick="closeMobileNav()">Custom Homes</a>
+  <a href="remodeling.html" onclick="closeMobileNav()">Remodeling</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="articles.html" onclick="closeMobileNav()" class="active">Articles</a>
+  <a href="index.html" onclick="closeMobileNav()">← Home</a>
+  <a href="quote.html" class="mobile-cta">Get a Quote</a>
+</div>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">
+  </a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="custom-home.html">Custom Homes</a>
+    <a href="remodeling.html">Remodeling</a>
+    <a href="about.html">About</a>
+    <a href="articles.html" class="active">Articles</a>
+    <a href="index.html" class="nav-back">← Home</a>
+    <a href="quote.html" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">JDC Construction</div>
+    <h1 class="hero-heading">Articles &amp;<br><em>Resources</em></h1>
+    <p class="hero-sub">Practical answers on kitchen remodels, bathroom renovations, home additions, and custom home builds — from our team in Lawrenceburg, Indiana.</p>
+  </div>
+</section>
+
+<div class="articles-section">
+
+  <!-- Featured Article -->
+  <a href="articles/how-long-does-a-kitchen-remodel-take.html" class="featured-article">
+    <div class="featured-img-wrap">
+      <img src="https://images.pexels.com/photos/10827337/pexels-photo-10827337.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&dpr=1" alt="Modern kitchen after remodel">
+      <div class="featured-img-overlay"></div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-tag">Kitchen Remodeling</div>
+      <h2>How Long Does a Kitchen Remodel Take?</h2>
+      <div class="featured-meta">
+        <span class="featured-date">May 2026</span>
+        <span class="featured-read">7 min read</span>
+      </div>
+      <p>A kitchen remodel in Southeast Indiana typically takes 6 to 12 weeks. We break down every phase — from demo to final walkthrough — so you can plan your project with confidence.</p>
+      <span class="read-link">
+        Read the article
+        <svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4.5h10M7 1l3.5 3.5L7 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- More articles -->
+  <div class="grid-label">More Articles</div>
+  <div class="articles-grid">
+
+    <div class="article-card coming-soon">
+      <div class="card-img">
+        <div class="card-img-placeholder"><span>Coming Soon</span></div>
+        <div class="coming-soon-badge">Coming Soon</div>
+      </div>
+      <div class="card-content">
+        <div class="card-tag">Kitchen Remodeling</div>
+        <div class="card-title">How Much Does a Kitchen Remodel Cost in Indiana?</div>
+        <p class="card-excerpt">A breakdown of real kitchen remodel costs in Southeast Indiana, from a light refresh to a full gut renovation.</p>
+        <div class="card-footer">
+          <span class="card-date">Coming soon</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card coming-soon">
+      <div class="card-img">
+        <div class="card-img-placeholder"><span>Coming Soon</span></div>
+        <div class="coming-soon-badge">Coming Soon</div>
+      </div>
+      <div class="card-content">
+        <div class="card-tag">Home Additions</div>
+        <div class="card-title">Home Addition Cost: What to Expect in 2026</div>
+        <p class="card-excerpt">What a home addition actually costs in Dearborn County and the Cincinnati area — and the factors that move the number.</p>
+        <div class="card-footer">
+          <span class="card-date">Coming soon</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="articles/how-to-choose-a-custom-home-builder.html" class="article-card">
+      <div class="card-img">
+        <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="Custom home exterior" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-tag">Custom Homes</div>
+        <div class="card-title">How to Choose a Custom Home Builder</div>
+        <p class="card-excerpt">What to look for, what questions to ask, and how to tell the difference between a builder you can trust and one you can't.</p>
+        <div class="card-footer">
+          <span class="card-date">May 2026</span>
+          <span class="card-arrow">
+            <svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4.5h10M7 1l3.5 3.5L7 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="cta-eyebrow">Start Your Project</div>
+  <h2 class="cta-heading">Let's Build<br><em>Something Lasting.</em></h2>
+  <p class="cta-sub">Whether you're planning a kitchen remodel or a custom home from the ground up, we'd love to talk through your project.</p>
+  <div>
+    <a href="quote.html" class="btn-primary">
+      Get a Free Quote
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+        <path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <a href="index.html"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>
+    <div class="footer-contact">
+      <span>(812) 637-2684</span>
+      <span>info@jdcconstruction.com</span>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2026 JDC Construction &middot; Licensed &amp; Insured &middot; Lawrenceburg, IN &middot; COL 3:23</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="custom-home.html">Custom Homes</a>
+    <a href="remodeling.html">Remodeling</a>
+    <a href="about.html">About</a>
+    <a href="articles.html">Articles</a>
+    <a href="quote.html">Get a Quote</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+  function toggleMobileNav() {
+    const overlay = document.getElementById('mobile-nav');
+    const btn = document.getElementById('hamburger');
+    overlay.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobileNav() {
+    document.getElementById('mobile-nav').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+
+</body>
+</html>
