@@ -3,7 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Homes — JDC Construction</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dybuigweq/image/upload/w_32,h_32,c_fill/v1777581179/Brand_assets/jdc%20icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dybuigweq/image/upload/w_180,h_180,c_fill/v1777581179/Brand_assets/jdc%20icon.png">
+  <title>Custom Home Builder in Lawrenceburg, IN — Luxury Custom Homes | JDC Construction</title>
+  <meta name="description" content="JDC Construction builds luxury custom homes in Lawrenceburg, Dearborn County, and Southeast Indiana. Since 1996 — fully custom designs, on time, on budget. Free initial consultation.">
+  <link rel="canonical" href="https://jdcconstructionllc.com/custom-home.html">
+  <meta property="og:title" content="Custom Home Builder in Lawrenceburg, IN — Luxury Custom Homes | JDC Construction">
+  <meta property="og:description" content="Every JDC luxury custom home is built from the ground up around your vision. Serving Lawrenceburg, Dearborn County, and Southeast Indiana since 1996.">
+  <meta property="og:image" content="https://res.cloudinary.com/dybuigweq/image/upload/v1777580991/Jobs/caudill/20240815-AJW_0082.jpg">
+  <meta property="og:url" content="https://jdcconstructionllc.com/custom-home.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JDC Construction">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Home Building",
+    "description": "JDC Construction builds luxury custom homes in Lawrenceburg, Dearborn County, and Southeast Indiana. Since 1996 — fully custom designs, on time, on budget.",
+    "url": "https://jdcconstructionllc.com/custom-home.html",
+    "serviceType": "Custom Home Building",
+    "provider": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "JDC Construction",
+      "telephone": "(812) 637-2684",
+      "url": "https://jdcconstructionllc.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lawrenceburg",
+        "addressRegion": "IN",
+        "addressCountry": "US"
+      }
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Lawrenceburg" },
+      { "@type": "AdministrativeArea", "name": "Dearborn County" },
+      { "@type": "AdministrativeArea", "name": "Southeast Indiana" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "description": "Free initial consultation for custom home builds"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
@@ -23,62 +65,6 @@
       color: var(--navy);
     }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 0 3rem;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: transparent;
-      transition: background 0.4s ease, box-shadow 0.4s ease;
-    }
-    nav.scrolled {
-      background: #091b37;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-    }
-    .nav-logo img {
-      height: 52px;
-      width: auto;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
-    .nav-links a {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .nav-links a:hover { color: white; }
-    .nav-cta {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--navy) !important;
-      background: var(--gold);
-      padding: 0.6rem 1.5rem;
-      transition: background 0.2s ease !important;
-    }
-    .nav-cta:hover { background: white !important; color: var(--navy) !important; }
-    .nav-back {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4) !important;
-    }
-    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
-
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -89,10 +75,13 @@
       display: flex;
       align-items: flex-end;
     }
+    @media (max-width: 768px) {
+      .hero { height: 100dvh; min-height: 0; }
+    }
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777580991/Jobs/caudill/20240815-AJW_0082.jpg');
+      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581653/Jobs/caudill/20240618-AJW_8533.jpg');
       background-size: cover;
       background-position: center 30%;
     }
@@ -123,7 +112,7 @@
       max-width: 900px;
     }
     .hero-eyebrow {
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -177,10 +166,12 @@
       color: var(--navy);
       background: var(--gold);
       padding: 1rem 2.25rem;
+      min-height: 44px;
       text-decoration: none;
       transition: background 0.2s ease;
     }
     .btn-primary:hover { background: white; }
+    .btn-primary:active { background: rgba(255,255,255,0.85); }
     .btn-ghost {
       font-size: 0.72rem;
       font-weight: 400;
@@ -191,9 +182,11 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      min-height: 44px;
       transition: color 0.2s ease;
     }
     .btn-ghost:hover { color: white; }
+    .btn-ghost:active { color: rgba(255,255,255,0.45); }
 
     /* Scroll indicator */
     .hero-scroll {
@@ -261,7 +254,7 @@
     .statement-heading em { font-style: italic; color: var(--gold); }
     .statement-right {}
     .statement-verse {
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gold);
@@ -317,7 +310,7 @@
       justify-content: space-between;
     }
     .section-eyebrow {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -371,12 +364,12 @@
       position: relative;
       overflow: hidden;
     }
-    .gallery-item:nth-child(1) { grid-column: 1 / 6; grid-row: 1; }
-    .gallery-item:nth-child(2) { grid-column: 6 / 9; grid-row: 1; }
-    .gallery-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1; }
-    .gallery-item:nth-child(4) { grid-column: 1 / 5; grid-row: 2; }
-    .gallery-item:nth-child(5) { grid-column: 5 / 9; grid-row: 2; }
-    .gallery-item:nth-child(6) { grid-column: 9 / 13; grid-row: 2; }
+    .gallery-grid .gallery-item:nth-child(1) { grid-column: 1 / 6; grid-row: 1; }
+    .gallery-grid .gallery-item:nth-child(2) { grid-column: 6 / 9; grid-row: 1; }
+    .gallery-grid .gallery-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1; }
+    .gallery-grid .gallery-item:nth-child(4) { grid-column: 1 / 5; grid-row: 2; }
+    .gallery-grid .gallery-item:nth-child(5) { grid-column: 5 / 9; grid-row: 2; }
+    .gallery-grid .gallery-item:nth-child(6) { grid-column: 9 / 13; grid-row: 2; }
 
     .gallery-item img {
       width: 100%;
@@ -394,19 +387,6 @@
       transition: opacity 0.4s ease;
     }
     .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-    .gallery-item-label {
-      position: absolute;
-      bottom: 1rem;
-      left: 1.25rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
-    }
-    .gallery-item:hover .gallery-item-label { opacity: 1; transform: translateY(0); }
 
     /* ── PROCESS SECTION ── */
     .process {
@@ -591,10 +571,12 @@
       color: var(--navy);
       background: var(--gold);
       padding: 1.1rem 2.5rem;
+      min-height: 44px;
       text-decoration: none;
       transition: background 0.2s ease;
     }
     .btn-lg:hover { background: white; }
+    .btn-lg:active { background: rgba(255,255,255,0.85); }
     .btn-outline {
       display: inline-flex;
       align-items: center;
@@ -605,119 +587,16 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.7);
       padding: 1.1rem 2rem;
+      min-height: 44px;
       border: 1px solid rgba(255,255,255,0.2);
       text-decoration: none;
       transition: border-color 0.2s ease, color 0.2s ease;
     }
     .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: white; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #050e1d;
-      padding: 2.5rem 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .footer-left {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.65rem;
-    }
-    .footer-icon { height: 68px; width: auto; opacity: 0.85; }
-    .footer-contact { display: flex; flex-direction: column; gap: 0.18rem; }
-    .footer-contact span {
-      font-size: 0.63rem;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.38);
-    }
-    .footer-copy {
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.2);
-      text-align: center;
-    }
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .footer-links a {
-      font-size: 0.63rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .footer-links a:hover { color: rgba(255,255,255,0.6); }
-
-    /* ── HAMBURGER ── */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 1100;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 100%;
-      height: 1.5px;
-      background: white;
-      border-radius: 1px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .mobile-nav-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 900;
-      background: rgba(9,27,55,0.97);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .mobile-nav-overlay.open { display: flex; }
-    .mobile-nav-overlay a {
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .mobile-nav-overlay a:hover { color: white; }
-    .mobile-nav-overlay .mobile-cta {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--navy);
-      background: var(--gold);
-      padding: 0.85rem 2.25rem;
-      letter-spacing: 0.18em;
-    }
+    .btn-outline:active { border-color: rgba(255,255,255,0.8); color: white; background: rgba(255,255,255,0.08); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      nav { padding: 0 2rem; }
       .hero-content, .statement, .portfolio, .process, .features, .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
       .statement-inner, .features-inner { gap: 3rem; }
       .process-steps { grid-template-columns: repeat(2, 1fr); }
@@ -725,12 +604,9 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
       }
-      .gallery-item { grid-column: auto !important; grid-row: auto !important; height: 240px; }
+      .gallery-item { grid-column: auto !important; grid-row: auto !important; aspect-ratio: 4/3; height: auto; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
       .hero-content { padding: 0 1.25rem 3rem; }
       .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); }
       .hero-sub { font-size: 0.9rem; }
@@ -741,49 +617,32 @@
       .features-image-accent { display: none; }
       .features-image img { height: auto; min-height: 260px; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item { height: 240px; }
-      .process-steps { grid-template-columns: 1fr; }
+      .gallery-item { aspect-ratio: 4/3; height: auto; }
+      .gallery-item-overlay { opacity: 0.6; }
+      .process-steps { grid-template-columns: 1fr; gap: 0; }
+      .step { padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .step:last-child { border-bottom: none; }
+      .step::before { width: 100%; }
+      .step-num { font-size: 3.5rem; font-weight: 300; line-height: 1; color: rgba(242,185,0,0.32); margin-bottom: 0.5rem; }
+      .step-title { font-size: 1.4rem; margin-bottom: 0.6rem; }
       .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .portfolio > div[style] { grid-template-columns: 1fr !important; }
       .portfolio > div[style] > div[style] { grid-template-rows: unset !important; }
-      .gallery-item[style] { height: 260px !important; }
+      .gallery-item[style] { aspect-ratio: 4/3 !important; height: auto !important; }
       .stats-row { gap: 1.5rem; flex-wrap: wrap; }
       .cta-actions { flex-direction: column; align-items: center; gap: 1rem; }
-      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.25rem; }
-      .footer-left { align-items: center; }
-      .footer-links { justify-content: center; }
+      .btn-primary, .btn-lg { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .statement, .portfolio, .process, .features, .cta-section { padding: 3rem 1.25rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav-overlay" id="mobile-nav">
-    <a href="custom-home-portfolio.html" onclick="closeMobileNav()">Portfolio</a>
-    <a href="custom-home-process.html" onclick="closeMobileNav()">Process</a>
-    <a href="about.html" onclick="closeMobileNav()">About</a>
-    <a href="articles.html" onclick="closeMobileNav()">Articles</a>
-    <a href="index.html" onclick="closeMobileNav()">← Home</a>
-    <a href="quote.html" class="mobile-cta">Get a Quote</a>
-  </div>
+  <div id="mobile-nav-container"></div>
 
-  <!-- NAV -->
-  <nav id="main-nav">
-    <a href="index.html" class="nav-logo">
-      <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">
-    </a>
-    <div class="nav-links">
-      <a href="custom-home-portfolio.html">Portfolio</a>
-      <a href="custom-home-process.html">Process</a>
-      <a href="about.html">About</a>
-      <a href="articles.html">Articles</a>
-      <a href="index.html" class="nav-back">← Home</a>
-      <a href="quote.html" class="nav-cta">Get a Quote</a>
-    </div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <div id="nav-container"></div>
 
   <!-- HERO -->
   <section class="hero">
@@ -792,7 +651,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Luxury Custom Homes</div>
       <h1 class="hero-heading">Built to<br><em>Last.</em><br>Designed to<br><em>Inspire.</em></h1>
-      <p class="hero-sub">Every JDC luxury custom home begins with your vision and ends with a masterpiece. We cater to discerning clients, handling every detail from the first blueprint to the final walkthrough.</p>
+      <p class="hero-sub">Every JDC luxury custom home begins with your vision and ends with a masterpiece. Building across Lawrenceburg, Dearborn County, and Southeast Indiana — we handle every detail from the first blueprint to the final walkthrough.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">
           Start Your Project
@@ -858,19 +717,46 @@
       <div class="gallery-item" style="height: 480px;">
         <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581631/Jobs/caudill/20240618-AJW_8458.jpg" alt="Caudill custom home interior" loading="lazy">
         <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">The Caudill Residence</span>
       </div>
-      <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 12px;">
+      <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 12px; height: 480px;">
         <div class="gallery-item">
           <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg" alt="Cameron custom home" loading="lazy">
           <div class="gallery-item-overlay"></div>
-          <span class="gallery-item-label">The Cameron Residence</span>
         </div>
         <div class="gallery-item">
           <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581081/Jobs/Larkin/20240815-AJW_0007.jpg" alt="Larkin custom home" loading="lazy">
           <div class="gallery-item-overlay"></div>
-          <span class="gallery-item-label">The Larkin Residence</span>
         </div>
+      </div>
+    </div>
+
+    <div style="max-width:1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+      <div class="gallery-item" style="height: 320px;">
+        <img src="https://images.pexels.com/photos/10099331/pexels-photo-10099331.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Custom home kitchen with island" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" style="height: 320px;">
+        <img src="https://images.pexels.com/photos/8951851/pexels-photo-8951851.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Luxury living room with fireplace" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" style="height: 320px;">
+        <img src="https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Modern custom home exterior facade" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+      </div>
+    </div>
+
+    <div style="max-width:1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+      <div class="gallery-item" style="height: 320px;">
+        <img src="https://images.pexels.com/photos/6835083/pexels-photo-6835083.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Luxury bathroom with freestanding tub" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" style="height: 320px;">
+        <img src="https://images.pexels.com/photos/7031408/pexels-photo-7031408.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Contemporary custom home exterior" loading="lazy">
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" style="height: 320px;">
+        <img src="https://images.pexels.com/photos/4933643/pexels-photo-4933643.jpeg?auto=compress&cs=tinysrgb&w=800" alt="New luxury home construction" loading="lazy">
+        <div class="gallery-item-overlay"></div>
       </div>
     </div>
 
@@ -992,44 +878,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-left">
-      <a href="index.html"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>
-      <div class="footer-contact">
-        <span>(812) 637-2684</span>
-        <span>info@jdcconstruction.com</span>
-      </div>
-    </div>
-    <p class="footer-copy">© 2024 JDC Construction · Licensed &amp; Insured · COL 3:23</p>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="custom-home.html">Custom Homes</a>
-      <a href="remodeling.html">Remodeling</a>
-      <a href="about.html">About</a>
-      <a href="articles.html">Articles</a>
-      <a href="quote.html">Get a Quote</a>
-    </div>
-  </footer>
+  <div id="footer-container"></div>
 
-  <script>
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-    function toggleMobileNav() {
-      const overlay = document.getElementById('mobile-nav');
-      const btn = document.getElementById('hamburger');
-      overlay.classList.toggle('open');
-      btn.classList.toggle('open');
-      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
-    }
-    function closeMobileNav() {
-      document.getElementById('mobile-nav').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  </script>
+  <script src="components.js"></script>
+  <script>JDC.nav('custom-home');JDC.footer();</script>
 
 </body>
 </html>
+

@@ -3,7 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — JDC Construction</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dybuigweq/image/upload/w_32,h_32,c_fill/v1777581179/Brand_assets/jdc%20icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dybuigweq/image/upload/w_180,h_180,c_fill/v1777581179/Brand_assets/jdc%20icon.png">
+  <title>About JDC Construction — Custom Home Builder & Remodeler | Lawrenceburg, IN</title>
+  <meta name="description" content="JDC Construction has been building and remodeling homes in Lawrenceburg, Indiana since 1996. Founded by Jason Cox, we hold 5 elite NAHB designations including GMR and GMB.">
+  <link rel="canonical" href="https://jdcconstructionllc.com/about.html">
+  <meta property="og:title" content="About JDC Construction — Custom Home Builder & Remodeler | Lawrenceburg, IN">
+  <meta property="og:description" content="30 years of craftsmanship in Southeast Indiana. Meet Jason & Lisa Cox and learn why JDC holds more NAHB designations than nearly any other team in the region.">
+  <meta property="og:image" content="https://res.cloudinary.com/dybuigweq/image/upload/v1777580997/Jobs/caudill/20240815-AJW_0112.jpg">
+  <meta property="og:url" content="https://jdcconstructionllc.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JDC Construction">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About JDC Construction",
+    "url": "https://jdcconstructionllc.com/about.html",
+    "description": "JDC Construction has been building and remodeling homes in Lawrenceburg, Indiana since 1996. Founded by Jason Cox, we hold 5 elite NAHB designations including GMR and GMB.",
+    "mainEntity": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "JDC Construction",
+      "foundingDate": "1996",
+      "founder": [
+        { "@type": "Person", "name": "Jason Cox" },
+        { "@type": "Person", "name": "Lisa Cox" }
+      ],
+      "telephone": "(812) 637-2684",
+      "url": "https://jdcconstructionllc.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lawrenceburg",
+        "addressRegion": "IN",
+        "addressCountry": "US"
+      },
+      "hasCertification": [
+        "Graduate Master Remodeler (GMR)",
+        "Graduate Master Builder (GMB)",
+        "Certified Graduate Remodeler (CGR)",
+        "Certified Aging-in-Place Specialist (CAPS)",
+        "Certified Green Professional (CGP)"
+      ],
+      "award": "Indiana Remodeler of the Year, 2019"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
@@ -23,126 +68,7 @@
       color: var(--navy);
     }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      padding: 0 3rem;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(9,27,55,0.0);
-      backdrop-filter: blur(0px);
-      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
-    }
-    nav.scrolled {
-      background: #091b37;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-    }
-    .nav-logo img {
-      height: 52px;
-      width: auto;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
-    .nav-links a {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .nav-links a:hover { color: white; }
-    .nav-links a.active { color: white; }
-    .nav-cta {
-      font-size: 0.7rem !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.18em !important;
-      color: var(--navy) !important;
-      background: var(--gold);
-      padding: 0.6rem 1.5rem;
-      transition: background 0.2s ease !important;
-    }
-    .nav-cta:hover { background: white !important; color: var(--navy) !important; }
-    .nav-back {
-      font-size: 0.68rem !important;
-      letter-spacing: 0.1em !important;
-      color: rgba(255,255,255,0.4) !important;
-    }
-    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
 
-    /* ── HAMBURGER ── */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 1100;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 100%;
-      height: 1.5px;
-      background: white;
-      border-radius: 1px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-    .mobile-nav-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 900;
-      background: rgba(9,27,55,0.97);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .mobile-nav-overlay.open { display: flex; }
-    .mobile-nav-overlay a {
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .mobile-nav-overlay a:hover { color: white; }
-    .mobile-nav-overlay .mobile-cta {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--navy);
-      background: var(--gold);
-      padding: 0.85rem 2.25rem;
-      letter-spacing: 0.18em;
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-    }
 
     /* ── HERO ── */
     .hero {
@@ -154,10 +80,13 @@
       display: flex;
       align-items: flex-end;
     }
+    @media (max-width: 768px) {
+      .hero { height: 100dvh; min-height: 0; }
+    }
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777580991/Jobs/caudill/20240815-AJW_0082.jpg');
+      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777580997/Jobs/caudill/20240815-AJW_0112.jpg');
       background-size: cover;
       background-position: center 25%;
     }
@@ -187,7 +116,7 @@
       max-width: 860px;
     }
     .hero-eyebrow {
-      font-size: 0.63rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.32em;
       text-transform: uppercase;
@@ -315,7 +244,7 @@
       align-items: center;
     }
     .story-eyebrow {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -440,7 +369,7 @@
       margin-bottom: 0.5rem;
     }
     .stat-label {
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       font-weight: 400;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -449,10 +378,17 @@
     }
 
     @media (max-width: 768px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }
-      .stat-item:last-child, .stat-item:nth-last-child(2) { border-bottom: none; }
+      .stats-section { padding: 4rem 1.25rem; }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: rgba(255,255,255,0.06);
+      }
+      .stat-item {
+        border: none;
+        background: var(--navy);
+        padding: 2rem 1.5rem;
+      }
     }
 
     /* ── LEADERSHIP ── */
@@ -469,7 +405,7 @@
       gap: 3rem;
     }
     .section-eyebrow {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -545,7 +481,7 @@
       font-weight: 500;
     }
     .leader-role {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.26em;
       text-transform: uppercase;
@@ -575,7 +511,7 @@
       margin: 1.5rem 0;
     }
     .leader-creds-label {
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -588,7 +524,7 @@
       gap: 0.5rem;
     }
     .cred-tag {
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -627,7 +563,7 @@
       flex-wrap: wrap;
     }
     .creds-label {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -661,6 +597,11 @@
     @media (max-width: 768px) {
       .creds-section { padding: 3.5rem 2rem; }
       .creds-inner { flex-direction: column; gap: 2rem; align-items: flex-start; }
+      .btn-primary { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .story-section, .leadership-section, .award-section { padding: 3.5rem 1.25rem; }
+      .cta-section { padding: 4rem 1.25rem; }
     }
 
     /* ── AWARD HIGHLIGHT ── */
@@ -756,7 +697,7 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
     }
     .cta-eyebrow {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.32em;
       text-transform: uppercase;
@@ -803,10 +744,12 @@
       color: var(--navy);
       background: var(--gold);
       padding: 1rem 2.25rem;
+      min-height: 44px;
       text-decoration: none;
       transition: background 0.2s ease;
     }
     .btn-primary:hover { background: white; }
+    .btn-primary:active { background: rgba(255,255,255,0.85); }
     .btn-ghost {
       font-size: 0.72rem;
       font-weight: 400;
@@ -814,90 +757,25 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.55);
       text-decoration: none;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
       transition: color 0.2s ease;
     }
     .btn-ghost:hover { color: white; }
+    .btn-ghost:active { color: rgba(255,255,255,0.4); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: #050f1e;
-      padding: 2.5rem 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .footer-left {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.65rem;
-    }
-    .footer-icon { height: 68px; width: auto; opacity: 0.85; }
-    .footer-contact { display: flex; flex-direction: column; gap: 0.18rem; }
-    .footer-contact span {
-      font-size: 0.63rem;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.38);
-    }
-    .footer-copy {
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.2);
-      text-align: center;
-    }
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .footer-links a {
-      font-size: 0.63rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .footer-links a:hover { color: rgba(255,255,255,0.6); }
-    @media (max-width: 768px) {
-      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.25rem; }
-      .footer-left { align-items: center; }
-      .footer-links { justify-content: center; }
-    }
+
+
   </style>
 </head>
 <body>
 
   <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav-overlay" id="mobile-nav">
-    <a href="custom-home.html" onclick="closeMobileNav()">Custom Homes</a>
-    <a href="remodeling.html" onclick="closeMobileNav()">Remodeling</a>
-    <a href="about.html" onclick="closeMobileNav()">About</a>
-    <a href="articles.html" onclick="closeMobileNav()">Articles</a>
-    <a href="index.html" onclick="closeMobileNav()">← Home</a>
-    <a href="quote.html" class="mobile-cta">Get a Quote</a>
-  </div>
+  <div id="mobile-nav-container"></div>
 
   <!-- Nav -->
-  <nav id="main-nav">
-    <a href="index.html" class="nav-logo">
-      <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">
-    </a>
-    <div class="nav-links">
-      <a href="custom-home.html">Custom Homes</a>
-      <a href="remodeling.html">Remodeling</a>
-      <a href="about.html" class="active">About</a>
-      <a href="articles.html">Articles</a>
-      <a href="index.html" class="nav-back">← Home</a>
-      <a href="quote.html" class="nav-cta">Get a Quote</a>
-    </div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <div id="nav-container"></div>
 
   <!-- Hero -->
   <section class="hero">
@@ -921,7 +799,7 @@
       <span></span>
     </div>
     <blockquote class="scripture-quote">
-      "Whatever you do, work at it with all your heart,<br>as working for the Lord, not for men."
+      "Whatever you do, work heartily,<br>as for the Lord and not for men,"
     </blockquote>
     <div class="scripture-ref">Colossians 3:23</div>
     <div class="mission-divider"></div>
@@ -1098,43 +976,11 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-left">
-      <a href="index.html"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>
-      <div class="footer-contact">
-        <span>(812) 637-2684</span>
-        <span>info@jdcconstruction.com</span>
-      </div>
-    </div>
-    <p class="footer-copy">© 2024 JDC Construction · Licensed &amp; Insured · Lawrenceburg, IN · COL 3:23</p>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="custom-home.html">Custom Homes</a>
-      <a href="remodeling.html">Remodeling</a>
-      <a href="about.html">About</a>
-      <a href="articles.html">Articles</a>
-      <a href="quote.html">Get a Quote</a>
-    </div>
-  </footer>
+  <div id="footer-container"></div>
 
-  <script>
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-    function toggleMobileNav() {
-      const overlay = document.getElementById('mobile-nav');
-      const btn = document.getElementById('hamburger');
-      overlay.classList.toggle('open');
-      btn.classList.toggle('open');
-      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
-    }
-    function closeMobileNav() {
-      document.getElementById('mobile-nav').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  </script>
+  <script src="components.js"></script>
+  <script>JDC.nav('standard', 'about');JDC.footer();</script>
 
 </body>
 </html>
+

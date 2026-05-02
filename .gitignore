@@ -3,3 +3,11 @@ temporary screenshots/
 SKILL.md
 claude.md
 Jobs/
+.env
+node_modules/
+*.exe
+*.tar.gz
+upload_log.txt
+upload_compressed_log.txt
+root_resources.txt
+job_like_root.txt

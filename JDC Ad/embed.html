@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JDC Construction</title>
+<link rel="icon" href="assets/jdc-icon.png"/>
+<link rel="stylesheet" href="ad.css"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #091b37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .scaler {
+    transform-origin: center;
+    width: 1080px;
+  }
+</style>
+</head>
+<body>
+
+<div id="root" class="scaler"></div>
+
+<script>
+  window.__resources = {
+    floorPlan:          'assets/floor-plan.webp',
+    renderCutaway:      'assets/render-cutaway.png',
+    finishedHome:       'assets/finished-home.jpg',
+    jdcIcon:            'assets/jdc-icon.png',
+    jdcLogoHorizontal:  'assets/jdc-logo-horizontal.png',
+    jdcLogoStacked:     'assets/jdc-logo-stacked.png',
+  };
+</script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="ad.standalone.jsx"></script>
+
+<script type="text/babel">
+  function App() {
+    return <Ad component={AdEditorial}/>;
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+  function fit() {
+    const stage = document.querySelector('.scaler');
+    if (!stage) return;
+    const shell = stage.querySelector('.ad-shell');
+    const margin = 24;
+    const w = 1080;
+    const h = shell ? shell.getBoundingClientRect().height / (parseFloat(stage.dataset.scale) || 1) : 1180;
+    const scaleW = (window.innerWidth - margin) / w;
+    const scaleH = (window.innerHeight - margin) / h;
+    const scale = Math.min(1, scaleW, scaleH);
+    stage.dataset.scale = scale;
+    stage.style.transform = `scale(${scale})`;
+  }
+  window.addEventListener('resize', fit);
+  setTimeout(fit, 100);
+  setTimeout(fit, 600);
+</script>
+
+</body>
+</html>

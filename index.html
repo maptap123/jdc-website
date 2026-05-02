@@ -1,9 +1,86 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JDC Construction</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dybuigweq/image/upload/w_32,h_32,c_fill/v1777581179/Brand_assets/jdc%20icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dybuigweq/image/upload/w_180,h_180,c_fill/v1777581179/Brand_assets/jdc%20icon.png">
+  <title>JDC Construction — Custom Home Builder & Remodeler | Lawrenceburg, IN</title>
+  <meta name="description" content="JDC Construction is a custom home builder and remodeler in Lawrenceburg, Indiana. Since 1996, we've built and renovated homes across Southeast Indiana and Greater Cincinnati. Licensed & insured.">
+  <link rel="canonical" href="https://jdcconstructionllc.com/index.html">
+  <meta property="og:title" content="JDC Construction — Custom Home Builder & Remodeler | Lawrenceburg, IN">
+  <meta property="og:description" content="Lawrenceburg's trusted custom home builder and remodeler since 1996. Serving Southeast Indiana and Greater Cincinnati with craftsmanship and integrity.">
+  <meta property="og:image" content="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdclogo.png">
+  <meta property="og:url" content="https://jdcconstructionllc.com/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JDC Construction">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "JDC Construction",
+    "telephone": "(812) 637-2684",
+    "email": "info@jdcconstruction.com",
+    "url": "https://jdcconstructionllc.com",
+    "sameAs": [
+      "https://www.facebook.com/JDCremodeling"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lawrenceburg",
+      "addressRegion": "IN",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.2411964,
+      "longitude": -84.9016921
+    },
+    "foundingDate": "1996",
+    "founder": {
+      "@type": "Person",
+      "name": "Jason Cox"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Lawrenceburg"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Dearborn County"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Southeast Indiana"
+      },
+      {
+        "@type": "City",
+        "name": "Cincinnati"
+      }
+    ],
+    "knowsAbout": [
+      "Custom Home Building",
+      "Home Remodeling",
+      "Kitchen Remodeling",
+      "Bathroom Renovation",
+      "Home Additions",
+      "Whole Home Remodel",
+      "Luxury Custom Homes"
+    ],
+    "priceRange": "$$$",
+    "hasCertification": [
+      "Graduate Master Remodeler (GMR)",
+      "Graduate Master Builder (GMB)",
+      "Certified Graduate Remodeler (CGR)",
+      "Certified Aging-in-Place Specialist (CAPS)",
+      "Certified Green Professional (CGP)"
+    ],
+    "award": "Indiana Remodeler of the Year, 2019",
+    "description": "Lawrenceburg's trusted custom home builder and remodeler since 1996. Serving Southeast Indiana and Greater Cincinnati with craftsmanship and integrity."
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
@@ -16,6 +93,12 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
     html, body {
       height: 100%;
       width: 100%;
@@ -24,7 +107,7 @@
       font-family: 'DM Sans', sans-serif;
     }
 
-    /* ── Logo bar ── */
+    /* â”€â”€ Logo bar â”€â”€ */
     .logo-bar {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -47,14 +130,14 @@
     }
     .logo-tagline {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.68rem;
+      font-size: 0.75rem;
       letter-spacing: 0.45em;
       text-transform: uppercase;
       color: rgba(242,185,0,0.55);
       margin-top: 0.55rem;
     }
 
-    /* ── Static center divider ── */
+    /* â”€â”€ Static center divider â”€â”€ */
     .center-divider {
       position: fixed;
       top: 8%;
@@ -74,7 +157,7 @@
       pointer-events: none;
     }
 
-    /* ── Split panels — fixed 50/50 ── */
+    /* â”€â”€ Split panels — fixed 50/50 â”€â”€ */
     .split {
       display: flex;
       height: 100vh;
@@ -156,7 +239,7 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    /* ── Always-visible division name ── */
+    /* â”€â”€ Always-visible division name â”€â”€ */
     .panel-division {
       position: absolute;
       top: 50%;
@@ -166,7 +249,7 @@
       text-align: center;
       pointer-events: none;
     }
-    .panel-division-name {
+    .panel-division-name, h2.panel-division-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3.2rem, 5vw, 6.5rem);
       font-weight: 300;
@@ -177,7 +260,7 @@
       transition: opacity 0.55s ease, transform 0.55s ease;
       white-space: nowrap;
     }
-    .panel:hover .panel-division-name {
+    .panel:hover .panel-division-name, .panel:hover h2.panel-division-name {
       opacity: 0.45;
       transform: translateY(-10px);
     }
@@ -194,7 +277,7 @@
       transform: scaleX(0);
     }
 
-    /* ── Hover content ── */
+    /* â”€â”€ Hover content â”€â”€ */
     .panel-content {
       position: absolute;
       bottom: 0;
@@ -205,7 +288,7 @@
     .panel-r .panel-content { text-align: right; }
 
     .panel-content-label {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -253,10 +336,12 @@
       color: var(--navy);
       background: var(--gold);
       padding: 0.82rem 1.75rem;
+      min-height: 44px;
       text-decoration: none;
       transition: background 0.2s ease, color 0.2s ease;
     }
     .btn-explore:hover { background: white; }
+    .btn-explore:active { background: rgba(255,255,255,0.85); }
 
     .btn-quote {
       display: inline-flex;
@@ -271,6 +356,7 @@
       background: transparent;
       border: 1px solid rgba(255,255,255,0.32);
       padding: 0.82rem 1.75rem;
+      min-height: 44px;
       text-decoration: none;
       transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
@@ -279,8 +365,84 @@
       border-color: rgba(255,255,255,0.65);
       color: white;
     }
+    .btn-quote:active {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.8);
+    }
 
-    /* ── Bottom strip ── */
+    /* â”€â”€ Mobile nav hamburger â”€â”€ */
+    .landing-hamburger {
+      display: none;
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      z-index: 1100;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: rgba(9,27,55,0.6);
+      border: 1px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+      padding: 4px;
+    }
+    .landing-hamburger span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background: white;
+      border-radius: 1px;
+      margin: 0 auto;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .landing-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .landing-hamburger.open span:nth-child(2) { opacity: 0; }
+    .landing-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* â”€â”€ Mobile nav overlay â”€â”€ */
+    .landing-mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(9,27,55,0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .landing-mobile-nav.open { display: flex; }
+    .landing-mobile-nav a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      padding: 0.5rem 0;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    .landing-mobile-nav a:hover { color: white; }
+    .landing-mobile-nav a:active { color: rgba(255,255,255,0.6); }
+    .landing-mobile-nav .mobile-nav-cta {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.85rem 2.25rem;
+      min-height: 44px;
+    }
+    .landing-mobile-nav .mobile-nav-cta:active { background: rgba(255,255,255,0.85); }
+
+    /* â”€â”€ Bottom strip â”€â”€ */
     .bottom-strip {
       position: fixed;
       bottom: 1.25rem;
@@ -296,30 +458,35 @@
       color: rgba(255,255,255,0.18);
     }
 
-    /* ── Mobile ── */
+    /* â”€â”€ Mobile â”€â”€ */
     @media (max-width: 768px) {
       html, body { overflow-y: auto; }
       .split { flex-direction: column; height: auto; min-height: 100dvh; }
       .panel { min-height: 55dvh; }
       .center-divider { display: none; }
       .panel-dim { display: none; }
-      .panel-division { top: 55%; }
-      .panel-division-name { font-size: clamp(2.4rem, 8vw, 3.8rem); opacity: 1 !important; transform: none !important; white-space: normal; text-align: center; }
-      .panel-division-rule { opacity: 1 !important; transform: none !important; }
+      .panel-division { display: none; }
       .panel-content-label, .panel-sub, .panel-buttons { opacity: 1; transform: none; }
-      .panel-content { padding: 1.75rem 1.5rem 2.5rem; }
+      .panel-content {
+        padding: 1.75rem 1.5rem 2.5rem;
+        background: linear-gradient(to top, rgba(9,27,55,0.88) 0%, rgba(9,27,55,0.45) 60%, transparent 100%);
+      }
       .panel-r .panel-content { text-align: left; }
       .panel-r .panel-sub { margin-left: 0; text-align: left; }
       .panel-r .panel-buttons { justify-content: flex-start; }
+      .panel-content-label { font-size: 0.75rem; margin-bottom: 0.5rem; }
+      .panel-sub { font-size: 0.88rem; margin-bottom: 1.25rem; }
       .logo-bar img { height: 100px; }
       .btn-explore, .btn-quote { padding: 0.75rem 1.25rem; font-size: 0.65rem; }
+      .landing-hamburger { display: flex; }
+      .bottom-strip { display: none; }
     }
     @media (max-width: 420px) {
       .logo-bar img { height: 72px; }
       .logo-bar { padding: 1rem 1rem 0; }
       .panel { min-height: 50dvh; }
       .panel-division { top: 52%; }
-      .panel-division-name { font-size: clamp(2rem, 9vw, 3rem); }
+      .panel-division-name, h2.panel-division-name { font-size: clamp(2rem, 9vw, 3rem); }
       .panel-content { padding: 1.25rem 1.25rem 2rem; }
       .panel-buttons { flex-direction: column; gap: 0.5rem; }
       .btn-explore, .btn-quote { width: 100%; justify-content: center; }
@@ -327,6 +494,22 @@
   </style>
 </head>
 <body>
+
+  <h1 class="sr-only">JDC Construction — Custom Home Builder & Remodeler in Lawrenceburg, Indiana</h1>
+
+  <!-- Mobile nav overlay (landing page) -->
+  <div class="landing-mobile-nav" id="landing-mobile-nav">
+    <a href="custom-home.html" onclick="closeLandingNav()">Custom Homes</a>
+    <a href="remodeling.html" onclick="closeLandingNav()">Remodeling</a>
+    <a href="about.html" onclick="closeLandingNav()">About</a>
+    <a href="articles.html" onclick="closeLandingNav()">Articles</a>
+    <a href="quote.html" class="mobile-nav-cta" onclick="closeLandingNav()">Get a Quote</a>
+  </div>
+
+  <!-- Hamburger (mobile only) -->
+  <button class="landing-hamburger" id="landing-hamburger" aria-label="Open menu" onclick="toggleLandingNav()">
+    <span></span><span></span><span></span>
+  </button>
 
   <!-- Logo bar -->
   <div class="logo-bar">
@@ -348,7 +531,7 @@
       <div class="panel-dim"></div>
 
       <div class="panel-division">
-        <div class="panel-division-name">Custom Homes</div>
+        <h2 class="panel-division-name">Custom Homes</h2>
         <span class="panel-division-rule"></span>
       </div>
 
@@ -369,13 +552,13 @@
 
     <!-- RIGHT — Remodeling -->
     <div class="panel panel-r" onclick="location.href='remodeling.html'" role="link" aria-label="Explore Remodeling" tabindex="0">
-      <div class="panel-bg" style="background-image:url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581009/Jobs/Cleeter/20200722-AJW_0039.jpg'); background-position: center center;"></div>
+      <div class="panel-bg" style="background-image:url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581731/Jobs/Cleeter/20200722-AJW_0081.jpg'); background-position: center center;"></div>
       <div class="panel-overlay"></div>
       <div class="panel-glow"></div>
       <div class="panel-dim"></div>
 
       <div class="panel-division">
-        <div class="panel-division-name">Remodeling</div>
+        <h2 class="panel-division-name">Remodeling</h2>
         <span class="panel-division-rule"></span>
       </div>
 
@@ -398,7 +581,7 @@
 
   <!-- Bottom copyright strip -->
   <div class="bottom-strip">
-    <p>JDC Construction &nbsp;·&nbsp; Licensed &amp; Insured &nbsp;·&nbsp; COL 3:23</p>
+    <p>Lawrenceburg, Indiana &nbsp;Â·&nbsp; JDC Construction &nbsp;Â·&nbsp; Licensed &amp; Insured &nbsp;Â·&nbsp; COL 3:23</p>
   </div>
 
   <script>
@@ -407,7 +590,23 @@
         if (e.key === 'Enter' || e.key === ' ') panel.click();
       });
     });
+
+    function toggleLandingNav() {
+      var nav = document.getElementById('landing-mobile-nav');
+      var btn = document.getElementById('landing-hamburger');
+      nav.classList.toggle('open');
+      btn.classList.toggle('open');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeLandingNav() {
+      var nav = document.getElementById('landing-mobile-nav');
+      var btn = document.getElementById('landing-hamburger');
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   </script>
 
 </body>
 </html>
+

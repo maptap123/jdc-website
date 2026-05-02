@@ -3,7 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Home Portfolio — JDC Construction</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dybuigweq/image/upload/w_32,h_32,c_fill/v1777581179/Brand_assets/jdc%20icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dybuigweq/image/upload/w_180,h_180,c_fill/v1777581179/Brand_assets/jdc%20icon.png">
+  <title>Custom Home Portfolio — Luxury Homes in Lawrenceburg, IN | JDC Construction</title>
+  <meta name="description" content="Browse JDC Construction's custom home portfolio — luxury homes built across Lawrenceburg and Southeast Indiana.">
+  <link rel="canonical" href="https://jdcconstructionllc.com/custom-home-portfolio.html">
+  <meta property="og:title" content="Custom Home Portfolio — Luxury Homes in Lawrenceburg, IN | JDC Construction">
+  <meta property="og:description" content="Browse our custom home portfolio — luxury builds across Lawrenceburg and Southeast Indiana. Every home designed from the ground up.">
+  <meta property="og:image" content="https://res.cloudinary.com/dybuigweq/image/upload/v1777581631/Jobs/caudill/20240618-AJW_8458.jpg">
+  <meta property="og:url" content="https://jdcconstructionllc.com/custom-home-portfolio.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JDC Construction">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Custom Home Portfolio — JDC Construction",
+    "description": "Browse JDC Construction's custom home portfolio — luxury homes built across Lawrenceburg and Southeast Indiana. Every home designed from the ground up.",
+    "url": "https://jdcconstructionllc.com/custom-home-portfolio.html",
+    "publisher": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "JDC Construction",
+      "url": "https://jdcconstructionllc.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lawrenceburg",
+        "addressRegion": "IN",
+        "addressCountry": "US"
+      }
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
@@ -23,64 +54,7 @@
       color: var(--navy);
     }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      padding: 0 3rem;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: transparent;
-      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
-    }
-    nav.scrolled {
-      background: #091b37;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-    }
-    .nav-logo img {
-      height: 52px;
-      width: auto;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
-    .nav-links a {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .nav-links a:hover { color: white; }
-    .nav-cta {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--navy) !important;
-      background: var(--gold);
-      padding: 0.6rem 1.5rem;
-      transition: background 0.2s ease !important;
-    }
-    .nav-cta:hover { background: white !important; color: var(--navy) !important; }
-    .nav-back {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4) !important;
-    }
-    .nav-back:hover { color: rgba(255,255,255,0.75) !important; }
-
-    /* ── HERO ── */
+    /* â”€â”€ HERO â”€â”€ */
     .hero {
       position: relative;
       z-index: 0;
@@ -93,7 +67,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777580991/Jobs/caudill/20240815-AJW_0082.jpg');
+      background-image: url('https://res.cloudinary.com/dybuigweq/image/upload/v1777581595/Jobs/cameron/20240620-AJW_9138-Edit.jpg');
       background-size: cover;
       background-position: center 30%;
     }
@@ -189,7 +163,7 @@
       50% { opacity: 0.7; }
     }
 
-    /* ── SECTION SHARED ── */
+    /* â”€â”€ SECTION SHARED â”€â”€ */
     .section-eyebrow {
       font-size: 0.62rem;
       font-weight: 500;
@@ -226,96 +200,109 @@
       margin: 0;
     }
 
-    /* ── FEATURED PROJECT SECTION ── */
-    .project-section {
+    /* â”€â”€ PORTFOLIO GRID â”€â”€ */
+    .portfolio-section {
       padding: 7rem 5rem;
+      background: #f7f5f2;
     }
-    .project-section--warm { background: #f7f5f2; }
-    .project-section--white { background: white; }
-
-    .project-header {
+    .portfolio-header {
       max-width: 1200px;
-      margin: 0 auto 3.5rem;
+      margin: 0 auto 4rem;
     }
-    .project-name {
+    .portfolio-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    /* â”€â”€ PROJECT CARD â”€â”€ */
+    .project-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .project-card-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .project-card-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.25rem, 4vw, 4rem);
+      font-size: clamp(1.75rem, 3vw, 3rem);
       font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -0.025em;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
       color: var(--navy);
-      margin: 0.5rem 0 1rem;
+      margin: 0;
     }
-
-    /* Feature + stack layout */
-    .portfolio-feature {
-      max-width: 1200px;
-      margin: 0 auto 12px;
+    .project-card-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.6;
+      max-width: 420px;
+      margin: 0.35rem 0 0;
+    }
+    .project-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+    .project-card-link:hover { color: var(--gold); }
+    .project-card-link svg {
+      transition: transform 0.2s ease;
+    }
+    .project-card:hover .project-card-link svg {
+      transform: translateX(3px);
+    }
+    .project-card-images {
       display: grid;
       grid-template-columns: 7fr 5fr;
       gap: 12px;
     }
-    .portfolio-feature-main {
+    .project-card-feature {
       position: relative;
       overflow: hidden;
-      height: 520px;
+      height: 380px;
     }
-    .portfolio-feature-stack {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 12px;
-    }
-    .portfolio-row {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .portfolio-item {
-      position: relative;
-      overflow: hidden;
-      height: 260px;
-    }
-    .portfolio-feature-stack .portfolio-item {
-      height: auto;
-    }
-
-    .portfolio-item img,
-    .portfolio-feature-main img {
+    .project-card-feature img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
       transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .portfolio-item:hover img,
-    .portfolio-feature-main:hover img { transform: scale(1.05); }
-    .portfolio-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(9,27,55,0.7) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
+    .project-card:hover .project-card-feature img { transform: scale(1.04); }
+    .project-card-stack {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
     }
-    .portfolio-item:hover .portfolio-overlay,
-    .portfolio-feature-main:hover .portfolio-overlay { opacity: 1; }
-    .portfolio-label {
-      position: absolute;
-      bottom: 1rem;
-      left: 1.25rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+    .project-card-thumb {
+      position: relative;
+      overflow: hidden;
     }
-    .portfolio-item:hover .portfolio-label,
-    .portfolio-feature-main:hover .portfolio-label { opacity: 1; transform: translateY(0); }
+    .project-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .project-card:hover .project-card-thumb img { transform: scale(1.04); }
 
-    /* ── DIVIDER STRIP ── */
+    /* â”€â”€ DIVIDER STRIP â”€â”€ */
     .divider-strip {
       background: var(--navy);
       padding: 4rem 5rem;
@@ -351,64 +338,7 @@
       font-style: italic;
     }
 
-    /* ── ADDITIONAL PROJECTS (GALLERY GRID) ── */
-    .additional-projects {
-      padding: 7rem 5rem;
-      background: #f7f5f2;
-    }
-    .additional-header {
-      max-width: 1200px;
-      margin: 0 auto 4rem;
-    }
-    .gallery-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 340px 260px;
-      gap: 12px;
-    }
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-    }
-    .gallery-item:nth-child(1) { grid-column: 1 / 6; grid-row: 1; }
-    .gallery-item:nth-child(2) { grid-column: 6 / 9; grid-row: 1; }
-    .gallery-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1; }
-    .gallery-item:nth-child(4) { grid-column: 1 / 5; grid-row: 2; }
-    .gallery-item:nth-child(5) { grid-column: 5 / 9; grid-row: 2; }
-    .gallery-item:nth-child(6) { grid-column: 9 / 13; grid-row: 2; }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .gallery-item:hover img { transform: scale(1.05); }
-    .gallery-item-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(9,27,55,0.7) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-    .gallery-item-label {
-      position: absolute;
-      bottom: 1rem;
-      left: 1.25rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
-    }
-    .gallery-item:hover .gallery-item-label { opacity: 1; transform: translateY(0); }
-
-    /* ── CTA ── */
+    /* â”€â”€ CTA â”€â”€ */
     .cta-section {
       position: relative;
       padding: 8rem 5rem;
@@ -485,177 +415,38 @@
     }
     .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: white; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: #050e1d;
-      padding: 2.5rem 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .footer-left {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.65rem;
-    }
-    .footer-icon { height: 68px; width: auto; opacity: 0.85; }
-    .footer-contact { display: flex; flex-direction: column; gap: 0.18rem; }
-    .footer-contact span {
-      font-size: 0.63rem;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.38);
-    }
-    .footer-copy {
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.2);
-      text-align: center;
-    }
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .footer-links a {
-      font-size: 0.63rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .footer-links a:hover { color: rgba(255,255,255,0.6); }
-
-    /* ── HAMBURGER ── */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 1100;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 100%;
-      height: 1.5px;
-      background: white;
-      border-radius: 1px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-    .mobile-nav-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 900;
-      background: rgba(9,27,55,0.97);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .mobile-nav-overlay.open { display: flex; }
-    .mobile-nav-overlay a {
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .mobile-nav-overlay a:hover { color: white; }
-    .mobile-nav-overlay .mobile-cta {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--navy);
-      background: var(--gold);
-      padding: 0.85rem 2.25rem;
-      letter-spacing: 0.18em;
-    }
-
-    /* ── RESPONSIVE ── */
+    /* â”€â”€ RESPONSIVE â”€â”€ */
     @media (max-width: 1024px) {
-      nav { padding: 0 2rem; }
       .hero-content { padding-left: 2.5rem; padding-right: 2.5rem; }
-      .project-section { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .portfolio-section { padding-left: 2.5rem; padding-right: 2.5rem; }
       .divider-strip { padding-left: 2.5rem; padding-right: 2.5rem; }
-      .additional-projects { padding-left: 2.5rem; padding-right: 2.5rem; }
       .cta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
-      .portfolio-feature { grid-template-columns: 1fr 1fr; }
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-      }
-      .gallery-item { grid-column: auto !important; grid-row: auto !important; height: 240px; }
+      .project-card-images { grid-template-columns: 1fr 1fr; }
+      .project-card-feature { height: 300px; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
       .hero-content { padding: 0 1.25rem 3rem; }
       .hero-heading { font-size: clamp(2.8rem, 10vw, 4.5rem); }
       .hero-sub { font-size: 0.9rem; }
       .hero-scroll { display: none; }
-      .project-section { padding: 4rem 1.25rem; }
+      .portfolio-section { padding: 4rem 1.25rem; }
+      .portfolio-grid { gap: 3.5rem; }
+      .project-card-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .project-card-images { grid-template-columns: 1fr; }
+      .project-card-feature { height: 240px; }
+      .project-card-stack { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .project-card-stack .project-card-thumb { height: 180px; }
       .divider-strip { padding: 3rem 1.25rem; }
-      .additional-projects { padding: 4rem 1.25rem; }
       .cta-section { padding: 5rem 1.25rem; }
-      .portfolio-feature { grid-template-columns: 1fr; }
-      .portfolio-feature-main { height: 300px; }
-      .portfolio-feature-stack .portfolio-item { height: 220px; }
-      .portfolio-row { grid-template-columns: 1fr; }
-      .portfolio-item { height: 240px; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item { height: 260px; }
       .cta-actions { flex-direction: column; align-items: center; gap: 1rem; }
-      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.25rem; }
-      .footer-left { align-items: center; }
-      .footer-links { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav-overlay" id="mobile-nav">
-    <a href="custom-home.html" onclick="closeMobileNav()">Custom Homes</a>
-    <a href="custom-home-process.html" onclick="closeMobileNav()">Our Process</a>
-    <a href="about.html" onclick="closeMobileNav()">About</a>
-    <a href="articles.html" onclick="closeMobileNav()">Articles</a>
-    <a href="index.html" onclick="closeMobileNav()">← Home</a>
-    <a href="quote.html" class="mobile-cta">Get a Quote</a>
-  </div>
+  <div id="mobile-nav-container"></div>
 
-  <!-- NAV -->
-  <nav id="main-nav">
-    <a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction"></a>
-    <div class="nav-links">
-      <a href="custom-home.html">Custom Homes</a>
-      <a href="custom-home-process.html">Our Process</a>
-      <a href="about.html">About</a>
-      <a href="articles.html">Articles</a>
-      <a href="index.html" class="nav-back">← Home</a>
-      <a href="quote.html" class="nav-cta">Get a Quote</a>
-    </div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <div id="nav-container"></div>
 
   <!-- HERO -->
   <section class="hero">
@@ -672,50 +463,183 @@
     </div>
   </section>
 
-  <!-- FEATURED PROJECT: CAUDILL RESIDENCE -->
-  <section class="project-section project-section--warm">
-    <div class="project-header">
-      <div class="section-eyebrow">Featured Project</div>
-      <h2 class="project-name">The Caudill Residence</h2>
-      <p class="section-desc">A luxury custom home in Southeast Indiana featuring open-concept living, bespoke millwork, and spa-inspired bathrooms.</p>
+  <!-- PORTFOLIO -->
+  <section class="portfolio-section">
+    <div class="portfolio-header">
+      <div class="section-eyebrow">Featured Projects</div>
+      <h2 class="section-title">Every home,<br>a different story</h2>
     </div>
 
-    <div class="portfolio-feature">
-      <div class="portfolio-feature-main">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581631/Jobs/caudill/20240618-AJW_8458.jpg" alt="Caudill Residence interior" loading="lazy">
-        <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Caudill Residence</span>
-      </div>
-      <div class="portfolio-feature-stack">
-        <div class="portfolio-item">
-          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581676/Jobs/caudill/20240618-AJW_8623.jpg" alt="Custom vanity detail" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <span class="portfolio-label">Custom Vanity</span>
-        </div>
-        <div class="portfolio-item">
-          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581678/Jobs/caudill/20240618-AJW_8633.jpg" alt="Spa bath" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <span class="portfolio-label">Spa Bath</span>
-        </div>
-      </div>
-    </div>
+    <div class="portfolio-grid">
 
-    <div class="portfolio-row">
-      <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581679/Jobs/caudill/20240618-AJW_8638.jpg" alt="Bathroom detail" loading="lazy">
-        <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Bath Detail</span>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581653/Jobs/caudill/20240618-AJW_8533.jpg" alt="Open concept living" loading="lazy">
-        <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Open Living</span>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581681/Jobs/caudill/20240618-AJW_8648.jpg" alt="Luxury finishes" loading="lazy">
-        <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Luxury Finishes</span>
-      </div>
+      <!-- Project 01 -->
+      <a href="portfolio-caudill.html" class="project-card">
+        <div class="project-card-header">
+          <div>
+            <div class="project-card-name">Project 01</div>
+            <p class="project-card-desc">A luxury custom home featuring open-concept living, bespoke millwork, and spa-inspired bathrooms.</p>
+          </div>
+          <span class="project-card-link">View Project <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="project-card-images">
+          <div class="project-card-feature">
+            <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580991/Jobs/caudill/20240815-AJW_0082.jpg" alt="Project 01" loading="lazy">
+          </div>
+          <div class="project-card-stack">
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580993/Jobs/caudill/20240815-AJW_0092.jpg" alt="Project 01" loading="lazy">
+            </div>
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580997/Jobs/caudill/20240815-AJW_0112.jpg" alt="Project 01" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 02 -->
+      <a href="portfolio-cameron.html" class="project-card">
+        <div class="project-card-header">
+          <div>
+            <div class="project-card-name">Project 02</div>
+            <p class="project-card-desc">A light-filled custom home featuring designer finishes, a dramatic great room, and indoor-outdoor living.</p>
+          </div>
+          <span class="project-card-link">View Project <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="project-card-images">
+          <div class="project-card-feature">
+            <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg" alt="Project 02" loading="lazy">
+          </div>
+          <div class="project-card-stack">
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580934/Jobs/cameron/20240620-AJW_9272.jpg" alt="Project 02" loading="lazy">
+            </div>
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580911/Jobs/cameron/20240620-AJW_9128.jpg" alt="Project 02" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 03 -->
+      <a href="portfolio-larkin.html" class="project-card">
+        <div class="project-card-header">
+          <div>
+            <div class="project-card-name">Project 03</div>
+            <p class="project-card-desc">A warm, character-rich custom home with refined millwork and craftsmanship throughout every room.</p>
+          </div>
+          <span class="project-card-link">View Project <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="project-card-images">
+          <div class="project-card-feature">
+            <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581081/Jobs/Larkin/20240815-AJW_0007.jpg" alt="Project 03" loading="lazy">
+          </div>
+          <div class="project-card-stack">
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581084/Jobs/Larkin/20240815-AJW_0026.jpg" alt="Project 03" loading="lazy">
+            </div>
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581104/Jobs/Larkin/20240815-AJW_9895.jpg" alt="Project 03" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 04 -->
+      <a href="portfolio-alice.html" class="project-card">
+        <div class="project-card-header">
+          <div>
+            <div class="project-card-name">Project 04</div>
+            <p class="project-card-desc">A timeless custom build combining traditional architecture with modern comfort and lasting materials.</p>
+          </div>
+          <span class="project-card-link">View Project <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="project-card-images">
+          <div class="project-card-feature">
+            <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580861/Jobs/Alice/20210111-AJW_3547_49_50.jpg" alt="Project 04" loading="lazy">
+          </div>
+          <div class="project-card-stack">
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580869/Jobs/Alice/20210111-AJW_3632-HDR.jpg" alt="Project 04" loading="lazy">
+            </div>
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580876/Jobs/Alice/20210111-AJW_3682-HDR-Edit.jpg" alt="Project 04" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 05 -->
+      <a href="portfolio-cleeter.html" class="project-card">
+        <div class="project-card-header">
+          <div>
+            <div class="project-card-name">Project 05</div>
+            <p class="project-card-desc">Designed for how a family actually lives — open, functional, and beautifully finished from top to bottom.</p>
+          </div>
+          <span class="project-card-link">View Project <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="project-card-images">
+          <div class="project-card-feature">
+            <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581009/Jobs/Cleeter/20200722-AJW_0039.jpg" alt="Project 05" loading="lazy">
+          </div>
+          <div class="project-card-stack">
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581011/Jobs/Cleeter/20200722-AJW_0043.jpg" alt="Project 05" loading="lazy">
+            </div>
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581016/Jobs/Cleeter/20200722-AJW_0072.jpg" alt="Project 05" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 06 -->
+      <a href="portfolio-drouge.html" class="project-card">
+        <div class="project-card-header">
+          <div>
+            <div class="project-card-name">Project 06</div>
+            <p class="project-card-desc">A recently completed build showcasing JDC's current work — clean lines, premium materials, precise execution.</p>
+          </div>
+          <span class="project-card-link">View Project <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="project-card-images">
+          <div class="project-card-feature">
+            <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581041/Jobs/drouge/20250929-AJW_7109.jpg" alt="Project 06" loading="lazy">
+          </div>
+          <div class="project-card-stack">
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581044/Jobs/drouge/20250929-AJW_7119.jpg" alt="Project 06" loading="lazy">
+            </div>
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581048/Jobs/drouge/20250929-AJW_7134.jpg" alt="Project 06" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 07 -->
+      <a href="portfolio-perfect.html" class="project-card">
+        <div class="project-card-header">
+          <div>
+            <div class="project-card-name">Project 07</div>
+            <p class="project-card-desc">Elevated finishes, a thoughtful floor plan, and the kind of details that make a house feel like home.</p>
+          </div>
+          <span class="project-card-link">View Project <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8.5 1.5L12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="project-card-images">
+          <div class="project-card-feature">
+            <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581125/Jobs/Perfect/20250929-AJW_7069.jpg" alt="Project 07" loading="lazy">
+          </div>
+          <div class="project-card-stack">
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581128/Jobs/Perfect/20250929-AJW_7083.jpg" alt="Project 07" loading="lazy">
+            </div>
+            <div class="project-card-thumb">
+              <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581751/Jobs/Perfect/20250929-AJW_7293.jpg" alt="Project 07" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </a>
+
     </div>
   </section>
 
@@ -723,94 +647,6 @@
   <div class="divider-strip">
     <p class="divider-strip-text">"Every JDC home begins with a conversation."</p>
   </div>
-
-  <!-- CAMERON RESIDENCE -->
-  <section class="project-section project-section--white">
-    <div class="project-header">
-      <div class="section-eyebrow">Featured Project</div>
-      <h2 class="project-name">The Cameron Residence</h2>
-      <p class="section-desc">A light-filled custom home featuring designer finishes, a dramatic great room, and seamlessly integrated indoor-outdoor living.</p>
-    </div>
-
-    <div class="portfolio-feature">
-      <div class="portfolio-feature-main">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581565/Jobs/cameron/20240620-AJW_9013.jpg" alt="Cameron Residence great room" loading="lazy">
-        <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Cameron Residence</span>
-      </div>
-      <div class="portfolio-feature-stack">
-        <div class="portfolio-item">
-          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581577/Jobs/cameron/20240620-AJW_9063.jpg" alt="Designer finishes" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <span class="portfolio-label">Designer Finishes</span>
-        </div>
-        <div class="portfolio-item">
-          <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581593/Jobs/cameron/20240620-AJW_9123.jpg" alt="Custom bathroom" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <span class="portfolio-label">Custom Bath</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="portfolio-row">
-      <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581595/Jobs/cameron/20240620-AJW_9138-Edit.jpg" alt="Luxe vanity" loading="lazy">
-        <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Luxe Vanity</span>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581563/Jobs/cameron/20240620-AJW_9003.jpg" alt="Indoor-outdoor living" loading="lazy">
-        <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Indoor-Outdoor</span>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581567/Jobs/cameron/20240620-AJW_9018.jpg" alt="Great room detail" loading="lazy">
-        <div class="portfolio-overlay"></div>
-        <span class="portfolio-label">Great Room</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ADDITIONAL PROJECTS -->
-  <section class="additional-projects">
-    <div class="additional-header">
-      <div class="section-eyebrow">More Homes</div>
-      <h2 class="section-title">A selection of recent builds.</h2>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581081/Jobs/Larkin/20240815-AJW_0007.jpg" alt="Larkin Residence" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Larkin Residence</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581084/Jobs/Larkin/20240815-AJW_0026.jpg" alt="Custom millwork" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Custom Millwork</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581104/Jobs/Larkin/20240815-AJW_9895.jpg" alt="Master suite" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Master Suite</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580861/Jobs/Alice/20210111-AJW_3547_49_50.jpg" alt="Alice Residence" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Alice Residence</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580869/Jobs/Alice/20210111-AJW_3632-HDR.jpg" alt="Great room" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Great Room</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777580876/Jobs/Alice/20210111-AJW_3682-HDR-Edit.jpg" alt="Custom kitchen" loading="lazy">
-        <div class="gallery-item-overlay"></div>
-        <span class="gallery-item-label">Custom Kitchen</span>
-      </div>
-    </div>
-  </section>
 
   <!-- CTA -->
   <section class="cta-section">
@@ -831,44 +667,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-left">
-      <a href="index.html"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>
-      <div class="footer-contact">
-        <span>(812) 637-2684</span>
-        <span>info@jdcconstruction.com</span>
-      </div>
-    </div>
-    <p class="footer-copy">© 2026 JDC Construction · Licensed &amp; Insured · COL 3:23</p>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="custom-home.html">Custom Homes</a>
-      <a href="remodeling.html">Remodeling</a>
-      <a href="about.html">About</a>
-      <a href="articles.html">Articles</a>
-      <a href="quote.html">Get a Quote</a>
-    </div>
-  </footer>
+  <div id="footer-container"></div>
 
-  <script>
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-    function toggleMobileNav() {
-      const overlay = document.getElementById('mobile-nav');
-      const btn = document.getElementById('hamburger');
-      overlay.classList.toggle('open');
-      btn.classList.toggle('open');
-      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
-    }
-    function closeMobileNav() {
-      document.getElementById('mobile-nav').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  </script>
+  <script src="components.js"></script>
+  <script>JDC.nav('custom-home', 'Portfolio');JDC.footer();</script>
 
 </body>
 </html>
+
