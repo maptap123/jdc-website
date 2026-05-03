@@ -370,7 +370,7 @@
         + '      <a href="index.html"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>\n'
         + '      <div class="footer-contact">\n'
         + '        <span>(812) 637-2684</span>\n'
-        + '        <span>info@jdcconstruction.com</span>\n'
+        + '        <span>customerservice@jdcremodeling.com</span>\n'
         + '      </div>\n'
         + '      <a href="https://www.facebook.com/JDCremodeling" class="footer-fb" target="_blank" rel="noopener" aria-label="JDC Construction on Facebook">\n'
         + '        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>\n'
