@@ -11,6 +11,20 @@
   gtag('config', 'G-24Y0PKB9XN');
 })();
 
+// Vercel Web Analytics
+(function() {
+  if (window.va) return;
+  window.va = function a() {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+  var s = document.createElement('script');
+  s.src = '/_vercel/insights/script.js';
+  s.defer = true;
+  s.dataset.sdkn = '@vercel/analytics';
+  s.dataset.sdkv = '2.0.1';
+  document.head.appendChild(s);
+})();
+
 (function () {
   'use strict';
 
