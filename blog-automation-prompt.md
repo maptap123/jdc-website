@@ -175,6 +175,13 @@ Save for reference: primary keyword, volume, KD.
 4. Confirm the article HTML is well-formed: all tags close properly.
 5. Report a summary: article title, slug, primary keyword, and confirmation that all files were updated.
 
+## J — Commit and Push
+
+1. Run `git add articles/{slug}.html articles.html sitemap.xml published-articles.md`.
+2. Run `git commit -m "publish: {Article Title}"` using the article title in the commit message.
+3. Run `git push`.
+4. Confirm the push succeeded.
+
 ## Important: Do NOT
 
 - Invoke the `frontend-design` skill — you are filling a template, not designing new UI.
