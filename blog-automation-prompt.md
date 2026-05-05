@@ -177,10 +177,11 @@ Save for reference: primary keyword, volume, KD.
 
 ## J — Commit and Push
 
-1. Run `git add articles/{slug}.html articles.html sitemap.xml published-articles.md`.
-2. Run `git commit -m "publish: {Article Title}"` using the article title in the commit message.
-3. Run `git push`.
-4. Confirm the push succeeded.
+1. Run `git remote set-url origin https://maptap123:${GITHUB_PAT}@github.com/maptap123/jdc-website.git` — the PAT is provided at the top of your session prompt.
+2. Run `git add articles/{slug}.html articles.html sitemap.xml published-articles.md`.
+3. Run `git commit -m "publish: {Article Title}"` using the article title in the commit message.
+4. Run `git push origin HEAD:master`.
+5. Confirm the push succeeded.
 
 ## Important: Do NOT
 
