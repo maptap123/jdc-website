@@ -1,0 +1,43 @@
+[     258ms] [ERROR] Loading the font 'https://k2mkucxia43oc7fa.public.blob.vercel-storage.com/front/fonts/space-mono/space-mono-v11-latin-regular.woff2' violates the following Content Security Policy directive: "font-src 'self' *.vercel.com *.gstatic.com vercel.live". The action has been blocked. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:76
+[     347ms] [LOG] %c
+▲
+
+    ____                               _ __
+   / __ \________  ____ _____ ___     (_) /_
+  / / / / ___/ _ \/ __ `/ __ `__ \   / / __/
+ / /_/ / /  /  __/ /_/ / / / / / /  / / /__
+/_____/_/   \___/\__,_/_/ /_/ /_/  /_/\__( )
+   _____ __    _          _ __           |/
+  / ___// /_  (_)___     (_) /_
+  \__ \/ __ \/ / __ \   / / __/
+ ___/ / / / / / /_/ /  / / /_
+/____/_/ /_/_/ .___/  /_/\__/
+            /_/
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/chunks/2y6rt5uara0xb.js?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF:78
+[     513ms] [WARNING] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment @ https://accounts.google.com/gsi/client:84
+[     536ms] [ERROR] Not signed in with the identity provider. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[     613ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[     782ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://accounts.google.com/gsi/client:85
+[     861ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/chunks/1c40oo-wfuz2f.js?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF:18
+[    4017ms] [WARNING] The resource https://vercel.com/_next/static/media/ebay-dark.34mho2a18qqlt.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[    4017ms] [WARNING] The resource https://vercel.com/_next/static/media/stripe-light.2l_1jctpe6k_4.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[    4017ms] [WARNING] The resource https://vercel.com/_next/static/chunks/1e-xmurttz2yh.css?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[    4017ms] [WARNING] The resource https://vercel.com/_next/static/media/ebay-light.3ft_ki8203ov0.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[    4017ms] [WARNING] The resource https://vercel.com/_next/static/media/adobe-light.406_7oryl71va.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[    4017ms] [WARNING] The resource https://vercel.com/_next/static/media/stripe-dark.16ozjth2vgb_3.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[    4017ms] [WARNING] The resource https://vercel.com/_next/static/chunks/2cpglv-d16ekd.css?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[   13966ms] [WARNING] The resource https://vercel.com/_next/static/media/ebay-dark.34mho2a18qqlt.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[   13966ms] [WARNING] The resource https://vercel.com/_next/static/media/stripe-light.2l_1jctpe6k_4.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[   13966ms] [WARNING] The resource https://vercel.com/_next/static/chunks/1e-xmurttz2yh.css?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[   13966ms] [WARNING] The resource https://vercel.com/_next/static/media/ebay-light.3ft_ki8203ov0.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[   13966ms] [WARNING] The resource https://vercel.com/_next/static/media/adobe-light.406_7oryl71va.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[   13966ms] [WARNING] The resource https://vercel.com/_next/static/media/stripe-dark.16ozjth2vgb_3.svg?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
+[   13966ms] [WARNING] The resource https://vercel.com/_next/static/chunks/2cpglv-d16ekd.css?dpl=dpl_6dghU8Nvq5SyS5nBTeMsmMT8ZSnF was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmaptap123s-projects%2Fjdc-website%2Fstores%2Fblob%2Fstore_M5rP4LyI1WSj5Myj%2Fsettings:0
