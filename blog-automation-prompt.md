@@ -34,7 +34,7 @@ Save for reference: primary keyword, volume, KD.
 - The H1 in the hero should use `<br>` to break naturally and `<em>` for the italicized sub-phrase.
 
 **Structure and Formatting**
-- Every article must have: a lead paragraph (italic, Cormorant Garamond), an answer box (navy background, gold left border), at least 3-4 h2 sections, at least one pull-quote, at least one `<figure class="article-image">` with a Cloudinary image and `<figcaption>`, and a numbered or bulleted list.
+- Every article must have: a lead paragraph (italic, Cormorant Garamond), an answer box (navy background, gold left border), at least 3-4 h2 sections, at least one pull-quote, at least one `<figure class="article-image">` with a Vercel Blob image and `<figcaption>`, and a numbered or bulleted list.
 - Use the `.cost-tiers` component when comparing pricing levels (Tier 1/2/3 format).
 - Use the `.planning-list` component for tips, steps, or checklists.
 - Wrap body content in proper HTML: `<h2>` for main sections, `<h3>` with gold styling for sub-sections, `<p>` for paragraphs, `<strong>` for emphasis.
@@ -42,10 +42,10 @@ Save for reference: primary keyword, volume, KD.
 **Images**
 - You MUST use at least one Cloudinary image in the hero background and at least one in the article body.
 - Known Cloudinary image URLs (reuse these):
-  - `https://res.cloudinary.com/dybuigweq/image/upload/v1777581097/Jobs/Larkin/20240815-AJW_9860.jpg`
-  - `https://res.cloudinary.com/dybuigweq/image/upload/v1777581582/Jobs/cameron/20240620-AJW_9078.jpg`
-  - `https://res.cloudinary.com/dybuigweq/image/upload/v1777581634/Jobs/caudill/20240618-AJW_8468.jpg`
-  - `https://res.cloudinary.com/dybuigweq/image/upload/v1777581571/Jobs/cameron/20240620-AJW_9038.jpg`
+  - `https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Larkin/20240815-AJW_9860.jpg
+  - `https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9078.jpg
+  - `https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8468.jpg
+  - `https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9038.jpg
 - Default hero image: the last URL in the list above.
 - Default body image: the second URL in the list above.
 

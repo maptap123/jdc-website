@@ -178,7 +178,7 @@
   /* ───────────────────────────────
      Logo helper
      ─────────────────────────────── */
-  var LOGO = '<img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction">';
+  var LOGO = '<img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Brand_assets/jdc%20icon.png" alt="JDC Construction">';
 
   function logoLink(href) {
     return '<a href="' + href + '" class="nav-logo">' + LOGO + '</a>';
@@ -381,7 +381,7 @@
     footer: function () {
       var html = '<footer>\n'
         + '    <div class="footer-left">\n'
-        + '      <a href="index.html"><img src="https://res.cloudinary.com/dybuigweq/image/upload/v1777581179/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>\n'
+        + '      <a href="index.html"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>\n'
         + '      <div class="footer-contact">\n'
         + '        <span>(812) 637-2684</span>\n'
         + '        <span>customerservice@jdcremodeling.com</span>\n'
