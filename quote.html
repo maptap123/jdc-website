@@ -169,18 +169,31 @@
       margin-bottom: 1rem;
     }
 
-    /* BuilderTrend iframe container */
-    .bt-frame-wrap {
-      width: 100%;
-      min-height: 650px;
+    /* Quote form — posts straight into BuildOS */
+    .qf { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.25rem; }
+    .qf .full { grid-column: 1 / -1; }
+    .qf .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .qf label { display: block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.4rem; }
+    .qf label .req { color: var(--gold); }
+    .qf input, .qf select, .qf textarea {
+      width: 100%; font: inherit; font-size: 1rem; color: var(--navy);
+      background: #fff; border: 1px solid rgba(9,27,55,0.18); border-radius: 2px;
+      padding: 0.75rem 0.85rem; transition: border-color .15s;
     }
-    #btIframe {
-      width: 100%;
-      min-height: 650px;
-      border: 0;
-      background: transparent;
-      display: block;
+    .qf textarea { min-height: 130px; resize: vertical; }
+    .qf input:focus, .qf select:focus, .qf textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(242,185,0,0.18); }
+    .qf .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .qf button {
+      grid-column: 1 / -1; justify-self: start; margin-top: 0.5rem;
+      font: inherit; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+      background: var(--navy); color: #fff; border: 0; padding: 1rem 2.4rem; cursor: pointer; transition: background .15s;
     }
+    .qf button:hover { background: #12305c; }
+    .qf button:disabled { opacity: 0.6; cursor: wait; }
+    .qf-error { grid-column: 1 / -1; color: #b3261e; font-size: 0.9rem; display: none; }
+    .qf-done { display: none; padding: 2rem 0; }
+    .qf-done h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem; }
+    .qf-done p { color: rgba(9,27,55,0.6); line-height: 1.7; }
 
     @media (max-width: 768px) {
       .quote-hero { padding: 120px 1.5rem 60px; }
@@ -188,8 +201,8 @@
       .form-wrap { padding: 2rem 1.5rem; }
     }
     @media (max-width: 480px) {
-      .bt-frame-wrap { min-height: auto; }
-      #btIframe { min-height: 500px; }
+      .qf { grid-template-columns: 1fr; }
+      .qf button { justify-self: stretch; }
       .quote-hero { padding: 100px 1.25rem 50px; }
       .form-section { padding: 2rem 0.75rem 3rem; }
     }
@@ -217,7 +230,7 @@
     <p class="hero-sub">Tell us about your project and our team will be in touch within one business day. Proudly serving Lawrenceburg, Dearborn County, and Southeast Indiana.</p>
   </section>
 
-  <!-- Form section with BuilderTrend -->
+  <!-- Form section — submissions go straight into BuildOS leads -->
   <section class="form-section">
     <div class="form-wrap">
       <div class="form-wrap-header">
@@ -226,11 +239,57 @@
         <p>Fill out the form below and a member of the JDC team will reach out to schedule your consultation.</p>
       </div>
 
-      <div class="bt-frame-wrap">
-        <!-- Buildertrend Contact Form -->
-        <script type="text/javascript" src="https://buildertrend.net/leads/contactforms/js/btClientContactForm.js"></script>
-        <iframe src="https://buildertrend.net/leads/contactforms/ContactFormFrame.aspx?builderID=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJidWlsZGVySWQiOjY5MDg0fQ.wNlFwzI5F3L3sUCAqgf236DzNYSbe8a7OjuVtAn7t78" scrolling="no" id="btIframe" style="background:transparent;border:0px;margin:0 auto;width:100%;"></iframe>
-        <!-- /Buildertrend Contact Form -->
+      <form class="qf" id="quoteForm" novalidate>
+        <div><label for="qf-first">First Name <span class="req">*</span></label><input id="qf-first" name="first_name" autocomplete="given-name" required></div>
+        <div><label for="qf-last">Last Name <span class="req">*</span></label><input id="qf-last" name="last_name" autocomplete="family-name" required></div>
+        <div><label for="qf-email">Email <span class="req">*</span></label><input id="qf-email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="qf-phone">Phone <span class="req">*</span></label><input id="qf-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="full"><label for="qf-address">Project Address</label><input id="qf-address" name="address" autocomplete="street-address"></div>
+        <div><label for="qf-city">City</label><input id="qf-city" name="city" autocomplete="address-level2"></div>
+        <div class="pair">
+          <div><label for="qf-state">State</label><input id="qf-state" name="state" autocomplete="address-level1" value="IN"></div>
+          <div><label for="qf-zip">Zip</label><input id="qf-zip" name="zip" inputmode="numeric" autocomplete="postal-code"></div>
+        </div>
+        <div><label for="qf-project">Type of Project <span class="req">*</span></label>
+          <select id="qf-project" name="project_type" required>
+            <option value="">— Please select —</option>
+            <option>New Custom Home</option>
+            <option>Kitchen Remodel</option>
+            <option>Bathroom Remodel</option>
+            <option>Exterior Remodel</option>
+            <option>Addition</option>
+            <option>Whole House Remodel</option>
+            <option>Basement Remodel</option>
+            <option>Interior Remodel</option>
+            <option>Sunroom</option>
+            <option>Water Damage</option>
+            <option>Insurance</option>
+            <option>Handyman</option>
+          </select></div>
+        <div><label for="qf-budget">Planned Investment</label>
+          <select id="qf-budget" name="budget">
+            <option value="">— Please select —</option>
+            <option>$25,000 - $50,000</option>
+            <option>$50,000 - $100,000</option>
+            <option>$100,000 - $250,000</option>
+            <option>$250,000 - $500,000</option>
+            <option>$500,000 - $750,000</option>
+            <option>$750,000 - $1,000,000</option>
+            <option>Over $1,000,000</option>
+          </select></div>
+        <div><label for="qf-financed">Bank Financed?</label>
+          <select id="qf-financed" name="financed"><option value="">—</option><option>Yes</option><option>No</option><option>Not sure yet</option></select></div>
+        <div><label for="qf-blueprints">Do You Have Blueprints?</label>
+          <select id="qf-blueprints" name="blueprints"><option value="">—</option><option>Yes</option><option>No</option><option>In progress</option></select></div>
+        <div class="full"><label for="qf-heard">Where Did You Hear About Us?</label><input id="qf-heard" name="heard_about"></div>
+        <div class="full"><label for="qf-message">Tell Us About Your Project</label><textarea id="qf-message" name="message"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="qf-website">Website</label><input id="qf-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="qf-error" id="qfError" role="alert"></p>
+        <button type="submit" id="qfSubmit">Request My Quote</button>
+      </form>
+      <div class="qf-done" id="qfDone" role="status">
+        <h3>Thank you &mdash; we&rsquo;ve got it.</h3>
+        <p>A member of the JDC team will reach out within one business day to schedule your consultation.</p>
       </div>
     </div>
   </section>
@@ -239,6 +298,37 @@
 
   <script src="components.js"></script>
   <script>JDC.nav('quote');JDC.footer();</script>
+
+  <script>
+    (function () {
+      var BUILDOS_LEADS_URL = 'https://build-os-eight.vercel.app/api/public/leads';
+      var form = document.getElementById('quoteForm');
+      var err = document.getElementById('qfError');
+      var btn = document.getElementById('qfSubmit');
+      var opened = Date.now();
+      function fail(msg) { err.textContent = msg; err.style.display = 'block'; }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        err.style.display = 'none';
+        var missing = form.querySelector(':invalid');
+        if (missing) { missing.focus(); return fail('Please fill in the required fields.'); }
+        var data = Object.fromEntries(new FormData(form));
+        data.elapsed_ms = Date.now() - opened;
+        btn.disabled = true; btn.textContent = 'Sending…';
+        fetch(BUILDOS_LEADS_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+          .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+          .then(function (res) {
+            if (!res.ok) { var e2 = new Error(res.j && res.j.error); e2.server = true; throw e2; }
+            form.style.display = 'none';
+            document.getElementById('qfDone').style.display = 'block';
+          })
+          .catch(function (x) {
+            fail((x && x.server && x.message) ||'Something went wrong. Please try again or give us a call.');
+            btn.disabled = false; btn.textContent = 'Request My Quote';
+          });
+      });
+    })();
+  </script>
 
 </body>
 </html>
