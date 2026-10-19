@@ -244,11 +244,11 @@
         <div><label for="qf-last">Last Name <span class="req">*</span></label><input id="qf-last" name="last_name" autocomplete="family-name" required></div>
         <div><label for="qf-email">Email <span class="req">*</span></label><input id="qf-email" name="email" type="email" autocomplete="email" required></div>
         <div><label for="qf-phone">Phone <span class="req">*</span></label><input id="qf-phone" name="phone" type="tel" autocomplete="tel" required></div>
-        <div class="full"><label for="qf-address">Project Address</label><input id="qf-address" name="address" autocomplete="street-address"></div>
-        <div><label for="qf-city">City</label><input id="qf-city" name="city" autocomplete="address-level2"></div>
+        <div class="full"><label for="qf-address">Project Address <span class="req">*</span></label><input id="qf-address" name="address" autocomplete="street-address" required></div>
+        <div><label for="qf-city">City <span class="req">*</span></label><input id="qf-city" name="city" autocomplete="address-level2" required></div>
         <div class="pair">
           <div><label for="qf-state">State</label><input id="qf-state" name="state" autocomplete="address-level1" value="IN"></div>
-          <div><label for="qf-zip">Zip</label><input id="qf-zip" name="zip" inputmode="numeric" autocomplete="postal-code"></div>
+          <div><label for="qf-zip">Zip <span class="req">*</span></label><input id="qf-zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" title="5-digit zip code" required></div>
         </div>
         <div><label for="qf-project">Type of Project <span class="req">*</span></label>
           <select id="qf-project" name="project_type" required>
@@ -266,8 +266,8 @@
             <option>Insurance</option>
             <option>Handyman</option>
           </select></div>
-        <div><label for="qf-budget">Planned Investment</label>
-          <select id="qf-budget" name="budget">
+        <div><label for="qf-budget">Planned Investment <span class="req">*</span></label>
+          <select id="qf-budget" name="budget" required>
             <option value="">— Please select —</option>
             <option>$25,000 - $50,000</option>
             <option>$50,000 - $100,000</option>
