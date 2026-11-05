@@ -11,19 +11,40 @@
   gtag('config', 'G-24Y0PKB9XN');
 })();
 
-// Vercel Web Analytics
+// Conversion event tracking (GA4)
+// JDCTrack(name, params) is also called from quote.html on successful submit.
 (function() {
-  if (window.va) return;
-  window.va = function a() {
-    (window.vaq = window.vaq || []).push(arguments);
-  };
-  var s = document.createElement('script');
-  s.src = '/_vercel/insights/script.js';
-  s.defer = true;
-  s.dataset.sdkn = '@vercel/analytics';
-  s.dataset.sdkv = '2.0.1';
-  document.head.appendChild(s);
+  function track(name, params) {
+    params = params || {};
+    params.page_path = location.pathname;
+    try { if (window.gtag) window.gtag('event', name, params); } catch (e) {}
+  }
+  window.JDCTrack = track;
+
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0) {
+      track('click_phone', { link_url: href });
+    } else if (href.indexOf('mailto:') === 0) {
+      track('click_email', { link_url: href });
+    } else if (/(^|\/)quote(\.html)?(\?|#|$)/.test(href)) {
+      track('click_quote_cta', { link_text: (a.textContent || '').trim().slice(0, 50) });
+    }
+  }, true);
+
+  var scrolled = {};
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h < 600) return;
+    var pct = (window.scrollY / h) * 100;
+    [50, 90].forEach(function(t) {
+      if (pct >= t && !scrolled[t]) { scrolled[t] = 1; track('scroll_depth', { percent: t }); }
+    });
+  }, { passive: true });
 })();
+
 
 (function () {
   'use strict';

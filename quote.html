@@ -319,6 +319,7 @@
           .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
           .then(function (res) {
             if (!res.ok) { var e2 = new Error(res.j && res.j.error); e2.server = true; throw e2; }
+            if (window.JDCTrack) JDCTrack('generate_lead', { form: 'quote', investment: data.investment || data.budget || '' });
             form.style.display = 'none';
             document.getElementById('qfDone').style.display = 'block';
           })
