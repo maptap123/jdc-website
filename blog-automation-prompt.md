@@ -86,7 +86,7 @@ Save for reference: primary keyword, volume, KD.
 | Field | Rule |
 |---|---|
 | `{{SLUG}}` | Kebab-case from primary keyword |
-| `{{TITLE_SEO}}` | "{Headline} | JDC Construction | Lawrenceburg, IN" |
+| `{{TITLE_SEO}}` | "{Headline} | JDC Construction" (keep whole title under 60 characters) |
 | `{{META_DESC}}` | 150-160 chars. Include primary keyword + at least one geo term |
 | `{{CANONICAL_URL}}` | `https://jdcremodeling.com/articles/{slug}.html` |
 | `{{OG_URL}}` | Same as canonical |
