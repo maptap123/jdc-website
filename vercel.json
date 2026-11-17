@@ -2,27 +2,89 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.jdcremodeling.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.jdcremodeling.com"
+        }
+      ],
       "destination": "https://jdcremodeling.com/$1",
       "permanent": true
     },
-    { "source": "/index.html", "destination": "/", "permanent": true },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
     {
       "source": "/",
-      "has": [{ "type": "query", "key": "p", "value": "676" }],
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "676"
+        }
+      ],
       "destination": "/remodeling.html",
       "permanent": true
     },
     {
       "source": "/",
-      "has": [{ "type": "query", "key": "page_id", "value": "26" }],
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "26"
+        }
+      ],
       "destination": "/about.html",
       "permanent": true
     },
     {
       "source": "/",
-      "has": [{ "type": "query", "key": "page_id", "value": "30" }],
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "30"
+        }
+      ],
       "destination": "/quote.html",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-caudill.html",
+      "destination": "/craftsman-ranch-custom-home-greendale-in.html",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-cameron.html",
+      "destination": "/custom-ranch-home-lawrenceburg-in.html",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-larkin.html",
+      "destination": "/craftsman-walkout-ranch-greendale-in.html",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-alice.html",
+      "destination": "/cottage-style-custom-home-new-alsace-in.html",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-cleeter.html",
+      "destination": "/kitchen-primary-suite-remodel-aurora-in.html",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-drouge.html",
+      "destination": "/modern-farmhouse-custom-home-guilford-in.html",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-perfect.html",
+      "destination": "/lake-house-renovation-hidden-valley-lake-in.html",
       "permanent": true
     }
   ]

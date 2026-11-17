@@ -1,0 +1,9 @@
+all_cloudinary.json
+blob_mapping.json
+cloudinary_urls.json
+*.md
+*.csv
+*.mjs
+jdc-ad
+JDC Ad
+.playwright-mcp

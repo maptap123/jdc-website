@@ -191,3 +191,7 @@ Save for reference: primary keyword, volume, KD.
 - Skip the `published-articles.md` update.
 - Use keywords already in `published-articles.md`.
 - Start a dev server or take screenshots — this runs unattended.
+
+
+## Client privacy
+Never name clients (surnames or project names such as "the Smith project") in article text, captions, alt text or file names. Describe images generically, for example "Custom home by JDC Construction, Lawrenceburg, IN". Do not state exact project prices.
