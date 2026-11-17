@@ -434,6 +434,7 @@
         + '      <a href="remodeling.html">Remodeling</a>\n'
         + '      <a href="about.html">About</a>\n'
         + '      <a href="articles.html">Articles</a>\n'
+        + '      <a href="areas-we-serve.html">Areas We Serve</a>\n'
         + '      <a href="quote.html">Get a Quote</a>\n'
         + '    </div>\n'
         + '  </footer>';
