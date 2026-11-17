@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.jdcremodeling.com" }],
+      "destination": "https://jdcremodeling.com/$1",
+      "permanent": true
+    },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "p", "value": "676" }],
+      "destination": "/remodeling.html",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "page_id", "value": "26" }],
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "page_id", "value": "30" }],
+      "destination": "/quote.html",
+      "permanent": true
+    }
+  ]
+}

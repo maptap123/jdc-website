@@ -139,10 +139,13 @@
       min-height: 44px; display: flex; align-items: center; justify-content: center;\
     }\
     .mobile-nav-overlay .mobile-cta:active { background: rgba(255,255,255,0.85) !important; color: var(--navy); }\
+    .nav-call { display: none; }\
+    .mobile-nav-overlay .mobile-call { font-size: 0.8rem; letter-spacing: 0.12em; color: var(--gold); }\
     @media (max-width: 768px) {\
       nav { padding: 0 1.25rem; background: rgba(9,27,55,0.9) !important; backdrop-filter: blur(12px); }\
       .nav-links { display: none; }\
       .nav-hamburger { display: flex; }\
+      .nav-call { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: auto; margin-right: 0.25rem; color: var(--gold); }\
     }\
     \
     /* ── FOOTER ── */\
@@ -156,9 +159,11 @@
     }\
     .footer-icon { height: 68px; width: auto; opacity: 0.85; }\
     .footer-contact { display: flex; flex-direction: column; gap: 0.18rem; }\
-    .footer-contact span {\
+    .footer-contact span, .footer-contact a {\
       font-size: 0.78rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.38);\
+      text-decoration: none; transition: color 0.2s ease;\
     }\
+    .footer-contact a:hover { color: rgba(255,255,255,0.7); }\
     .footer-fb {\
       display: inline-flex; align-items: center; justify-content: center;\
       width: 38px; height: 38px;\
@@ -188,7 +193,8 @@
       .footer-links { display: grid; grid-template-columns: repeat(2, auto); gap: 0.25rem 2rem; justify-content: center; }\
       .footer-links a { justify-content: center; min-height: 40px; }\
       .footer-icon { height: 48px; }\
-      .footer-contact span { font-size: 0.88rem; color: rgba(255,255,255,0.55); }\
+      .footer-contact span, .footer-contact a { font-size: 0.88rem; color: rgba(255,255,255,0.55); }\
+      .footer-contact a { min-height: 40px; display: inline-flex; align-items: center; justify-content: center; }\
     }\
   ';
 
@@ -395,6 +401,15 @@
         return;
       }
       presets[preset](active);
+      // Click-to-call: phone icon beside the hamburger + link in the mobile menu
+      var ham = document.getElementById('hamburger');
+      if (ham && !document.getElementById('nav-call')) {
+        ham.insertAdjacentHTML('beforebegin', '<a href="tel:+18126372684" id="nav-call" class="nav-call" aria-label="Call JDC at (812) 637-2684"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>');
+      }
+      var mnav = document.getElementById('mobile-nav');
+      if (mnav && !mnav.querySelector('.mobile-call')) {
+        mnav.insertAdjacentHTML('beforeend', '<a href="tel:+18126372684" class="mobile-call">Call (812) 637-2684</a>');
+      }
       // Re-bind nav reference after DOM replacement
       window._navEl = document.getElementById('main-nav');
     },
@@ -404,8 +419,9 @@
         + '    <div class="footer-left">\n'
         + '      <a href="index.html"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>\n'
         + '      <div class="footer-contact">\n'
-        + '        <span>(812) 637-2684</span>\n'
-        + '        <span>customerservice@jdcremodeling.com</span>\n'
+        + '        <span>25505 Steele Rd, Lawrenceburg, IN 47025</span>\n'
+        + '        <a href="tel:+18126372684">(812) 637-2684</a>\n'
+        + '        <a href="mailto:customerservice@jdcremodeling.com">customerservice@jdcremodeling.com</a>\n'
         + '      </div>\n'
         + '      <a href="https://www.facebook.com/JDCremodeling" class="footer-fb" target="_blank" rel="noopener" aria-label="JDC Construction on Facebook">\n'
         + '        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>\n'
