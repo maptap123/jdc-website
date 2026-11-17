@@ -315,16 +315,30 @@
     }
   </style>
 <style>
-    .case-study{background:#fff;padding:4.5rem 5rem;border-bottom:1px solid rgba(9,27,55,.08)}
-    .case-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:3.5rem}
-    .case-copy p{font-size:1.02rem;line-height:1.85;color:#2b3947;margin:0 0 1.2rem}
-    .case-facts{background:#f7f5f2;padding:1.75rem 1.75rem 1rem;align-self:start}
-    .case-facts h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin:0 0 1rem;color:#091b37}
-    .case-facts dl{margin:0}.case-facts dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#8a6d00;margin-top:.9rem}
-    .case-facts dd{margin:.2rem 0 0;font-size:.95rem;line-height:1.5;color:#091b37}
-    .case-note{font-size:.72rem;color:#465462;margin:1.1rem 0 .75rem;line-height:1.5}
-    .case-links{margin-top:1.5rem;font-size:.9rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.25rem}
-    @media(max-width:900px){.case-study{padding:3rem 1.25rem}.case-inner{grid-template-columns:1fr;gap:2rem}}
+    .case-article{background:#fff;padding:4.5rem 1.5rem 3rem}
+    .case-article .wrap{max-width:1100px;margin:0 auto}
+    .case-intro{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:3rem;align-items:start}
+    .case-article h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.15;letter-spacing:-.01em;color:#091b37;max-width:720px;margin:4.5rem auto 1.1rem}
+    .case-intro-text h2{margin:0 0 1.1rem}
+    .case-article p{font-size:1.06rem;line-height:1.9;color:#2b3947;max-width:720px;margin:0 auto 1.25rem}
+    .case-intro-text p{margin-left:0;margin-right:0}
+    .case-card{background:#091b37;color:#fff;border-top:4px solid #f2b900;padding:1.75rem 1.75rem 1.5rem;position:sticky;top:100px;box-shadow:0 10px 30px rgba(9,27,55,.18)}
+    .case-article .case-card-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.6rem;color:#fff;margin:0 0 .5rem;max-width:none}
+    .case-card dl{margin:0}.case-card dl>div{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.14)}
+    .case-card dt{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#f2b900}
+    .case-card dd{margin:.3rem 0 0;font-size:1.08rem;font-weight:500;line-height:1.4;color:#fff}
+    .case-article .case-card .case-note{margin:.75rem 0 0;max-width:none;font-size:.74rem;line-height:1.5;color:rgba(255,255,255,.7)}
+    .cf{margin:2rem 0 0}
+    .cf img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+    .cf-wide img{aspect-ratio:16/9}
+    .cf figcaption{font-size:.78rem;color:#465462;margin-top:.55rem;line-height:1.5}
+    .cf-row{display:grid;gap:12px;margin-top:2rem}
+    .cf-row .cf{margin:0}
+    .cf-row img{aspect-ratio:4/3}
+    .cf-2{grid-template-columns:1fr 1fr}.cf-3{grid-template-columns:repeat(3,1fr)}
+    .case-links{max-width:720px;margin:2.5rem auto 0;font-size:.95rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.4rem}
+    @media(max-width:900px){.case-intro{grid-template-columns:1fr;gap:2rem}.case-card{position:static;order:-1}}
+    @media(max-width:768px){.case-article{padding:3rem 1.25rem 2rem}.cf-2,.cf-3{grid-template-columns:1fr}.cf-row img{aspect-ratio:3/2}}
   </style>
 </head>
 <body>
@@ -344,27 +358,49 @@
     </div>
   </section>
 
-  <section class="case-study">
-    <div class="case-inner">
-      <div class="case-copy">
-        <p>This Aurora remodel reworked the rooms the family uses most. The kitchen now has white cabinetry and a walnut island top, and the primary suite got a new bedroom, closet and full bath.</p>
-        <p>The scope also included the laundry, a hall half bath and some exterior work, with accessibility-related features built in so the home keeps working as needs change.</p>
-        <p>Timelines on whole-room remodels often stretch when special-order items arrive late, and this project ran roughly five to eight months with a few delayed items.</p>
-        <div class="case-links"><a href="remodeling.html">Our remodeling services</a><a href="articles/how-much-does-a-kitchen-remodel-cost.html">Remodel costs</a><a href="quote.html">Get a free quote</a></div>
-      </div>
-      <aside class="case-facts">
-        <h2>Project facts</h2>
-        <dl><dt>Location</dt><dd>Aurora, Dearborn County, IN</dd><dt>Completed</dt><dd>2020</dd><dt>Scope</dt><dd>Kitchen, primary bedroom, closet and full bath, laundry, hall half bath, some exterior work</dd><dt>Timeline</dt><dd>Roughly 5 to 8 months, including delayed items</dd><dt>Style</dt><dd>Traditional / farmhouse-inspired, with accessibility-related features</dd></dl>
-        
-      </aside>
+  <article class="case-article">
+    <div class="wrap">
+
+      <div class="case-intro"><div class="case-intro-text">
+      <h2>Remodeling the rooms a family uses most</h2>
+      <p>This Aurora remodel focused on the rooms that matter most day to day: the kitchen, the primary suite, the laundry and a powder room, along with some exterior work. The goal was a traditional, farmhouse-inspired look with finishes that feel warm and a layout that works for how the owners actually live, including a few accessibility-related features built in for the long run.</p>
+      <p>The project ran roughly five to eight months, which included waiting on some delayed items. Here is a look at the finished rooms.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0039.jpg" alt="Farmhouse kitchen with a walnut island top, white cabinets and a window over the sink" loading="lazy" onclick="openLightbox(1)"><figcaption>The remodeled kitchen, with white cabinets and a walnut island top.</figcaption></figure></div><aside class="case-card"><h2 class="case-card-title">Project at a glance</h2><dl><div><dt>Location</dt><dd>Aurora, Dearborn County, IN</dd></div><div><dt>Completed</dt><dd>2020</dd></div><div><dt>Scope</dt><dd>Kitchen, primary bedroom, closet and full bath, laundry, hall half bath, some exterior work</dd></div><div><dt>Timeline</dt><dd>Roughly 5 to 8 months, including delayed items</dd></div><div><dt>Style</dt><dd>Traditional / farmhouse-inspired, with accessibility-related features</dd></div></dl></aside></div>
+      <h2>A farmhouse kitchen with a walnut island</h2>
+      <p>The kitchen is built around a long island with a walnut butcher-block top, a warm contrast against the white painted cabinets and the white subway tile on the walls. Rustic metal-legged stools line one side, and a pair of turned corbels under the overhang give the island a furniture-like look.</p>
+      <p>A wide window over the farmhouse sink looks out across open fields, so washing up comes with a view. Floating dark wood shelves flank the window and the range, holding everyday dishes and cookbooks within reach, and a black chandelier with fabric shades hangs over the work area.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0043.jpg" alt="Long walnut butcher-block island top with a stainless refrigerator and window beyond" loading="lazy" onclick="openLightbox(2)"><figcaption>A long walnut island top anchors the kitchen.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0109.jpg" alt="Stainless range beside a farmhouse sink under a window with floating shelves" loading="lazy" onclick="openLightbox(11)"><figcaption>The range and farmhouse sink, with floating shelves.</figcaption></figure></div>
+
+      <h2>Details that make it feel custom</h2>
+      <p>The details are where a remodel like this earns its character. Behind the range, a square panel of decorative tile breaks up the white subway tile and creates a focal point above the stove. Under the farmhouse sink, a fabric skirt replaces cabinet doors in the traditional style. And the island's turned corbels, set against the stools, add a small piece of craftsmanship you notice every time you sit down.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0103.jpg" alt="Decorative tile panel behind a gas cooktop with white subway tile" loading="lazy" onclick="openLightbox(10)"><figcaption>A decorative tile panel behind the cooktop.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0081.jpg" alt="Island overhang with turned corbels and rustic metal-legged stools" loading="lazy" onclick="openLightbox(7)"><figcaption>Turned corbels and metal-legged stools at the island.</figcaption></figure></div>
+
+      <h2>A dining nook with a dark accent wall</h2>
+      <p>Off the kitchen, a small dining nook is painted in a deep charcoal with a set of decorative wall tiles, which sets it apart from the light kitchen and makes the space feel cozy. A little table with two upholstered chairs sits beside a window with plantation shutters.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0112.jpg" alt="Small dining nook with a dark accent wall, a round table and two upholstered chairs" loading="lazy" onclick="openLightbox(12)"><figcaption>A dining nook with a charcoal accent wall.</figcaption></figure>
+
+      <h2>A powder room with a pattern</h2>
+      <p>The powder room is small, so it can afford to be bold. A black-and-white patterned tile floor sits below white wainscoting, with a small white vanity and a dark upper wall for contrast.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0118.jpg" alt="Powder room with black-and-white patterned tile floor and white wainscoting" loading="lazy" onclick="openLightbox(13)"><figcaption>Patterned tile and wainscoting in the powder room.</figcaption></figure>
+
+      <h2>A primary bath with a clawfoot tub</h2>
+      <p>The primary bath is a mix of classic and practical. A clawfoot tub sits beneath a window against a navy accent wall, on a herringbone-pattern floor. The vanity is white, with vessel sinks, a quartz-look top and large round black-framed mirrors, and the faucets have a vintage look that matches the rest of the house.</p>
+      <p>A tiled walk-in shower is designed around accessibility. It is finished in white subway tile with a black mosaic floor, grab bars on the walls and a handheld shower head on a slide bar, which makes it comfortable and safe for today and for years to come.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0133.jpg" alt="Clawfoot tub beneath a window with a navy accent wall and herringbone floor" loading="lazy" onclick="openLightbox(16)"><figcaption>A clawfoot tub against a navy accent wall.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0125.jpg" alt="Primary bath with a white vanity, round black mirrors and a herringbone tile floor" loading="lazy" onclick="openLightbox(14)"><figcaption>The vanity, with round black-framed mirrors.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Cleeter/20200722-AJW_0136.jpg" alt="Tiled walk-in shower with grab bars and a handheld shower head" loading="lazy" onclick="openLightbox(19)"><figcaption>An accessible shower with grab bars and a handheld sprayer.</figcaption></figure></div>
+
+      <h2>A remodel that works for the long run</h2>
+      <p>Timelines on projects like this often stretch when special-order items arrive late, and that was true here. The end result is a home with warm finishes, a kitchen made for gathering and a primary suite designed to keep working as needs change.</p>
+      <p>If you are planning a kitchen or primary-suite remodel, we would be happy to talk through your goals, your timeline and what the project might cost.</p>
+      
+      <div class="case-links"><a href="remodeling.html">Our remodeling services</a><a href="articles/how-much-does-a-kitchen-remodel-cost.html">Remodel costs</a><a href="quote.html">Get a free quote</a></div>
     </div>
-  </section>
+  </article>
 
   <section class="gallery-section">
     <div class="gallery-header">
       <div>
         <div class="section-eyebrow">Gallery</div>
-        <h2 class="section-title">All Photos</h2>
+        <h2 class="section-title">Full Photo Gallery</h2>
       </div>
     </div>
     <div class="gallery-grid">

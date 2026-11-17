@@ -315,16 +315,30 @@
     }
   </style>
 <style>
-    .case-study{background:#fff;padding:4.5rem 5rem;border-bottom:1px solid rgba(9,27,55,.08)}
-    .case-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:3.5rem}
-    .case-copy p{font-size:1.02rem;line-height:1.85;color:#2b3947;margin:0 0 1.2rem}
-    .case-facts{background:#f7f5f2;padding:1.75rem 1.75rem 1rem;align-self:start}
-    .case-facts h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin:0 0 1rem;color:#091b37}
-    .case-facts dl{margin:0}.case-facts dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#8a6d00;margin-top:.9rem}
-    .case-facts dd{margin:.2rem 0 0;font-size:.95rem;line-height:1.5;color:#091b37}
-    .case-note{font-size:.72rem;color:#465462;margin:1.1rem 0 .75rem;line-height:1.5}
-    .case-links{margin-top:1.5rem;font-size:.9rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.25rem}
-    @media(max-width:900px){.case-study{padding:3rem 1.25rem}.case-inner{grid-template-columns:1fr;gap:2rem}}
+    .case-article{background:#fff;padding:4.5rem 1.5rem 3rem}
+    .case-article .wrap{max-width:1100px;margin:0 auto}
+    .case-intro{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:3rem;align-items:start}
+    .case-article h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.15;letter-spacing:-.01em;color:#091b37;max-width:720px;margin:4.5rem auto 1.1rem}
+    .case-intro-text h2{margin:0 0 1.1rem}
+    .case-article p{font-size:1.06rem;line-height:1.9;color:#2b3947;max-width:720px;margin:0 auto 1.25rem}
+    .case-intro-text p{margin-left:0;margin-right:0}
+    .case-card{background:#091b37;color:#fff;border-top:4px solid #f2b900;padding:1.75rem 1.75rem 1.5rem;position:sticky;top:100px;box-shadow:0 10px 30px rgba(9,27,55,.18)}
+    .case-article .case-card-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.6rem;color:#fff;margin:0 0 .5rem;max-width:none}
+    .case-card dl{margin:0}.case-card dl>div{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.14)}
+    .case-card dt{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#f2b900}
+    .case-card dd{margin:.3rem 0 0;font-size:1.08rem;font-weight:500;line-height:1.4;color:#fff}
+    .case-article .case-card .case-note{margin:.75rem 0 0;max-width:none;font-size:.74rem;line-height:1.5;color:rgba(255,255,255,.7)}
+    .cf{margin:2rem 0 0}
+    .cf img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+    .cf-wide img{aspect-ratio:16/9}
+    .cf figcaption{font-size:.78rem;color:#465462;margin-top:.55rem;line-height:1.5}
+    .cf-row{display:grid;gap:12px;margin-top:2rem}
+    .cf-row .cf{margin:0}
+    .cf-row img{aspect-ratio:4/3}
+    .cf-2{grid-template-columns:1fr 1fr}.cf-3{grid-template-columns:repeat(3,1fr)}
+    .case-links{max-width:720px;margin:2.5rem auto 0;font-size:.95rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.4rem}
+    @media(max-width:900px){.case-intro{grid-template-columns:1fr;gap:2rem}.case-card{position:static;order:-1}}
+    @media(max-width:768px){.case-article{padding:3rem 1.25rem 2rem}.cf-2,.cf-3{grid-template-columns:1fr}.cf-row img{aspect-ratio:3/2}}
   </style>
 </head>
 <body>
@@ -344,27 +358,65 @@
     </div>
   </section>
 
-  <section class="case-study">
-    <div class="case-inner">
-      <div class="case-copy">
-        <p>This Craftsman-influenced ranch in Greendale pairs single-level living with a full walkout lower level. The main floor holds an open kitchen and great room, a primary suite, and a flexible office that can serve as a bedroom. Timber details give the exterior and the covered rear deck a warm, crafted look.</p>
-        <p>Downstairs, the finished lower level adds a family room, a bedroom and a second office, bringing the home to 3,274 finished square feet. Because the lower level walks out to grade, it lives like a main floor rather than a basement.</p>
-        <p>From start to occupancy took about seven months. If you are weighing a custom ranch with a finished walkout, this is a good example of how the space can be planned from the start.</p>
-        <div class="case-links"><a href="custom-home-process.html">How we build</a><a href="articles/how-much-does-it-cost-to-build-a-house.html">What a custom home costs</a><a href="quote.html">Start your project</a></div>
-      </div>
-      <aside class="case-facts">
-        <h2>Project facts</h2>
-        <dl><dt>Location</dt><dd>Greendale, Dearborn County, IN</dd><dt>Completed</dt><dd>2024</dd><dt>Finished size</dt><dd>3,274 sq ft (2,064 main level + 1,210 finished walkout lower level)</dd><dt>Bedrooms / baths</dt><dd>3 bedrooms (one flexible office/bedroom), 3 full baths</dd><dt>Build time</dt><dd>About 7 months</dd><dt>Approximate investment</dt><dd>$700K–$750K</dd></dl>
-        <p class="case-note">Investment ranges are approximate and rounded. Every project is priced to its own lot, finishes and scope.</p>
-      </aside>
+  <article class="case-article">
+    <div class="wrap">
+
+      <div class="case-intro"><div class="case-intro-text">
+      <h2>A ranch designed around the walkout</h2>
+      <p>This Craftsman-influenced home in Greendale was planned around a simple idea: live on one level, and let the lower level open straight onto the yard. The main floor holds the kitchen, great room, primary suite and a flexible office that can double as a bedroom. Below it, a finished walkout adds another 1,210 square feet, for 3,274 finished square feet in all.</p>
+      <p>From the first day of construction to occupancy took about seven months in 2024. What follows is a room-by-room look at how the house came together.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240815-AJW_0087.jpg" alt="Front of a Craftsman ranch with board-and-batten siding, stone and a timber-post porch" loading="lazy" onclick="openLightbox(76)"><figcaption>The front elevation: board-and-batten siding, stone and a timber-post porch.</figcaption></figure></div><aside class="case-card"><h2 class="case-card-title">Project at a glance</h2><dl><div><dt>Location</dt><dd>Greendale, Dearborn County, IN</dd></div><div><dt>Completed</dt><dd>2024</dd></div><div><dt>Finished size</dt><dd>3,274 sq ft (2,064 main + 1,210 walkout lower level)</dd></div><div><dt>Bedrooms / baths</dt><dd>3 bedrooms (one flexible office/bedroom), 3 full baths</dd></div><div><dt>Build time</dt><dd>About 7 months</dd></div><div><dt>Approximate investment</dt><dd>$700K–$750K</dd></div></dl><p class="case-note">Investment range is approximate and rounded. Every project is priced to its own lot, finishes and scope.</p></aside></div>
+      <h2>Timber, stone and board-and-batten</h2>
+      <p>The front elevation combines gray-blue board-and-batten siding with stone accents and a deep covered porch carried on heavy timber posts. A pair of glass-paneled wood doors anchors the entry, and stained wood garage doors repeat the warm timber tone from the porch.</p>
+      <p>Landscape beds, a paved walkway and a porch big enough for rocking chairs make the entry feel settled into the site rather than perched on it.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240815-AJW_0102.jpg" alt="Glass-paneled wood double front doors under a timber-post porch" loading="lazy" onclick="openLightbox(79)"><figcaption>A pair of glass-paneled wood doors at the front entry.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240815-AJW_0117.jpg" alt="Stone-faced garage with stained wood doors beside the covered porch" loading="lazy" onclick="openLightbox(82)"><figcaption>Stone and stained wood garage doors echo the porch timbers.</figcaption></figure></div>
+
+      <h2>An open great room and kitchen</h2>
+      <p>Inside, the main living space is a single open room. A stone fireplace anchors the great room, exposed timber beams run overhead, and a wall of black-framed windows pulls in views of the rolling green landscape beyond. The beams tie the interior back to the timber on the porch outside.</p>
+      <p>The great room flows directly into the kitchen, so whoever is cooking is never cut off from the room. A wrought-iron stair rail marks the way down to the lower level without closing anything off.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8518.jpg" alt="Open great room with stone fireplace, exposed beams and kitchen beyond" loading="lazy" onclick="openLightbox(12)"><figcaption>Great room and kitchen share one open space under exposed timber beams.</figcaption></figure>
+
+      <h2>A kitchen with two tones and plenty of storage</h2>
+      <p>The kitchen is built around a large island with a dark wood base and a light stone-look top. Painted cabinetry in soft blue and warm white sits against a mosaic tile backsplash, with a farmhouse-style apron sink, a range under a stained wood hood and black fixtures throughout.</p>
+      <p>The details are practical as well as pretty. A pull-out trash cabinet sits in the island, a slim pull-out spice drawer keeps the cooktop area tidy, and a built-in window bench in blue opens up for storage while giving the breakfast area a place to sit with a view.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8533.jpg" alt="Kitchen with large wood-base island, blue and white cabinets and mosaic backsplash" loading="lazy" onclick="openLightbox(15)"><figcaption>A large island with a dark wood base anchors the kitchen.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8563.jpg" alt="Farmhouse apron sink on the kitchen island with a stone fireplace in the background" loading="lazy" onclick="openLightbox(21)"><figcaption>Farmhouse sink with the great-room fireplace beyond.</figcaption></figure></div>
+
+      <h2>Built-ins, color and a pantry that works</h2>
+      <p>Rather than keep everything white, this home uses color in its cabinetry. The same soft blue appears on the kitchen cabinets, the pantry wall, the window bench and a gray-blue built-in bookcase with a warm wood top. Because the color repeats, it reads as a deliberate palette and not a one-off accent.</p>
+      <p>A tall blue pantry wall with a butcher-block work counter and open shelving keeps small appliances and groceries within a few steps of the range.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8543.jpg" alt="Blue pantry cabinetry with butcher-block counter and open shelving" loading="lazy" onclick="openLightbox(17)"><figcaption>The pantry wall, with a wood work counter.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8582.jpg" alt="Blue built-in window bench with a wood top beneath large black-framed windows" loading="lazy" onclick="openLightbox(25)"><figcaption>A window bench with a wood top and a view of the landscape.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8468.jpg" alt="Gray-blue built-in shelving with a wood countertop" loading="lazy" onclick="openLightbox(2)"><figcaption>Built-in shelving with a warm wood top.</figcaption></figure></div>
+
+      <h2>A mudroom and laundry that earn their space</h2>
+      <p>The mudroom is lined with tall blue lockers, a wood bench and a bright yellow utility sink, a cheerful and practical spot for coats, boots and muddy hands. The laundry room switches to sage green, with a full counter for folding and plenty of cabinet space around the washer and dryer.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8607.jpg" alt="Mudroom with blue lockers, wood bench and yellow utility sink" loading="lazy" onclick="openLightbox(30)"><figcaption>Mudroom lockers, a wood bench and a yellow utility sink.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8677.jpg" alt="Laundry room with sage green cabinets, countertop and front-loading washer and dryer" loading="lazy" onclick="openLightbox(44)"><figcaption>Sage green laundry cabinets with a folding counter.</figcaption></figure></div>
+
+      <h2>A primary suite with a spa-style bath</h2>
+      <p>The primary suite sits on the main level. A sliding barn door opens into the bath, where a freestanding soaking tub sits on a patterned hexagon tile floor. A double vanity in a light wood finish runs along one wall, and a walk-in shower is finished in marble-look tile with a built-in bench.</p>
+      <p>The walk-in closet is fitted with custom shelving, drawers and hanging rods, so the room is organized from the day the owners move in. A second bath takes a different approach, with a gray vanity, a tub-shower and a pebble tile floor.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8648.jpg" alt="Primary bath with freestanding tub, hexagon tile floor and double wood vanity" loading="lazy" onclick="openLightbox(38)"><figcaption>Primary bath: soaking tub, patterned tile and a double vanity.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8638.jpg" alt="Walk-in shower with marble-look tile and built-in bench" loading="lazy" onclick="openLightbox(36)"><figcaption>Walk-in shower with marble-look tile and a built-in bench.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8657.jpg" alt="Walk-in closet with built-in shelving, drawers and hanging rods" loading="lazy" onclick="openLightbox(40)"><figcaption>A walk-in closet fitted with shelving and drawers.</figcaption></figure></div>
+
+      <h2>A finished lower level that walks out to the yard</h2>
+      <p>The lower level is a second living floor. A family room with its own stone fireplace opens to the covered patio, and a bar area with a wood countertop and a hammered copper sink makes entertaining easy. A wall of walnut-toned built-in shelving with accent lighting gives the room a library feel, and a bedroom, a second office and a full bath with a pebble-floor shower round out the level.</p>
+      <p>Because it walks out to grade, this floor gets real daylight and a direct connection to the yard, which is why it feels like part of the house and not a basement.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8708.jpg" alt="Lower-level family room with stone fireplace and staircase" loading="lazy" onclick="openLightbox(50)"><figcaption>The lower-level family room, with a second stone fireplace.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8727.jpg" alt="Walnut-toned built-in shelving and cabinets with accent lighting" loading="lazy" onclick="openLightbox(54)"><figcaption>Built-in shelving with accent lighting.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240618-AJW_8747.jpg" alt="Hammered copper bar sink set in a wood countertop" loading="lazy" onclick="openLightbox(58)"><figcaption>A hammered copper sink in a wood counter.</figcaption></figure></div>
+
+      <h2>Outdoor living on every level</h2>
+      <p>The covered rear deck extends the main floor outdoors, and below it a covered stone patio with its own fireplace gives the lower level an outdoor room that works in cooler weather. Beyond it, a paver patio with a fire-pit seating area looks over a pond with a fountain.</p>
+      <p>The landscaping carries the Craftsman character into the yard: boulder retaining walls, stone steps, planting beds and a small putting green tucked beside the patio.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240815-AJW_0140.jpg" alt="Covered stone patio with a fireplace beneath the rear deck" loading="lazy" onclick="openLightbox(86)"><figcaption>A covered patio with a fireplace beneath the rear deck.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240815-AJW_0142.jpg" alt="Paver patio with red chairs overlooking a pond with a fountain" loading="lazy" onclick="openLightbox(87)"><figcaption>Fire-pit seating with a view of the pond.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/caudill/20240815-AJW_0132.jpg" alt="Artificial turf putting green edged with boulders and plantings" loading="lazy" onclick="openLightbox(85)"><figcaption>A putting green edged with boulders.</figcaption></figure></div>
+
+      <h2>Thinking about a custom ranch with a walkout?</h2>
+      <p>This home shows how a one-level plan and a finished walkout can work together, giving a household main-floor convenience and a second floor of living space without adding stairs to daily life. If you are weighing a similar plan, we would be glad to talk through your lot, your program and a realistic budget.</p>
+      
+      <div class="case-links"><a href="custom-home-process.html">How we build</a><a href="articles/how-much-does-it-cost-to-build-a-house.html">What a custom home costs</a><a href="quote.html">Start your project</a></div>
     </div>
-  </section>
+  </article>
 
   <section class="gallery-section">
     <div class="gallery-header">
       <div>
         <div class="section-eyebrow">Gallery</div>
-        <h2 class="section-title">All Photos</h2>
+        <h2 class="section-title">Full Photo Gallery</h2>
       </div>
     </div>
     <div class="gallery-grid">

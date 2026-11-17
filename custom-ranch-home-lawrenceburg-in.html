@@ -315,16 +315,30 @@
     }
   </style>
 <style>
-    .case-study{background:#fff;padding:4.5rem 5rem;border-bottom:1px solid rgba(9,27,55,.08)}
-    .case-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:3.5rem}
-    .case-copy p{font-size:1.02rem;line-height:1.85;color:#2b3947;margin:0 0 1.2rem}
-    .case-facts{background:#f7f5f2;padding:1.75rem 1.75rem 1rem;align-self:start}
-    .case-facts h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin:0 0 1rem;color:#091b37}
-    .case-facts dl{margin:0}.case-facts dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#8a6d00;margin-top:.9rem}
-    .case-facts dd{margin:.2rem 0 0;font-size:.95rem;line-height:1.5;color:#091b37}
-    .case-note{font-size:.72rem;color:#465462;margin:1.1rem 0 .75rem;line-height:1.5}
-    .case-links{margin-top:1.5rem;font-size:.9rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.25rem}
-    @media(max-width:900px){.case-study{padding:3rem 1.25rem}.case-inner{grid-template-columns:1fr;gap:2rem}}
+    .case-article{background:#fff;padding:4.5rem 1.5rem 3rem}
+    .case-article .wrap{max-width:1100px;margin:0 auto}
+    .case-intro{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:3rem;align-items:start}
+    .case-article h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.15;letter-spacing:-.01em;color:#091b37;max-width:720px;margin:4.5rem auto 1.1rem}
+    .case-intro-text h2{margin:0 0 1.1rem}
+    .case-article p{font-size:1.06rem;line-height:1.9;color:#2b3947;max-width:720px;margin:0 auto 1.25rem}
+    .case-intro-text p{margin-left:0;margin-right:0}
+    .case-card{background:#091b37;color:#fff;border-top:4px solid #f2b900;padding:1.75rem 1.75rem 1.5rem;position:sticky;top:100px;box-shadow:0 10px 30px rgba(9,27,55,.18)}
+    .case-article .case-card-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.6rem;color:#fff;margin:0 0 .5rem;max-width:none}
+    .case-card dl{margin:0}.case-card dl>div{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.14)}
+    .case-card dt{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#f2b900}
+    .case-card dd{margin:.3rem 0 0;font-size:1.08rem;font-weight:500;line-height:1.4;color:#fff}
+    .case-article .case-card .case-note{margin:.75rem 0 0;max-width:none;font-size:.74rem;line-height:1.5;color:rgba(255,255,255,.7)}
+    .cf{margin:2rem 0 0}
+    .cf img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+    .cf-wide img{aspect-ratio:16/9}
+    .cf figcaption{font-size:.78rem;color:#465462;margin-top:.55rem;line-height:1.5}
+    .cf-row{display:grid;gap:12px;margin-top:2rem}
+    .cf-row .cf{margin:0}
+    .cf-row img{aspect-ratio:4/3}
+    .cf-2{grid-template-columns:1fr 1fr}.cf-3{grid-template-columns:repeat(3,1fr)}
+    .case-links{max-width:720px;margin:2.5rem auto 0;font-size:.95rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.4rem}
+    @media(max-width:900px){.case-intro{grid-template-columns:1fr;gap:2rem}.case-card{position:static;order:-1}}
+    @media(max-width:768px){.case-article{padding:3rem 1.25rem 2rem}.cf-2,.cf-3{grid-template-columns:1fr}.cf-row img{aspect-ratio:3/2}}
   </style>
 </head>
 <body>
@@ -344,27 +358,55 @@
     </div>
   </section>
 
-  <section class="case-study">
-    <div class="case-inner">
-      <div class="case-copy">
-        <p>This Lawrenceburg ranch is built for a household that needs room. Five bedrooms are split across two levels, three on the main floor and two below, so there is space for family, guests and a home office without feeling oversized.</p>
-        <p>The main level centers on an open kitchen and great room finished in a modern, transitional palette. The partially finished basement adds a family room and wet bar for entertaining, with the rest of the lower level left flexible.</p>
-        <p>From start to occupancy took about seven months. Explore the photos below for the kitchen, great room and lower-level details.</p>
-        <div class="case-links"><a href="custom-home-process.html">How we build</a><a href="articles/how-much-does-it-cost-to-build-a-house.html">What a custom home costs</a><a href="quote.html">Start your project</a></div>
-      </div>
-      <aside class="case-facts">
-        <h2>Project facts</h2>
-        <dl><dt>Location</dt><dd>Lawrenceburg, Dearborn County, IN</dd><dt>Completed</dt><dd>2024</dd><dt>Finished size</dt><dd>2,966 sq ft (2,084 main level + 882 finished lower level)</dd><dt>Bedrooms / baths</dt><dd>5 bedrooms, 3 full baths</dd><dt>Build time</dt><dd>About 7 months</dd><dt>Approximate investment</dt><dd>$600K–$650K</dd></dl>
-        <p class="case-note">Investment ranges are approximate and rounded. Every project is priced to its own lot, finishes and scope.</p>
-      </aside>
+  <article class="case-article">
+    <div class="wrap">
+
+      <div class="case-intro"><div class="case-intro-text">
+      <h2>A ranch built for a full house</h2>
+      <p>This Lawrenceburg home was designed for a household that needs room to spread out. It is a ranch with five bedrooms, three on the main level and two on the finished lower level, in 2,966 finished square feet. That is enough space for a family, guests and a home office without any room feeling oversized.</p>
+      <p>The style is modern and transitional: clean lines, flat-panel cabinetry, black accents against white walls and a neutral wood-look floor that runs through the main level. Construction took about seven months in 2024, and this page walks through the house room by room.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9098.jpg" alt="Great room with a linear fireplace wall and the kitchen visible beyond" loading="lazy" onclick="openLightbox(19)"><figcaption>The fireplace wall defines the great room while keeping sightlines to the kitchen.</figcaption></figure></div><aside class="case-card"><h2 class="case-card-title">Project at a glance</h2><dl><div><dt>Location</dt><dd>Lawrenceburg, Dearborn County, IN</dd></div><div><dt>Completed</dt><dd>2024</dd></div><div><dt>Finished size</dt><dd>2,966 sq ft (2,084 main + 882 finished lower level)</dd></div><div><dt>Bedrooms / baths</dt><dd>5 bedrooms, 3 full baths</dd></div><div><dt>Build time</dt><dd>About 7 months</dd></div><div><dt>Approximate investment</dt><dd>$600K–$650K</dd></div></dl><p class="case-note">Investment range is approximate and rounded. Every project is priced to its own lot, finishes and scope.</p></aside></div>
+      <h2>A modern entry</h2>
+      <p>The entry sets the tone. A black front door with three frosted glass panels and matching sidelights lets daylight into the foyer while keeping the front of the house private. At the garage, a black door with a row of horizontal windows sits against brick and a gray stone base, repeating the dark accent color from the front door.</p>
+      <p>Inside the door, the foyer opens to the great room on one side and, on the other, to a staircase with a glass railing that leads to the lower level.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9013.jpg" alt="Black front door with three frosted glass panels and sidelights" loading="lazy" onclick="openLightbox(2)"><figcaption>A black front door with frosted glass panels and sidelights.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9280.jpg" alt="Black garage door with horizontal windows beside brick and a stone base" loading="lazy" onclick="openLightbox(56)"><figcaption>A black garage door with horizontal windows against brick.</figcaption></figure></div>
+
+      <h2>A great room organized around the fireplace</h2>
+      <p>The great room is the center of the main level. A linear fireplace in a white surround stands on a partial wall that separates the room from the entry and the kitchen without closing either off, so you can see from one end of the house to the other. Large windows on the back wall fill the room with light, and a ceiling fan keeps the air moving in summer.</p>
+      <p>Because the plan is open, furniture can be arranged in several ways, and the kitchen, dining area and living space all read as one connected room.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9093.jpg" alt="Great room with a linear fireplace and large windows" loading="lazy" onclick="openLightbox(18)"><figcaption>A linear fireplace and large windows in the great room.</figcaption></figure>
+
+      <h2>A kitchen of clean lines and hidden storage</h2>
+      <p>The kitchen is a bright, uncluttered space. White flat-panel cabinets run to the ceiling, the countertops are a white stone-look surface with soft veining, and a black range with a stainless hood gives the room a strong focal point against all that white. A sliding glass door beside the kitchen opens to the back deck, so cooking and outdoor dining are only a step apart.</p>
+      <p>Behind the clean fronts, the storage works hard. Tall pantry cabinets hold pull-out wood drawers and adjustable shelves, and flush panel doors hide still more storage. It is the kind of kitchen that stays calm even when it is in use.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9057.jpg" alt="White kitchen with stone-look counters, refrigerator and corner window" loading="lazy" onclick="openLightbox(11)"><figcaption>White flat-panel cabinets and light stone-look countertops.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9252.jpg" alt="Black range with a stainless hood in a white kitchen" loading="lazy" onclick="openLightbox(50)"><figcaption>A black range stands out against the white cabinetry.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9088.jpg" alt="Pull-out wood drawers inside a tall pantry cabinet" loading="lazy" onclick="openLightbox(17)"><figcaption>Pull-out drawers inside the tall pantry cabinet.</figcaption></figure></div>
+
+      <h2>Bedrooms and baths with a hotel feel</h2>
+      <p>With five bedrooms, bathrooms matter, and the three full baths each have their own character. The primary bath has two vanities in a soft gray finish with round, backlit mirrors above them, plus a glass-enclosed shower with tall vertical tile and a built-in niche. A separate walk-in closet offers shelving along multiple walls.</p>
+      <p>Another bath breaks from the gray with a deep navy vanity and an oval backlit mirror, which gives the room personality without a lot of added expense. Frameless glass, simple chrome fixtures and large-format tile keep every bath bright and easy to clean.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9152.jpg" alt="Primary bath with two gray vanities and round backlit mirrors" loading="lazy" onclick="openLightbox(30)"><figcaption>Two vanities with round, backlit mirrors in the primary bath.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9133.jpg" alt="Glass shower with vertical tile and a built-in niche" loading="lazy" onclick="openLightbox(26)"><figcaption>A glass-enclosed shower with tall vertical tile and a niche.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9157.jpg" alt="Bathroom with a navy blue vanity and an oval backlit mirror" loading="lazy" onclick="openLightbox(31)"><figcaption>A navy vanity gives this bath a pop of color.</figcaption></figure></div>
+
+      <h2>A lower level with its own living space</h2>
+      <p>A staircase with a glass rail and a continuous handrail leads down to the finished lower level, which adds 882 square feet. The centerpiece is a family room with a second linear fireplace, this one framed in a dark gray surround, with a ceiling fan overhead and small windows that bring in daylight.</p>
+      <p>A wet bar sits just off the room, with a sink and cabinetry for drinks and snacks, which makes the lower level a natural place for movie nights and game days. Two of the home's five bedrooms are on this level, giving guests or older kids some privacy from the rest of the house.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9188.jpg" alt="Staircase with a glass railing and wood handrail" loading="lazy" onclick="openLightbox(37)"><figcaption>A glass-railed staircase leads to the lower level.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9198.jpg" alt="Lower-level family room with a dark gray fireplace surround" loading="lazy" onclick="openLightbox(39)"><figcaption>The lower-level family room, with a second fireplace.</figcaption></figure></div>
+
+      <h2>Everyday details</h2>
+      <p>The laundry room has its own cabinets and counter, plus a sliding barn-style door that saves the space a door would swing into. These smaller rooms are where a home tends to succeed or fail day to day, and they were planned with as much care as the great room.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/cameron/20240620-AJW_9262.jpg" alt="Laundry room with white cabinets, counter and washer" loading="lazy" onclick="openLightbox(52)"><figcaption>The laundry room, with cabinets and a counter.</figcaption></figure>
+
+      <h2>Planning a ranch with room to grow?</h2>
+      <p>This home shows how a one-level plan with a finished lower level can handle a big household without feeling big. If you are weighing a similar plan, we would be glad to talk through your lot, your list of must-haves and a realistic budget.</p>
+      
+      <div class="case-links"><a href="custom-home-process.html">How we build</a><a href="articles/how-much-does-it-cost-to-build-a-house.html">What a custom home costs</a><a href="quote.html">Start your project</a></div>
     </div>
-  </section>
+  </article>
 
   <section class="gallery-section">
     <div class="gallery-header">
       <div>
         <div class="section-eyebrow">Gallery</div>
-        <h2 class="section-title">All Photos</h2>
+        <h2 class="section-title">Full Photo Gallery</h2>
       </div>
     </div>
     <div class="gallery-grid">

@@ -315,16 +315,30 @@
     }
   </style>
 <style>
-    .case-study{background:#fff;padding:4.5rem 5rem;border-bottom:1px solid rgba(9,27,55,.08)}
-    .case-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:3.5rem}
-    .case-copy p{font-size:1.02rem;line-height:1.85;color:#2b3947;margin:0 0 1.2rem}
-    .case-facts{background:#f7f5f2;padding:1.75rem 1.75rem 1rem;align-self:start}
-    .case-facts h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin:0 0 1rem;color:#091b37}
-    .case-facts dl{margin:0}.case-facts dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#8a6d00;margin-top:.9rem}
-    .case-facts dd{margin:.2rem 0 0;font-size:.95rem;line-height:1.5;color:#091b37}
-    .case-note{font-size:.72rem;color:#465462;margin:1.1rem 0 .75rem;line-height:1.5}
-    .case-links{margin-top:1.5rem;font-size:.9rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.25rem}
-    @media(max-width:900px){.case-study{padding:3rem 1.25rem}.case-inner{grid-template-columns:1fr;gap:2rem}}
+    .case-article{background:#fff;padding:4.5rem 1.5rem 3rem}
+    .case-article .wrap{max-width:1100px;margin:0 auto}
+    .case-intro{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:3rem;align-items:start}
+    .case-article h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.15;letter-spacing:-.01em;color:#091b37;max-width:720px;margin:4.5rem auto 1.1rem}
+    .case-intro-text h2{margin:0 0 1.1rem}
+    .case-article p{font-size:1.06rem;line-height:1.9;color:#2b3947;max-width:720px;margin:0 auto 1.25rem}
+    .case-intro-text p{margin-left:0;margin-right:0}
+    .case-card{background:#091b37;color:#fff;border-top:4px solid #f2b900;padding:1.75rem 1.75rem 1.5rem;position:sticky;top:100px;box-shadow:0 10px 30px rgba(9,27,55,.18)}
+    .case-article .case-card-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.6rem;color:#fff;margin:0 0 .5rem;max-width:none}
+    .case-card dl{margin:0}.case-card dl>div{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.14)}
+    .case-card dt{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#f2b900}
+    .case-card dd{margin:.3rem 0 0;font-size:1.08rem;font-weight:500;line-height:1.4;color:#fff}
+    .case-article .case-card .case-note{margin:.75rem 0 0;max-width:none;font-size:.74rem;line-height:1.5;color:rgba(255,255,255,.7)}
+    .cf{margin:2rem 0 0}
+    .cf img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+    .cf-wide img{aspect-ratio:16/9}
+    .cf figcaption{font-size:.78rem;color:#465462;margin-top:.55rem;line-height:1.5}
+    .cf-row{display:grid;gap:12px;margin-top:2rem}
+    .cf-row .cf{margin:0}
+    .cf-row img{aspect-ratio:4/3}
+    .cf-2{grid-template-columns:1fr 1fr}.cf-3{grid-template-columns:repeat(3,1fr)}
+    .case-links{max-width:720px;margin:2.5rem auto 0;font-size:.95rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.4rem}
+    @media(max-width:900px){.case-intro{grid-template-columns:1fr;gap:2rem}.case-card{position:static;order:-1}}
+    @media(max-width:768px){.case-article{padding:3rem 1.25rem 2rem}.cf-2,.cf-3{grid-template-columns:1fr}.cf-row img{aspect-ratio:3/2}}
   </style>
 </head>
 <body>
@@ -344,27 +358,49 @@
     </div>
   </section>
 
-  <section class="case-study">
-    <div class="case-inner">
-      <div class="case-copy">
-        <p>This Hidden Valley Lake renovation turned an older house into a contemporary lake home. The centerpiece is a sunken great room with a large opening glass wall that pulls the lake view into the living space.</p>
-        <p>Wood detailing warms the modern finishes, and an expansive lake-facing deck extends the living area outdoors. The scope also covered the primary suite, dining area, foyer, laundry, powder room and some upstairs work.</p>
-        <p>The renovation took about five months, finishing with final walkthrough and details in early fall.</p>
-        <div class="case-links"><a href="remodeling.html">Our remodeling services</a><a href="articles/how-much-does-a-kitchen-remodel-cost.html">Remodel costs</a><a href="quote.html">Get a free quote</a></div>
-      </div>
-      <aside class="case-facts">
-        <h2>Project facts</h2>
-        <dl><dt>Location</dt><dd>Hidden Valley Lake, Dearborn County, IN</dd><dt>Completed</dt><dd>2025</dd><dt>Scope</dt><dd>Primary suite, living and dining areas, foyer, laundry, powder room, upstairs work and deck</dd><dt>Timeline</dt><dd>About 5 months</dd><dt>Style</dt><dd>Contemporary lake house</dd></dl>
-        
-      </aside>
+  <article class="case-article">
+    <div class="wrap">
+
+      <div class="case-intro"><div class="case-intro-text">
+      <h2>Opening a lake house to the water</h2>
+      <p>This Hidden Valley Lake renovation is a contemporary lake home built around the view. The project reworked the primary suite, the living and dining areas, the foyer, the laundry, a powder room and the deck, along with work upstairs. The guiding idea was simple: make the lake the main feature of every room that faces it.</p>
+      <p>The renovation took about five months, with the final walkthrough and details in early fall. Here is a look at how it came together.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7282.jpg" alt="Sunken great room with a sliding glass wall opening to a deck and the lake" loading="lazy" onclick="openLightbox(7)"><figcaption>A sunken great room with an opening glass wall facing the lake.</figcaption></figure></div><aside class="case-card"><h2 class="case-card-title">Project at a glance</h2><dl><div><dt>Location</dt><dd>Hidden Valley Lake, Dearborn County, IN</dd></div><div><dt>Completed</dt><dd>2025</dd></div><div><dt>Scope</dt><dd>Primary suite, living and dining areas, foyer, laundry, powder room, upstairs work and deck</dd></div><div><dt>Timeline</dt><dd>About 5 months</dd></div><div><dt>Style</dt><dd>Contemporary lake house</dd></div></dl></aside></div>
+      <h2>A sunken great room and a wall of glass</h2>
+      <p>The centerpiece is the great room. It sits a few steps down from the surrounding spaces, which gives it a feeling of its own, and its entire lake-facing wall is glass. The sliding panels open to the deck, and when they do, the room and the outdoors become one space.</p>
+      <p>A smooth, neutral floor in the sunken room lets the view be the color, and the raised, warm wood floors around it provide a clear change in feeling from one level to the next.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7298.jpg" alt="Great room with a large sliding glass wall and views of the lake" loading="lazy" onclick="openLightbox(10)"><figcaption>The glass wall opens the great room to the lake.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7308.jpg" alt="Open sliding glass wall leading from the great room to the deck" loading="lazy" onclick="openLightbox(12)"><figcaption>With the panels open, the room flows onto the deck.</figcaption></figure></div>
+
+      <h2>A deck made for the view</h2>
+      <p>Beyond the glass, an expansive deck stretches across the lake side of the house, with a black metal railing that keeps the view open. It connects directly to the great room, so the two spaces work together when you host.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7314.jpg" alt="Wide deck with black metal railing overlooking the lake" loading="lazy" onclick="openLightbox(14)"><figcaption>A wide deck with a black metal railing and an open view.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7321.jpg" alt="Lake view from the deck through a black metal railing" loading="lazy" onclick="openLightbox(15)"><figcaption>The view from the deck.</figcaption></figure></div>
+
+      <h2>Wood details that warm the modern finishes</h2>
+      <p>Contemporary can feel cold, so wood does a lot of work in this house. Vertical wood slats form the railing along the upper hallway and the open stairs, letting light pass through while still giving a sense of enclosure. The stair treads float, which adds to the airy feel, and light oak floors run through the main living spaces.</p>
+      <p>The warm tones repeat in the natural-wood cabinetry used for the baths and built-ins.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7287.jpg" alt="Upper hallway with a vertical wood slat railing and open stairs" loading="lazy" onclick="openLightbox(8)"><figcaption>A vertical wood slat railing along the upper hall.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7402.jpg" alt="Open staircase with floating wood treads" loading="lazy" onclick="openLightbox(30)"><figcaption>Floating wood stair treads.</figcaption></figure></div>
+
+      <h2>A pop of color in the details</h2>
+      <p>Amid the white walls and natural wood, a soft seafoam green appears in cabinetry. A floating vanity in the powder room is finished in the color, and a built-in wall of cabinets with open shelving uses it too. It is a quiet nod to the water, and it keeps the interior from feeling too plain.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7293.jpg" alt="Powder room with a floating seafoam green vanity" loading="lazy" onclick="openLightbox(9)"><figcaption>A floating seafoam green vanity in the powder room.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7387.jpg" alt="Built-in cabinetry in seafoam green and natural wood with open shelving" loading="lazy" onclick="openLightbox(27)"><figcaption>Built-in cabinetry in the same soft green.</figcaption></figure></div>
+
+      <h2>A primary suite with a view of its own</h2>
+      <p>The primary suite is arranged to take in the lake. A bay of black-framed windows frames the water from the bedroom, and the light oak floor reflects the daylight. The bath continues the modern look with a double vanity in natural wood, a white stone-look top, wall-mounted black faucets and a large walk-in shower finished in big tile with a niche and handheld sprayer.</p>
+      <p>A walk-in closet with shelving and hanging rods sits close by, and tall built-in storage keeps the suite tidy.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7377.jpg" alt="Primary bedroom with a bay of black-framed windows overlooking the lake" loading="lazy" onclick="openLightbox(25)"><figcaption>A bay of windows frames the lake from the primary bedroom.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7357.jpg" alt="Primary bath with a wood double vanity, wall-mounted faucets and a walk-in shower" loading="lazy" onclick="openLightbox(21)"><figcaption>A wood double vanity with wall-mounted black faucets.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Perfect/20250929-AJW_7362.jpg" alt="Walk-in shower with large tile, a niche and a handheld sprayer" loading="lazy" onclick="openLightbox(22)"><figcaption>A walk-in shower with large tile and a niche.</figcaption></figure></div>
+
+      <h2>A renovation designed around how you live</h2>
+      <p>The result is a lake house that feels connected to its setting, with clear sightlines, plenty of daylight and warm finishes that make a modern home comfortable. If you own a lake home that no longer takes advantage of its view, we would be glad to talk through what is possible, your timeline and what the project might cost.</p>
+      
+      <div class="case-links"><a href="remodeling.html">Our remodeling services</a><a href="articles/how-much-does-a-kitchen-remodel-cost.html">Remodel costs</a><a href="quote.html">Get a free quote</a></div>
     </div>
-  </section>
+  </article>
 
   <section class="gallery-section">
     <div class="gallery-header">
       <div>
         <div class="section-eyebrow">Gallery</div>
-        <h2 class="section-title">All Photos</h2>
+        <h2 class="section-title">Full Photo Gallery</h2>
       </div>
     </div>
     <div class="gallery-grid">

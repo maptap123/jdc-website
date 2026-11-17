@@ -315,16 +315,30 @@
     }
   </style>
 <style>
-    .case-study{background:#fff;padding:4.5rem 5rem;border-bottom:1px solid rgba(9,27,55,.08)}
-    .case-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:3.5rem}
-    .case-copy p{font-size:1.02rem;line-height:1.85;color:#2b3947;margin:0 0 1.2rem}
-    .case-facts{background:#f7f5f2;padding:1.75rem 1.75rem 1rem;align-self:start}
-    .case-facts h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin:0 0 1rem;color:#091b37}
-    .case-facts dl{margin:0}.case-facts dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#8a6d00;margin-top:.9rem}
-    .case-facts dd{margin:.2rem 0 0;font-size:.95rem;line-height:1.5;color:#091b37}
-    .case-note{font-size:.72rem;color:#465462;margin:1.1rem 0 .75rem;line-height:1.5}
-    .case-links{margin-top:1.5rem;font-size:.9rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.25rem}
-    @media(max-width:900px){.case-study{padding:3rem 1.25rem}.case-inner{grid-template-columns:1fr;gap:2rem}}
+    .case-article{background:#fff;padding:4.5rem 1.5rem 3rem}
+    .case-article .wrap{max-width:1100px;margin:0 auto}
+    .case-intro{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:3rem;align-items:start}
+    .case-article h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.15;letter-spacing:-.01em;color:#091b37;max-width:720px;margin:4.5rem auto 1.1rem}
+    .case-intro-text h2{margin:0 0 1.1rem}
+    .case-article p{font-size:1.06rem;line-height:1.9;color:#2b3947;max-width:720px;margin:0 auto 1.25rem}
+    .case-intro-text p{margin-left:0;margin-right:0}
+    .case-card{background:#091b37;color:#fff;border-top:4px solid #f2b900;padding:1.75rem 1.75rem 1.5rem;position:sticky;top:100px;box-shadow:0 10px 30px rgba(9,27,55,.18)}
+    .case-article .case-card-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.6rem;color:#fff;margin:0 0 .5rem;max-width:none}
+    .case-card dl{margin:0}.case-card dl>div{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.14)}
+    .case-card dt{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#f2b900}
+    .case-card dd{margin:.3rem 0 0;font-size:1.08rem;font-weight:500;line-height:1.4;color:#fff}
+    .case-article .case-card .case-note{margin:.75rem 0 0;max-width:none;font-size:.74rem;line-height:1.5;color:rgba(255,255,255,.7)}
+    .cf{margin:2rem 0 0}
+    .cf img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+    .cf-wide img{aspect-ratio:16/9}
+    .cf figcaption{font-size:.78rem;color:#465462;margin-top:.55rem;line-height:1.5}
+    .cf-row{display:grid;gap:12px;margin-top:2rem}
+    .cf-row .cf{margin:0}
+    .cf-row img{aspect-ratio:4/3}
+    .cf-2{grid-template-columns:1fr 1fr}.cf-3{grid-template-columns:repeat(3,1fr)}
+    .case-links{max-width:720px;margin:2.5rem auto 0;font-size:.95rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.4rem}
+    @media(max-width:900px){.case-intro{grid-template-columns:1fr;gap:2rem}.case-card{position:static;order:-1}}
+    @media(max-width:768px){.case-article{padding:3rem 1.25rem 2rem}.cf-2,.cf-3{grid-template-columns:1fr}.cf-row img{aspect-ratio:3/2}}
   </style>
 </head>
 <body>
@@ -344,27 +358,58 @@
     </div>
   </section>
 
-  <section class="case-study">
-    <div class="case-inner">
-      <div class="case-copy">
-        <p>This cottage-style home near New Alsace blends Craftsman character with an efficient two-level plan. A front porch welcomes visitors, and wood-beam details carry through the open kitchen and living space.</p>
-        <p>The primary suite is on the main floor, while two more bedrooms and an office sit upstairs. The result is about 2,000 square feet above grade that handles daily life without wasted rooms. The basement was left unfinished.</p>
-        <p>Construction took about five and a half months. The investment range shown includes the land, not just construction.</p>
-        <div class="case-links"><a href="custom-home-process.html">How we build</a><a href="articles/how-much-does-it-cost-to-build-a-house.html">What a custom home costs</a><a href="quote.html">Start your project</a></div>
-      </div>
-      <aside class="case-facts">
-        <h2>Project facts</h2>
-        <dl><dt>Location</dt><dd>Near New Alsace, Dearborn County, IN</dd><dt>Completed</dt><dd>2021</dd><dt>Finished size</dt><dd>2,007 sq ft above grade (1,323 first floor + 684 second floor)</dd><dt>Bedrooms / baths</dt><dd>3 bedrooms, 2½ baths, plus an upstairs office</dd><dt>Build time</dt><dd>About 5½ months</dd><dt>Approximate investment (home and land)</dt><dd>$400K–$450K</dd></dl>
-        <p class="case-note">Investment ranges are approximate and rounded. Every project is priced to its own lot, finishes and scope.</p>
-      </aside>
+  <article class="case-article">
+    <div class="wrap">
+
+      <div class="case-intro"><div class="case-intro-text">
+      <h2>A cottage-style home with Craftsman character</h2>
+      <p>This two-level home near New Alsace borrows from the Craftsman cottage: a gabled roofline, gray siding with crisp white trim, and a front porch held up by stone-based columns. It is a house that looks at home in the country, and it was designed to live well too.</p>
+      <p>The plan puts the primary suite on the main floor, with two more bedrooms and an office upstairs, for 2,007 finished square feet above grade. The basement was left unfinished. Construction took about five and a half months, and this page walks through the finished house.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3882.jpg" alt="Cottage-style home with gray siding, white trim and a stone-based front porch" loading="lazy" onclick="openLightbox(46)"><figcaption>Gray siding, white trim and a stone-based porch.</figcaption></figure></div><aside class="case-card"><h2 class="case-card-title">Project at a glance</h2><dl><div><dt>Location</dt><dd>Near New Alsace, Dearborn County, IN</dd></div><div><dt>Completed</dt><dd>2021</dd></div><div><dt>Finished size</dt><dd>2,007 sq ft above grade (1,323 first floor + 684 second floor)</dd></div><div><dt>Bedrooms / baths</dt><dd>3 bedrooms, 2½ baths, plus an upstairs office</dd></div><div><dt>Build time</dt><dd>About 5½ months</dd></div><div><dt>Approximate investment (home and land)</dt><dd>$400K–$450K</dd></div></dl><p class="case-note">Investment range is approximate and rounded, and includes the land, not just construction.</p></aside></div>
+      <h2>A porch, a black door and a detached garage</h2>
+      <p>The front porch is the first thing you notice, with stone-clad column bases and a deep roof that shades the entry. The front door is solid black with narrow glass sidelights, which gives the otherwise soft palette a graphic punch and lets light into the foyer.</p>
+      <p>A detached two-car garage sits to the side of the house, which keeps garage doors out of the front elevation and leaves the porch to take center stage.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3872_4_5.jpg" alt="Black front door with glass sidelights beside a stone-clad porch column" loading="lazy" onclick="openLightbox(44)"><figcaption>A black front door with glass sidelights.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3878.jpg" alt="Front porch and detached two-car garage seen from the driveway" loading="lazy" onclick="openLightbox(45)"><figcaption>The porch, with a detached garage beyond.</figcaption></figure></div>
+
+      <h2>A great room with a fireplace and built-ins</h2>
+      <p>The great room is centered on a fireplace with a white shiplap chimney wall and a reclaimed-wood mantle. Built-in shelves with a wood top flank the fireplace on both sides, with a window above each, so the wall works as both a focal point and storage for books and keepsakes.</p>
+      <p>Light oak floors run through the main level, and a rough-hewn wood beam crosses the ceiling, a detail that ties the room to the rustic mantle below it. A ceiling fan keeps things comfortable.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3552_4_5.jpg" alt="Great room with a shiplap fireplace wall, built-in shelves and light oak floors" loading="lazy" onclick="openLightbox(2)"><figcaption>The great room: a shiplap fireplace wall flanked by built-in shelves.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3713_4_5%20copy.jpg" alt="Fireplace with a white surround and built-in shelves on each side" loading="lazy" onclick="openLightbox(26)"><figcaption>A fireplace with built-in shelving on both sides.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3764_7_8.jpg" alt="Rough-hewn wood ceiling beams with a ceiling fan" loading="lazy" onclick="openLightbox(31)"><figcaption>Rough-hewn beams overhead.</figcaption></figure></div>
+
+      <h2>A bright kitchen made for gathering</h2>
+      <p>The kitchen opens to the great room, so the cook is never cut off from the family. White cabinets reach toward the ceiling, with a subway tile backsplash and granite-look countertops that add subtle pattern. A stainless gas range sits under a hood, with a dishwasher and a large refrigerator close by.</p>
+      <p>The island is the hub, topped with a butcher-block section that warms up all the white and lined with black metal stools for casual meals. Pendant lights above it, and a window over the sink, keep the room bright from morning to evening.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3769_72_73.jpg" alt="Kitchen island with a butcher-block top and four black stools" loading="lazy" onclick="openLightbox(32)"><figcaption>A butcher-block island with seating for four.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3780_2_3.jpg" alt="Stainless gas range, dishwasher and granite-look counters" loading="lazy" onclick="openLightbox(34)"><figcaption>A gas range and granite-look counters.</figcaption></figure></div>
+
+      <h2>A mudroom, laundry and powder bath that work hard</h2>
+      <p>Near the entry from outside, the mudroom has white shiplap walls, a row of black hooks, open cubbies and a wood bench, which gives coats and bags a home. The laundry room has its own sink, counter and cabinets, and a window with a view of the fields.</p>
+      <p>The powder bath adds some personality: a square vessel sink sits on a rustic wood vanity, which contrasts nicely with the clean white and gray used in the rest of the house.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3622_4_5.jpg" alt="Mudroom with shiplap walls, hooks, cubbies and a wood bench" loading="lazy" onclick="openLightbox(10)"><figcaption>The mudroom, with shiplap, hooks and a wood bench.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3617_19_20.jpg" alt="Powder bath with a square vessel sink on a rustic wood vanity" loading="lazy" onclick="openLightbox(9)"><figcaption>A vessel sink on a rustic wood vanity in the powder bath.</figcaption></figure></div>
+
+      <h2>A main-floor primary suite</h2>
+      <p>Putting the primary suite on the first floor means the owners can live on one level for as long as they like. The bath has a double vanity with a granite-look top and two round mirrors, white cabinetry and a shelf of reclaimed wood. The shower is fully tiled, and a walk-in closet with wire shelving sits close by.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3607_09_10.jpg" alt="Primary bath with a double vanity and two round mirrors" loading="lazy" onclick="openLightbox(7)"><figcaption>A double vanity with round mirrors in the primary bath.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3612-HDR.jpg" alt="Walk-in closet with wire shelving" loading="lazy" onclick="openLightbox(8)"><figcaption>A walk-in closet with built-in shelving.</figcaption></figure></div>
+
+      <h2>Upstairs: two bedrooms, an office and a full bath</h2>
+      <p>A carpeted staircase leads to the second floor, where two bedrooms and an office share a full bath. The bedrooms are comfortably sized, with gray walls, ceiling fans and big windows that overlook the surrounding fields. The bath has a tub-shower finished in white subway tile with a thin band of dark blue mosaic tile along the top, a small detail that stands out.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3657-HDR.jpg" alt="Upstairs bedroom with gray walls, carpet and a large window" loading="lazy" onclick="openLightbox(17)"><figcaption>An upstairs bedroom with a large window.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3652-HDR.jpg" alt="Tub-shower with white subway tile and a dark blue mosaic accent band" loading="lazy" onclick="openLightbox(16)"><figcaption>Subway tile with a blue mosaic accent band.</figcaption></figure></div>
+
+      <h2>An unfinished basement, ready when you are</h2>
+      <p>Under the house, the basement is unfinished, with a polished concrete floor, exposed floor joists and plenty of height. It already works as storage space, and it can become a family room, a workshop or extra bedrooms later, without tearing out anything that was built.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/Alice/20210111-AJW_3697.jpg" alt="Unfinished basement with a polished concrete floor and exposed joists" loading="lazy" onclick="openLightbox(24)"><figcaption>The unfinished basement, ready to be finished later.</figcaption></figure>
+
+      <h2>Thinking about a cottage-style custom home?</h2>
+      <p>This home proves you can get Craftsman character and a smart plan in about 2,000 square feet. If you are weighing something similar, we would be glad to talk through your lot, your must-haves and what a realistic budget looks like.</p>
+      
+      <div class="case-links"><a href="custom-home-process.html">How we build</a><a href="articles/how-much-does-it-cost-to-build-a-house.html">What a custom home costs</a><a href="quote.html">Start your project</a></div>
     </div>
-  </section>
+  </article>
 
   <section class="gallery-section">
     <div class="gallery-header">
       <div>
         <div class="section-eyebrow">Gallery</div>
-        <h2 class="section-title">All Photos</h2>
+        <h2 class="section-title">Full Photo Gallery</h2>
       </div>
     </div>
     <div class="gallery-grid">

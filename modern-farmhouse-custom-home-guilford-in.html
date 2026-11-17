@@ -315,16 +315,30 @@
     }
   </style>
 <style>
-    .case-study{background:#fff;padding:4.5rem 5rem;border-bottom:1px solid rgba(9,27,55,.08)}
-    .case-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:3.5rem}
-    .case-copy p{font-size:1.02rem;line-height:1.85;color:#2b3947;margin:0 0 1.2rem}
-    .case-facts{background:#f7f5f2;padding:1.75rem 1.75rem 1rem;align-self:start}
-    .case-facts h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin:0 0 1rem;color:#091b37}
-    .case-facts dl{margin:0}.case-facts dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#8a6d00;margin-top:.9rem}
-    .case-facts dd{margin:.2rem 0 0;font-size:.95rem;line-height:1.5;color:#091b37}
-    .case-note{font-size:.72rem;color:#465462;margin:1.1rem 0 .75rem;line-height:1.5}
-    .case-links{margin-top:1.5rem;font-size:.9rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.25rem}
-    @media(max-width:900px){.case-study{padding:3rem 1.25rem}.case-inner{grid-template-columns:1fr;gap:2rem}}
+    .case-article{background:#fff;padding:4.5rem 1.5rem 3rem}
+    .case-article .wrap{max-width:1100px;margin:0 auto}
+    .case-intro{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:3rem;align-items:start}
+    .case-article h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.15;letter-spacing:-.01em;color:#091b37;max-width:720px;margin:4.5rem auto 1.1rem}
+    .case-intro-text h2{margin:0 0 1.1rem}
+    .case-article p{font-size:1.06rem;line-height:1.9;color:#2b3947;max-width:720px;margin:0 auto 1.25rem}
+    .case-intro-text p{margin-left:0;margin-right:0}
+    .case-card{background:#091b37;color:#fff;border-top:4px solid #f2b900;padding:1.75rem 1.75rem 1.5rem;position:sticky;top:100px;box-shadow:0 10px 30px rgba(9,27,55,.18)}
+    .case-article .case-card-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.6rem;color:#fff;margin:0 0 .5rem;max-width:none}
+    .case-card dl{margin:0}.case-card dl>div{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.14)}
+    .case-card dt{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#f2b900}
+    .case-card dd{margin:.3rem 0 0;font-size:1.08rem;font-weight:500;line-height:1.4;color:#fff}
+    .case-article .case-card .case-note{margin:.75rem 0 0;max-width:none;font-size:.74rem;line-height:1.5;color:rgba(255,255,255,.7)}
+    .cf{margin:2rem 0 0}
+    .cf img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+    .cf-wide img{aspect-ratio:16/9}
+    .cf figcaption{font-size:.78rem;color:#465462;margin-top:.55rem;line-height:1.5}
+    .cf-row{display:grid;gap:12px;margin-top:2rem}
+    .cf-row .cf{margin:0}
+    .cf-row img{aspect-ratio:4/3}
+    .cf-2{grid-template-columns:1fr 1fr}.cf-3{grid-template-columns:repeat(3,1fr)}
+    .case-links{max-width:720px;margin:2.5rem auto 0;font-size:.95rem}.case-links a{color:#091b37;font-weight:500;margin-right:1.4rem}
+    @media(max-width:900px){.case-intro{grid-template-columns:1fr;gap:2rem}.case-card{position:static;order:-1}}
+    @media(max-width:768px){.case-article{padding:3rem 1.25rem 2rem}.cf-2,.cf-3{grid-template-columns:1fr}.cf-row img{aspect-ratio:3/2}}
   </style>
 </head>
 <body>
@@ -344,27 +358,55 @@
     </div>
   </section>
 
-  <section class="case-study">
-    <div class="case-inner">
-      <div class="case-copy">
-        <p>This is the largest home in our portfolio: more than 5,300 finished square feet near Guilford. The exterior combines stone, board-and-batten and timber details in a Craftsman and modern-farmhouse style, with a three-bay garage.</p>
-        <p>The main level holds the primary suite and the main living spaces. Upstairs are an office, loft and sitting area. The finished walkout lower level adds a recreation room, kitchenette and home theater, which makes it a home built for hosting.</p>
-        <p>Homes at this scale have long punch lists, and some exterior and finishing work continued after the family moved in.</p>
-        <div class="case-links"><a href="custom-home-process.html">How we build</a><a href="articles/how-much-does-it-cost-to-build-a-house.html">What a custom home costs</a><a href="quote.html">Start your project</a></div>
-      </div>
-      <aside class="case-facts">
-        <h2>Project facts</h2>
-        <dl><dt>Location</dt><dd>Near Guilford, Dearborn County, IN</dd><dt>Completed</dt><dd>2025</dd><dt>Finished size</dt><dd>5,344 sq ft (2,707 main + 759 upper level + 1,878 finished walkout lower level)</dd><dt>Bedrooms / baths</dt><dd>3 bedrooms, 4 full baths and 1 half bath</dd><dt>Garage</dt><dd>Three-bay</dd><dt>Approximate investment</dt><dd>$1.6M–$1.7M</dd></dl>
-        <p class="case-note">Investment ranges are approximate and rounded. Every project is priced to its own lot, finishes and scope.</p>
-      </aside>
+  <article class="case-article">
+    <div class="wrap">
+
+      <div class="case-intro"><div class="case-intro-text">
+      <h2>The largest home in our portfolio</h2>
+      <p>This Craftsman and modern-farmhouse home near Guilford is the biggest custom home on our portfolio page, at more than 5,300 finished square feet across three levels. The exterior combines stone, board-and-batten siding and timber details, and a three-bay garage handles the vehicles.</p>
+      <p>Inside, the house is full of color, texture and natural materials: warm wood cabinets, dark stone, sage green and red walls, and big black-framed windows that look out on the country around it. This page walks through what makes it work.</p>
+      <figure class="cf cf-wide"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7114.jpg" alt="Great room with a stone fireplace, timber ceiling beams and large black-framed windows" loading="lazy" onclick="openLightbox(1)"><figcaption>The great room: stone fireplace, timber beams and big windows.</figcaption></figure></div><aside class="case-card"><h2 class="case-card-title">Project at a glance</h2><dl><div><dt>Location</dt><dd>Near Guilford, Dearborn County, IN</dd></div><div><dt>Completed</dt><dd>2025</dd></div><div><dt>Finished size</dt><dd>5,344 sq ft (2,707 main + 759 upper level + 1,878 finished walkout lower level)</dd></div><div><dt>Bedrooms / baths</dt><dd>3 bedrooms, 4 full baths and 1 half bath</dd></div><div><dt>Garage</dt><dd>Three-bay</dd></div><div><dt>Approximate investment</dt><dd>$1.6M–$1.7M</dd></div></dl><p class="case-note">Investment range is approximate and rounded. Every project is priced to its own lot, finishes and scope.</p></aside></div>
+      <h2>A great room built around stone and timber</h2>
+      <p>The great room is the heart of the house. A floor-to-ceiling stone fireplace in dark, rugged stone anchors one wall, flanked by open floating shelves, and a low wood hearth bench wraps the base. Timber beams cross a coffered ceiling, with a large ceiling fan hung from the center.</p>
+      <p>On the far wall, a bank of black-framed windows frames the view outdoors and floods the room with natural light. The wood-look plank flooring and sage green walls keep the space feeling warm rather than formal, and the room opens through wide cased openings to the foyer and the kitchen.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7109.jpg" alt="Great room with dark stone fireplace, floating shelves and large windows" loading="lazy" onclick="openLightbox(0)"><figcaption>A dark stone fireplace with floating shelves.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7163.jpg" alt="Wood hearth bench with a built-in drawer at the base of the stone fireplace" loading="lazy" onclick="openLightbox(11)"><figcaption>A wood hearth bench with a built-in drawer.</figcaption></figure></div>
+
+      <h2>A kitchen in natural wood and sage green</h2>
+      <p>The kitchen steps away from the all-white look. Natural light-wood cabinets run up to the ceiling, with a sage green island topped in a pale, veined stone-look surface. A stained wood range hood, slate-toned tile backsplash with accent tiles and lantern-style pendant lights over the island give the room texture and a lot of character.</p>
+      <p>Tall cabinets run along one wall, and a long run of countertop gives several people room to cook at once. The island is large enough to gather around, and the kitchen sits right beside the great room.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7129.jpg" alt="Kitchen with light-wood cabinets, a wood range hood, slate backsplash and sage green island" loading="lazy" onclick="openLightbox(4)"><figcaption>Light-wood cabinets, a wood hood and a sage green island.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7139.jpg" alt="Slate tile backsplash with decorative accent tiles above a gas range" loading="lazy" onclick="openLightbox(6)"><figcaption>A slate-toned backsplash with decorative accent tiles.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7144.jpg" alt="Sage green island with a stone-look top and the stone fireplace beyond" loading="lazy" onclick="openLightbox(7)"><figcaption>The island, with the great-room fireplace beyond.</figcaption></figure></div>
+
+      <h2>A home office and a laundry room that work as hard as you do</h2>
+      <p>A built-in office has floor-to-ceiling white shelving, a deep red accent wall and a long desk with a rich wood top, a space that works as a home office, a craft room or a homework station. A laundry room with sunny yellow walls, a wood shelf above a front-loading washer and dryer set on pedestals, and a window with a view makes laundry day a bit less of a chore.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7174.jpg" alt="Built-in office with white shelving, a red accent wall and a wood-top desk" loading="lazy" onclick="openLightbox(13)"><figcaption>A built-in office, with shelving and a wood-top desk.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7179.jpg" alt="Laundry room with yellow walls, front-loading washer and dryer on pedestals and a window" loading="lazy" onclick="openLightbox(14)"><figcaption>The laundry room, with a window and a wood shelf.</figcaption></figure></div>
+
+      <h2>A primary suite with a spa-style bath</h2>
+      <p>The primary suite is on the main floor and is built for relaxation. The bath combines a large freestanding soaking tub with a walk-in tile shower, set in sage green walls with big windows and a vanity in the same natural wood used in the kitchen. The shower is finished in large-format gray tile with a built-in niche and a built-in bench, and a handheld sprayer sits beside the rain head.</p>
+      <p>Next to the bath, a dressing area has a large white island with drawers and floor-to-ceiling shelving, so everything has a place.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7214.jpg" alt="Primary bath with a freestanding soaking tub, tile shower and a window" loading="lazy" onclick="openLightbox(21)"><figcaption>A freestanding tub beside the walk-in shower.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7219.jpg" alt="Large-format gray tile shower with a niche and bench next to a wood vanity" loading="lazy" onclick="openLightbox(22)"><figcaption>The shower, with a niche, a bench and a handheld sprayer.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7183.jpg" alt="Dressing area with white shelving and a drawer island" loading="lazy" onclick="openLightbox(15)"><figcaption>A dressing area with shelving and a drawer island.</figcaption></figure></div>
+
+      <h2>Color, from top to bottom</h2>
+      <p>One of the first things you notice is how much color this house uses. The powder room has a bold red wall and a dark vessel sink on a wood vanity. The stairway has a stained wood newel post and black iron balusters against green walls. Upstairs and down, rooms are painted in teal, red, yellow and blue.</p>
+      <p>Color is a design choice that is easy to change later, and these rooms were planned so the owners' personality could show.</p>
+      <div class="cf-row cf-2"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7234.jpg" alt="Powder room with a red wall, a round mirror and a dark vessel sink" loading="lazy" onclick="openLightbox(25)"><figcaption>A red powder room with a vessel sink.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7239.jpg" alt="Staircase with a stained wood newel post and black iron balusters" loading="lazy" onclick="openLightbox(26)"><figcaption>Timber newel posts and black iron balusters.</figcaption></figure></div>
+
+      <h2>A walkout lower level made for hosting</h2>
+      <p>The finished walkout lower level adds 1,878 square feet, which is more than most entire houses have to spare. A large, open recreation room is set up around a full kitchenette with gray cabinets, a stainless refrigerator and a long walnut counter that doubles as a bar or buffet. Glass doors open to the outdoors.</p>
+      <p>A home theater, additional carpeted rooms with bold accent walls in teal and red, and a bath with a tiled walk-in shower make the lower level a self-contained guest floor. With the kitchenette, it could host a party without anyone going upstairs.</p>
+      <div class="cf-row cf-3"><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7264.jpg" alt="Lower-level recreation room with a long walnut counter and kitchenette" loading="lazy" onclick="openLightbox(30)"><figcaption>The lower-level recreation room, with a long wood counter.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7253.jpg" alt="Lower-level kitchenette with gray cabinets, stainless appliances and a long wood counter" loading="lazy" onclick="openLightbox(28)"><figcaption>A full kitchenette with gray cabinets.</figcaption></figure><figure class="cf "><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Jobs/drouge/20250929-AJW_7274.jpg" alt="Carpeted lower-level room with a red accent wall and a large window" loading="lazy" onclick="openLightbox(32)"><figcaption>A lower-level room with a red accent wall.</figcaption></figure></div>
+
+      <h2>Planning something on this scale?</h2>
+      <p>Homes at this scale take careful planning, and punch lists run long. Some exterior and finishing work continued after the family moved in. If you are thinking about a large custom home, we would be glad to talk through your lot, your program and what a realistic budget looks like.</p>
+      
+      <div class="case-links"><a href="custom-home-process.html">How we build</a><a href="articles/how-much-does-it-cost-to-build-a-house.html">What a custom home costs</a><a href="quote.html">Start your project</a></div>
     </div>
-  </section>
+  </article>
 
   <section class="gallery-section">
     <div class="gallery-header">
       <div>
         <div class="section-eyebrow">Gallery</div>
-        <h2 class="section-title">All Photos</h2>
+        <h2 class="section-title">Full Photo Gallery</h2>
       </div>
     </div>
     <div class="gallery-grid">
