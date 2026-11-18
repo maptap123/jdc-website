@@ -108,6 +108,9 @@ Save for reference: primary keyword, volume, KD.
 2. Replace every `{{PLACEHOLDER}}` with actual content. Do not leave any placeholder unfilled.
 3. `{{ARTICLE_BODY}}` must be valid HTML using: `<h2>`, `<h3>`, `<p>`, `<figure class="article-image">`, `<div class="cost-tiers">`, `<div class="pull-quote">`, `<ul class="planning-list">`.
 4. Write to `articles/{slug}.html`.
+5. Authorship: every article is attributed to August Cox. Keep the template's visible byline exactly as `By August Cox &middot; JDC Construction &middot; Lawrenceburg, Indiana`, and keep the Article JSON-LD author as a Person (not an Organization):
+   `"author": { "@type": "Person", "@id": "https://jdcremodeling.com/about.html#august-cox", "name": "August Cox", "url": "https://jdcremodeling.com/about.html", "jobTitle": "Owner", "worksFor": { "@id": "https://jdcremodeling.com/#business" } }`
+   Leave the publisher Organization block unchanged.
 
 ## F — Update articles.html
 

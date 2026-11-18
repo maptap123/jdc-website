@@ -27,7 +27,9 @@
     "logo": "https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Brand_assets/jdclogo.png",
     "image": "https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Brand_assets/jdclogo.png",
     "sameAs": [
-      "https://www.facebook.com/JDCremodeling"
+      "https://www.facebook.com/JDCremodeling",
+      "https://www.houzz.com/professionals/general-contractors/jdc-remodeling-llc-pfvwus-pf~1795224534",
+      "https://www.guildquality.com/JDCConstruction"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -471,6 +473,23 @@
       color: rgba(255,255,255,0.18);
     }
 
+
+    /* Reviews strip */
+    html { height: auto; overflow-x: hidden; overflow-y: auto; }
+    body { height: auto; overflow: visible; }
+    .logo-bar { transition: opacity 0.3s ease; }
+    body.scrolled .logo-bar { opacity: 0; }
+    .reviews-strip { position: relative; z-index: 60; background: var(--navy); padding: 4rem 5rem 4.5rem; border-top: 1px solid rgba(242,185,0,0.35); }
+    .reviews-strip-inner { max-width: 1200px; margin: 0 auto; }
+    .reviews-eyebrow { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .reviews-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.1; color: #fff; margin-bottom: 2rem; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .reviews-grid figure { border-top: 2px solid var(--gold); padding-top: 1.1rem; }
+    .reviews-grid blockquote { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.8); font-weight: 300; }
+    .reviews-grid figcaption { margin-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); }
+    .reviews-more { display: inline-block; margin-top: 2rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); padding-bottom: 3px; }
+    @media (max-width: 900px) { .reviews-strip { padding: 3rem 1.5rem 3.5rem; } .reviews-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+
     /* â”€â”€ Mobile â”€â”€ */
     @media (max-width: 768px) {
       html, body { overflow-y: auto; }
@@ -592,12 +611,27 @@
 
   </div>
 
+  <!-- Client reviews strip (quotes verbatim from GuildQuality) -->
+  <section class="reviews-strip" aria-labelledby="reviews-title">
+    <div class="reviews-strip-inner">
+      <div class="reviews-eyebrow">Client Reviews</div>
+      <h2 class="reviews-title" id="reviews-title">What our clients say</h2>
+      <div class="reviews-grid">
+        <figure><blockquote>&ldquo;We are so completely satisfied with the expertise of JDC. They are by far a 5 Star company. They will go over and beyond to make sure their work satisfies their client.&rdquo;</blockquote><figcaption>Tom D.</figcaption></figure>
+        <figure><blockquote>&ldquo;The end result of our kitchen remodel was fantastic. Design stage was fun. Crew was courteous and respectful of our home.&rdquo;</blockquote><figcaption>Mike B.</figcaption></figure>
+        <figure><blockquote>&ldquo;Very professional company. Finished the complete roof replacement on my home in less time than I was told.&rdquo;</blockquote><figcaption>Greg G.</figcaption></figure>
+      </div>
+      <a href="reviews.html" class="reviews-more">Read all reviews</a>
+    </div>
+  </section>
+
   <!-- Bottom copyright strip -->
   <div class="bottom-strip">
     <p>Lawrenceburg, Indiana &nbsp;·&nbsp; JDC Construction &nbsp;·&nbsp; Licensed &amp; Insured &nbsp;·&nbsp; COL 3:23</p>
   </div>
 
   <script>
+    window.addEventListener('scroll', function(){ document.body.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
     document.querySelectorAll('.panel[tabindex]').forEach(panel => {
       panel.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') panel.click();

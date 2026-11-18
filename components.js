@@ -164,6 +164,8 @@
       text-decoration: none; transition: color 0.2s ease;\
     }\
     .footer-contact a:hover { color: rgba(255,255,255,0.7); }\
+    .footer-profiles a { font-size: 0.78rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s ease; }\
+    .footer-profiles a:hover { color: rgba(255,255,255,0.7); }\
     .footer-fb {\
       display: inline-flex; align-items: center; justify-content: center;\
       width: 38px; height: 38px;\
@@ -426,6 +428,11 @@
         + '      <a href="https://www.facebook.com/JDCremodeling" class="footer-fb" target="_blank" rel="noopener" aria-label="JDC Construction on Facebook">\n'
         + '        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>\n'
         + '      </a>\n'
+        + '      <div class="footer-profiles" style="display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:.85em">\n'
+        + '        <a href="https://www.facebook.com/JDCremodeling" target="_blank" rel="noopener">Facebook</a>\n'
+        + '        <a href="https://www.houzz.com/professionals/general-contractors/jdc-remodeling-llc-pfvwus-pf~1795224534" target="_blank" rel="noopener">Houzz</a>\n'
+        + '        <a href="https://www.guildquality.com/JDCConstruction" target="_blank" rel="noopener">GuildQuality</a>\n'
+        + '      </div>\n'
         + '    </div>\n'
         + '    <p class="footer-copy">&copy; 2026 JDC Construction &middot; Licensed &amp; Insured &middot; Lawrenceburg, IN &middot; COL 3:23</p>\n'
         + '    <div class="footer-links">\n'
