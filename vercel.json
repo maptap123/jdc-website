@@ -86,6 +86,16 @@
       "source": "/portfolio-perfect.html",
       "destination": "/lake-house-renovation-hidden-valley-lake-in.html",
       "permanent": true
+    },
+    {
+      "source": "/index.htm",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/mobile/team.html",
+      "destination": "/about.html",
+      "permanent": true
     }
   ]
 }
