@@ -207,15 +207,21 @@
   /* ───────────────────────────────
      Logo helper
      ─────────────────────────────── */
+  // Root-relative links so nav and footer work from /articles/ pages too
+  function abs(h) {
+    if (!h || /^(https?:|#|\/|tel:|mailto:|\.\.)/.test(h)) return h;
+    return h === 'index.html' ? '/' : '/' + h;
+  }
+
   var LOGO = '<img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Brand_assets/jdc%20icon.png" alt="JDC Construction">';
 
   function logoLink(href) {
-    return '<a href="' + href + '" class="nav-logo">' + LOGO + '</a>';
+    return '<a href="' + abs(href) + '" class="nav-logo">' + LOGO + '</a>';
   }
 
   function link(href, label, cls) {
     cls = cls || '';
-    return '<a href="' + href + '" class="' + cls + '">' + label + '</a>';
+    return '<a href="' + abs(href) + '" class="' + cls + '">' + label + '</a>';
   }
 
   /* ───────────────────────────────
@@ -225,7 +231,7 @@
     var html = '';
     for (var i = 0; i < links.length; i++) {
       var item = links[i];
-      html += '<a href="' + item.href + '" onclick="closeMobileNav()">' + item.label + '</a>';
+      html += '<a href="' + abs(item.href) + '" onclick="closeMobileNav()">' + item.label + '</a>';
     }
     if (links.length > 0 && links[links.length - 1].label === 'Get a Quote') {
       html = html.replace('">Get a Quote</a>', ' mobile-cta">Get a Quote</a>');
@@ -332,7 +338,7 @@
       + '      ' + link('custom-home.html', 'Custom Homes') + '\n'
       + '      ' + link('remodeling.html', 'Remodeling') + '\n'
       + '      ' + link('articles.html', 'Articles') + '\n'
-      + '      <a href="index.html" class="nav-back">\n'
+      + '      <a href="/" class="nav-back">\n'
       + '        <svg width="14" height="10" viewBox="0 0 14 10" fill="none">\n'
       + '          <path d="M13 5H1M5.5 1.5L2 5l3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>\n'
       + '        </svg>\n        Back to Home\n      </a>\n'
@@ -388,7 +394,7 @@
       }
     }
     var container = document.getElementById('nav-container');
-    container.outerHTML = buildDesktopNav('../', '../index.html', links);
+    container.outerHTML = buildDesktopNav('', 'index.html', links);
     container = document.getElementById('mobile-nav-container');
     container.outerHTML = buildMobileNav(links);
   };
@@ -419,7 +425,7 @@
     footer: function () {
       var html = '<footer>\n'
         + '    <div class="footer-left">\n'
-        + '      <a href="index.html"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>\n'
+        + '      <a href="/"><img src="https://oxz6o6nm3fxg567g.public.blob.vercel-storage.com/jdc-images/Brand_assets/jdc%20icon.png" alt="JDC Construction" class="footer-icon"></a>\n'
         + '      <div class="footer-contact">\n'
         + '        <span>25505 Steele Rd, Lawrenceburg, IN 47025</span>\n'
         + '        <a href="tel:+18126372684">(812) 637-2684</a>\n'
@@ -436,13 +442,13 @@
         + '    </div>\n'
         + '    <p class="footer-copy">&copy; 2026 JDC Construction &middot; Licensed &amp; Insured &middot; Lawrenceburg, IN &middot; COL 3:23</p>\n'
         + '    <div class="footer-links">\n'
-        + '      <a href="index.html">Home</a>\n'
-        + '      <a href="custom-home.html">Custom Homes</a>\n'
-        + '      <a href="remodeling.html">Remodeling</a>\n'
-        + '      <a href="about.html">About</a>\n'
-        + '      <a href="articles.html">Articles</a>\n'
-        + '      <a href="areas-we-serve.html">Areas We Serve</a>\n'
-        + '      <a href="quote.html">Get a Quote</a>\n'
+        + '      <a href="/">Home</a>\n'
+        + '      <a href="/custom-home.html">Custom Homes</a>\n'
+        + '      <a href="/remodeling.html">Remodeling</a>\n'
+        + '      <a href="/about.html">About</a>\n'
+        + '      <a href="/articles.html">Articles</a>\n'
+        + '      <a href="/areas-we-serve.html">Areas We Serve</a>\n'
+        + '      <a href="/quote.html">Get a Quote</a>\n'
         + '    </div>\n'
         + '  </footer>';
       var container = document.getElementById('footer-container');
