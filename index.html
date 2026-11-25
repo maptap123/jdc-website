@@ -495,6 +495,15 @@
     .reviews-grid blockquote { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.8); font-weight: 300; }
     .reviews-grid figcaption { margin-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); }
     .reviews-more { display: inline-block; margin-top: 2rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); padding-bottom: 3px; }
+    .local-strip { position: relative; z-index: 60; background: #fff; padding: 4rem 5rem 4.5rem; }
+    .local-strip-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; }
+    .local-strip .reviews-eyebrow { color: #b08600; }
+    .local-strip h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.1; color: var(--navy); margin-bottom: 1.2rem; }
+    .local-strip p { font-size: 0.98rem; line-height: 1.8; color: #333; margin-bottom: 1rem; }
+    .local-strip a { color: var(--navy); font-weight: 500; }
+    .local-strip ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 2rem; }
+    .local-strip li { padding: 0.45rem 0; border-bottom: 1px solid rgba(9,27,55,0.12); break-inside: avoid; font-size: 0.95rem; }
+    @media (max-width: 900px) { .local-strip { padding: 3rem 1.5rem 3.5rem; } .local-strip-inner { grid-template-columns: 1fr; gap: 1.5rem; } }
     @media (max-width: 900px) { .reviews-strip { padding: 3rem 1.5rem 3.5rem; } .reviews-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
 
     /* â”€â”€ Mobile â”€â”€ */
@@ -629,6 +638,33 @@
         <figure><blockquote>&ldquo;Very professional company. Finished the complete roof replacement on my home in less time than I was told.&rdquo;</blockquote><figcaption>Greg G.</figcaption></figure>
       </div>
       <a href="reviews.html" class="reviews-more">Read all reviews</a>
+    </div>
+  </section>
+
+  <!-- Local custom home builder summary (crawlable text for search and AI) -->
+  <section class="local-strip" aria-labelledby="local-title">
+    <div class="local-strip-inner">
+      <div>
+        <div class="reviews-eyebrow">Dearborn County, Indiana</div>
+        <h2 id="local-title">Custom home builder and remodeler in Southeast Indiana since 1996</h2>
+        <p>JDC Construction is a family-run custom home builder and remodeler based at 25505 Steele Rd in Lawrenceburg, Indiana. Jason Cox founded the company in 1996, and he and Lisa Cox lead it today. They hold Graduate Master Builder, Graduate Master Remodeler and Certified Graduate Remodeler designations from the National Association of Home Builders, and JDC was named Indiana Remodeler of the Year in 2019.</p>
+        <p>We build fully custom homes, from right-sized ranches to large estate homes, and take on kitchens, baths, additions and whole-home remodels. One team carries each project from the first meeting through design, pricing and construction. Read about <a href="/custom-home-process.html">our custom home process</a>, see <a href="/custom-home-portfolio.html">homes we have built</a>, or call <a href="tel:+18126372684">(812) 637-2684</a>.</p>
+      </div>
+      <div>
+        <div class="reviews-eyebrow">Where we build</div>
+        <ul>
+          <li><a href="/custom-home-builder-lawrenceburg-in.html">Lawrenceburg</a></li>
+          <li><a href="/custom-home-builder-greendale-in.html">Greendale</a></li>
+          <li><a href="/home-builder-remodeler-aurora-in.html">Aurora</a></li>
+          <li><a href="/builder-remodeler-hidden-valley-lake-in.html">Hidden Valley Lake</a></li>
+          <li><a href="/custom-homes-guilford-new-alsace-in.html">Guilford and New Alsace</a></li>
+          <li><a href="/custom-home-builder-bright-st-leon-in.html">Bright and St. Leon</a></li>
+          <li><a href="/custom-home-builder-ripley-county-in.html">Ripley County</a></li>
+          <li><a href="/custom-home-builder-franklin-county-in.html">Franklin County</a></li>
+          <li><a href="/custom-home-builder-ohio-county-in.html">Ohio County</a></li>
+          <li><a href="/areas-we-serve.html">All areas we serve</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
